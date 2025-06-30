@@ -12,8 +12,14 @@
         <!-- <h4>МЕХАНИЗИРОВАННАЯ СТЯЖКА ПОЛА</h4>
         <h4>ШТУКАТУРКА СТЕН</h4> -->
       </div>
-      <div class="header__container-burger">clck</div>
-      <nav class="header__container-nav ">
+    
+      <nav
+        class="header__container-nav"
+        [style.transform]="zoom ? leftVisible : leftHidden"
+      >
+        <button class="header__container-burger" (click)="menuBurger()">
+        <span> <mat-icon>menu</mat-icon> </span>
+      </button>
         <ul class="header__container-nav-menu">
           <li class="header__container-nav-menu-item">
             <a
@@ -68,6 +74,7 @@
           </li>
         </ul>
       </nav>
+
       <div class="header__container-tel tel">
         <div class="header__container-tel-item">
           <a

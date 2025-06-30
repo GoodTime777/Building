@@ -7,6 +7,7 @@
   z-index: 100;
   background-color: variables.$bg-orange;
   @media (min-width: 320px) and (max-width: 1023px) {
+   overflow: visible;
   }
 
   .header {
@@ -25,8 +26,9 @@
       @media (min-width: 320px) and (max-width: 1023px) {
         padding: 7px 10px;
         position: relative;
-        overflow: hidden;
-        justify-content: flex-start;
+       overflow: visible; //*
+        justify-content: center;
+        z-index: 3;
       }
       &-logo {
         display: flex;
@@ -41,11 +43,10 @@
             width: 40px;
           }
         }
-        h2{
+        h2 {
           margin: 0;
         }
         &-name {
-
           @media (min-width: 320px) and (max-width: 1023px) {
             display: none;
           }
@@ -55,7 +56,13 @@
         @media (min-width: 320px) and (max-width: 1023px) {
           order: 1;
           position: absolute;
-          left: -150%;
+        //  left: 0%; //*dynamic style
+          //background-color: white;
+          background: pink;
+          top: 62px;
+          height: 100vh;
+          width: 310px;
+          transition: transform 0.7s ease-in-out;
         }
         &-menu {
           display: flex;
@@ -67,8 +74,16 @@
           @media (min-width: 1024px) and (max-width: 1419px) {
             gap: 15px;
           }
+          @media (min-width: 320px) and (max-width: 1023px) {
+            flex-direction: column;
+          }
 
           &-item {
+            a {
+              @media (min-width: 320px) and (max-width: 1023px) {
+                color: black;
+              }
+            }
             span {
               width: 100%;
               height: 100%;
@@ -78,6 +93,9 @@
                 height: 100%;
                 font-size: 28px;
                 transition: transform 0.5s ease;
+                @media (min-width: 320px) and (max-width: 1023px) {
+                  color: black;
+                }
               }
             }
           }
@@ -144,9 +162,29 @@
       &-burger {
         display: none;
         @media (min-width: 320px) and (max-width: 1023px) {
-          
           display: block;
-          color: rgb(0, 238, 255);
+          //  align-items: center;
+          //  justify-content: center;
+
+          color: rgb(0, 0, 0);
+          width: 40px;
+          height: 40px;
+        }
+        span {
+          display: block;
+          //  align-items: center;
+          //  justify-content: center;
+          width: 100%;
+          height: 100%;
+          // background-color: aqua;
+          mat-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 38px;
+            width: 100%;
+            height: 100%;
+          }
         }
       }
     }

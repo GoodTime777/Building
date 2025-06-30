@@ -30,25 +30,21 @@ import { DialogComponent } from '../../pages/dialog/dialog.component';
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
-  //readonly animal = signal('');
   readonly dialog = inject(MatDialog);
+  leftHidden = "-95%";
+  leftVisible = "2%";
+  // hidden = "scale(0,0)";
+  // visible = "scale(1,1)";
+  zoom = false;
 
   openDialog(): void {
-     this.dialog.open(DialogComponent);
-    //const dialogRef = this.dialog.open(DialogComponent, {data:{}});
-    // const dialogRef = this.dialog.open(DialogComponent, {
-    //   data: { name: this.name(), animal: this.animal() },
-    // });
-
-    // dialogRef.afterClosed().subscribe(result => {
-    //   console.log('The dialog was closed');
-    //   // if (result !== undefined) {
-    //   //   this.animal.set(result);
-    //   // }
-    // });
+    this.dialog.open(DialogComponent);
   }
 
-
+  menuBurger() {
+    //alert('click')
+    this.zoom = !this.zoom
+  }
 }
 
 
