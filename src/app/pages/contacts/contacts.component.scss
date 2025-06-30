@@ -11,6 +11,9 @@
     padding: 10px 10px 0px 10px;
     justify-content: center;
   }
+  h2{
+    margin-bottom: 0px;
+  }
 
   &__info-content,
   &__contacts-contact {
@@ -142,13 +145,14 @@
     &-map {
       cursor: pointer;
       width: 100%;
+      margin-bottom: 20px;
       iframe {
         @media (min-width: 1024px) and (max-width: 1299px) {
           width: 85%;
         }
         @media (min-width: 320px) and (max-width: 1023px) {
           width: 100%;
-          margin-bottom: 20px;
+         // margin-bottom: 20px;
         }
       }
     }

@@ -55,7 +55,7 @@
         @media (min-width: 320px) and (max-width: 1023px) {
           order: 1;
           position: absolute;
-          left: -130%;
+          left: -150%;
         }
         &-menu {
           display: flex;
@@ -144,6 +144,8 @@
       &-burger {
         display: none;
         @media (min-width: 320px) and (max-width: 1023px) {
+          
+          display: block;
           color: rgb(0, 238, 255);
         }
       }

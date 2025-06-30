@@ -89,10 +89,12 @@
               box-shadow: 0px 0px 2px 3px variables.$shadow-black;
             }
           }
-          &-buttons{
-            width: 100%;
-            &-btn{
-width: 100%;
+          &-buttons {
+            margin: 0 auto;
+            width:45%;
+            // width: 100%;
+            &-btn {
+              width: 100%;
             }
           }
         }
@@ -101,9 +103,9 @@ width: 100%;
   }
   button {
     min-width: 212px;
-      @media (min-width: 320px) and (max-width: 1023px){
-        width: 100%;
-      }
+    @media (min-width: 320px) and (max-width: 1023px) {
+      width: 100%;
+    }
   }
   button,
   button:active {
