@@ -1,0 +1,193 @@
+@use "variables";
+@use "decoration";
+
+.contacts {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px 40px 0px 40px;
+
+  @media (min-width: 320px) and (max-width: 1023px) {
+    flex-flow: wrap;
+    padding: 10px 10px 0px 10px;
+    justify-content: center;
+  }
+
+  &__info-content,
+  &__contacts-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    padding: 20px;
+
+    @media (min-width: 320px) and (max-width: 1023px) {
+      padding: 10px 10px;
+    }
+  }
+
+  &__info {
+    width: 52%;
+    border-radius: 16px;
+
+    @media (min-width: 1300px) and (max-width: 1480px) {
+      width: 57.5%;
+    }
+    @media (min-width: 1024px) and (max-width: 1299px) {
+      width: 65%;
+    }
+    @media (min-width: 320px) and (max-width: 1023px) {
+      order: 2;
+      width: 100%;
+    }
+
+    &-content {
+      color: variables.$text-gray;
+      background: variables.$bg-glass;
+      border-radius: 16px;
+      box-shadow: 0 4px 10px variables.$shadow-black-05;
+      backdrop-filter: blur(8.8px);
+      -webkit-backdrop-filter: blur(8.8px);
+      border: 1px solid variables.$border-white-03;
+      transition: background 0.7s ease, transform 0.7s ease,
+        box-shadow 0.7s ease;
+
+      @media (min-width: 320px) and (max-width: 1023px) {
+      }
+
+      &:hover {
+        color: variables.$text-black;
+        background: variables.$bg-glass-hover-orange;
+        box-shadow: 0 4px 30px variables.$shadow-black-02;
+        transform: translate(10px, -14px);
+
+        @media (min-width: 320px) and (max-width: 1023px) {
+          transform: translate(0px, 0px);
+          color: variables.$text-gray;
+          background: variables.$bg-glass;
+          box-shadow: 0 4px 10px variables.$shadow-black-05;
+        }
+      }
+
+      &-title {
+        // margin-bottom: 0px;
+      }
+    }
+  }
+  &__contacts {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    text-align: center;
+    flex-direction: column;
+    // padding-top: 2%;
+
+    @media (min-width: 1024px) and (max-width: 1350px) {
+      //  padding-top: 1%;
+      //width: 45%;
+      //  align-items: flex-end;
+    }
+
+    @media (min-width: 320px) and (max-width: 1023px) {
+      order: 1;
+      width: 100%;
+    }
+    &-contact {
+      color: variables.$text-black;
+      margin: 0 auto;
+      //padding: 5%;
+
+      @media (min-width: 320px) and (max-width: 1023px) {
+      }
+
+      &-phones {
+        &-box {
+          a {
+            font-size: clamp(0.875rem, 0.8rem + 0.375vw, 1.25rem); //20-14
+            // font-size: 20px;
+            color: variables.$text-black;
+
+            // @media (min-width: 1000px) and (max-width: 1850px) {
+            //   font-size: 18px;
+            // }
+
+            // @media (min-width: 360px) and (max-width: 999px) {
+            // }
+          }
+          span mat-icon {
+            font-size: 20px;
+            margin-bottom: -7px;
+
+            @media (min-width: 1000px) and (max-width: 1850px) {
+              font-size: 20px;
+            }
+
+            @media (min-width: 360px) and (max-width: 999px) {
+            }
+          }
+        }
+      }
+
+      &-txt {
+      }
+
+      &-time {
+        &-detail {
+          .day {
+            font-weight: 600;
+          }
+        }
+      }
+    }
+
+    &-map {
+      cursor: pointer;
+      width: 100%;
+      iframe {
+        @media (min-width: 1024px) and (max-width: 1299px) {
+          width: 85%;
+        }
+        @media (min-width: 320px) and (max-width: 1023px) {
+          width: 100%;
+          margin-bottom: 20px;
+        }
+      }
+    }
+
+    &-buttons {
+      @media (min-width: 1024px) and (max-width: 1299px) {
+        margin-bottom: 10px;
+      }
+      @media (min-width: 320px) and (max-width: 1023px) {
+        width: 100%;
+        gap: 0;
+      }
+      // flex-direction: column;
+
+      &-btn {
+        @media (min-width: 320px) and (max-width: 1023px) {
+          width: 100%;
+        }
+        button {
+          @media (min-width: 320px) and (max-width: 1023px) {
+            background-color: black;
+            color: white;
+            border: none;
+          }
+        }
+        button:hover {
+          @media (min-width: 320px) and (max-width: 1023px) {
+            background-color: black;
+            color: white;
+          }
+        }
+        button:active {
+          @media (min-width: 320px) and (max-width: 1023px) {
+            background-color: white;
+            color: black;
+          }
+        }
+        //  margin-bottom: 0;
+      }
+    }
+  }
+}

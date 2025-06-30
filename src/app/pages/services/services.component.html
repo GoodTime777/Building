@@ -1,0 +1,105 @@
+<section class=" wrapper">
+  <!-- <p>services works!</p> -->
+  <!-- <div class="big-foto"><img src="/assets/images/1.jpg" alt="foto" /></div> -->
+  <div class=" content services ">
+    <mat-tab-group class="services__tabs">
+      <mat-tab
+        class="services__tabs-label"
+        label="Штукатурка стен"
+        #wall
+        id="1"
+      >
+        <div class="services__tabs-label-card card-content">
+          <p class="services__tabs-label-card-txt txt">
+            <span>
+              Штукатурка осуществляется опытными специалистами на немецком
+              оборудовании PFT RITMO XL. Штукатурная станция этого производителя
+              создана с учетом строгих требований к автоматизации наиболее
+              трудоемких работ, имеет небольшие габариты, что позволяет работать
+              даже на небольшой площади, высокая производительность: сроки
+              выполнения работ сокращаются и увеличивается качество, так как
+              смесь замешивается однородно.</span
+            >
+            <span>
+              Перед нанесением подготавливаем поверхность: сбиваем старую
+              штукатурку, если это требуется, и грунтуем стены, в зависимости от
+              материала стены (например, газосиликат), может понадобиться
+              прогрунтовать стену дважды. Для ровного нанесения выставляются
+              маяки. После подготовительных работ переходим к процессу нанесения
+              штукатурки (мы используем MP75 (но это не точно)) и ее
+              выравниванию. Так мы получаем идеально гладкую поверхность стен.
+            </span>
+          </p>
+
+          <div class="services__tabs-label-card-buttons btns">
+            <div class="services__tabs-label-card-buttons-btn btn">
+              <button>
+                <!-- <span> <mat-icon>engineering</mat-icon> </span> -->
+                Рассчитать стоимость
+              </button>
+            </div>
+            <div class="services__tabs-label-card-buttons-btn btn">
+              <button>
+                <!-- <span> <mat-icon>engineering</mat-icon> </span> -->
+                Оставить заявку
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="services__tabs-label-card-foto">
+          <img src="/assets/images/5.jpg" alt="" />
+        </div>
+      </mat-tab>
+      <mat-tab
+        class="services__tabs-label"
+        label="Механизированная стяжка пола"
+        (linkFloorClick)="fTwo()"
+        #floor
+        id="2"
+      >
+        <div class="services__tabs-label-card card-content">
+          <p class="services__tabs-label-card-txt txt">
+            <span>
+              (Знать бы каким оборудованием делается стяжка). Механизированная
+              стяжка пола, в отличии от ручной, дает преимущества в скорости,
+              меньший усадок из-за меньшего содержания влаги в растворе и выше
+              однородность смеси, что также улучшает прочностные характеристики
+              смеси, снижает риск трещинообразования и повышает устойчивость к
+              механическим воздействиям. В своей работе мы применяем раствор
+              марки м200 и выше, с возможностью добавления фиброволокна.
+            </span>
+            <span>
+              Этапы работы включают: установка маячной системы, армирование
+              стяжки сеткой, заливание пола раствором и тут же выравнивание
+              (участвует два человека), через несколько часов затирка, наводим
+              порядок и проливаем водой.</span
+            >
+            <span
+              >Смесь подается из миксера.И так как люди в приготовлении смеси
+              не участвуют, исключена проблема человеческого фактора. Качество
+              гарантированно.</span
+            >
+          </p>
+          <div class="services__tabs-label-card-buttons btns">
+            <div class="services__tabs-label-card-buttons-btn btn">
+              <button>
+                <!-- <span> <mat-icon>engineering</mat-icon> </span> -->
+                Рассчитать стоимость
+              </button>
+            </div>
+            <div class="services__tabs-label-card-buttons-btn btn">
+              <button>
+                <!-- <span> <mat-icon>engineering</mat-icon> </span> -->
+                Оставить заявку
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="services__tabs-label-card-foto">
+          <img src="/assets/images/10.jpg" alt="" />
+        </div>
+      </mat-tab>
+    </mat-tab-group>
+  </div>
+</section>

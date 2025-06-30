@@ -1,0 +1,142 @@
+<div class="wrapper">
+  <div class="content calculator">
+    <h2 class="calculator__title">Цены</h2>
+    <div class="calculator__price">
+      <table>
+        <thead>
+          <tr>
+            <th>Вид работы</th>
+            <th>Площадь</th>
+            <th>Толщина</th>
+            <th>Цена руб.(за м<sup>2</sup>)</th>
+            <th>Дополнительно</th>
+            <th>*</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Стяжка пола</td>
+            <td>1м<sup>2</sup></td>
+            <td>6см</td>
+            <td>800</td>
+            <td>каждый см свыше - 150 руб.</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td>Штукатурка стен</td>
+            <td>1м<sup>2</sup></td>
+            <td>20 мм*</td>
+            <td>750</td>
+            <td>-</td>
+            <td>*от 300 м<sup>2</sup></td>
+          </tr>
+          <tr>
+            <td>Откосы</td>
+            <td>1м</td>
+            <td>до 20мм</td>
+            <td>950</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <h2 class="calculator__title">Рассчет стоимости</h2>
+    <div class="calculator__container">
+      <div class="calculator__container-calc calc-floor">
+        <h2 class="calculator__container-calc-name">Cтяжка пола</h2>
+        <div class="calculator__container-calc-wrap">
+          <div class="calculator__container-calc-wrap-item">
+            <div class="calculator__container-calc-wrap-item-label">
+              Площадь (м<sup>2</sup>)
+            </div>
+            <div class="calculator__container-calc-wrap-item-input">
+              <input
+                type="number"
+                name="area"
+                value=""
+                [formControl]="areaFloor"
+              />
+              <span *ngIf="areaFloor?.hasError('required')"
+                >Это обязательное поле</span
+              >
+            </div>
+          </div>
+          <div class="calculator__container-calc-wrap-item">
+            <div class="calculator__container-calc-wrap-item-label">
+              Толщина (см)
+            </div>
+            <div class="calculator__container-calc-wrap-item-input">
+              <input
+                type="number"
+                name="width"
+                value=""
+                [formControl]="widthFloor"
+              />
+              <span *ngIf="widthFloor?.hasError('required')"
+                >Это обязательное поле</span
+              >
+            </div>
+          </div>
+          <div class="calculator__container-calc-wrap-item result-floor">
+            <button
+              class="calculator__container-calc-wrap-item-btn"
+              (click)="calculateFloor()"
+            >
+              Рассчитать
+            </button>
+            <div class="calculator__container-calc-wrap-item-result">
+              Итого:{{ resultFloor }},{{ widthFloor.value }}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="calculator__container-calc calc-wall">
+        <h2 class="calculator__container-calc-name">Штукатурка стен</h2>
+        <div class="calculator__container-calc-wrap">
+          <div class="calculator__container-calc-wrap-item">
+            <div class="calculator__container-calc-wrap-item-label">
+              Площадь (м<sup>2</sup>)
+            </div>
+            <div class="calculator__container-calc-wrap-item-input">
+              <input
+                type="number"
+                name="area"
+                value=""
+                [formControl]="areaWall"
+              />
+              <span *ngIf="areaWall?.hasError('required')"
+                >Это обязательное поле</span
+              >
+            </div>
+          </div>
+
+          <div class="calculator__container-calc-wrap-item result-floor">
+            <button
+              class="calculator__container-calc-wrap-item-btn"
+              (click)="calculateWall()"
+            >
+              Рассчитать
+            </button>
+            <div class="calculator__container-calc-wrap-item-result">
+              Итого:{{ resultWall }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="calculator__result">
+      <div class="calculator__result-number">
+        ИТОГОВАЯ СТОИМОСТЬ: {{ resultFloor + resultWall }} &#8381;
+      </div>
+      <p class="calculator__result-description">
+        Точная стоимость будет рассчитана после замеров мастером.
+      </p>
+      <div class="calculator__result-btn btn">
+        <button>Оставить заявку</button>
+      </div>
+    </div>
+  </div>
+</div>

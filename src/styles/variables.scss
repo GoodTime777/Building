@@ -1,0 +1,100 @@
+$white: rgb(255, 255, 255); //@  a:hover+, color+, border+
+$white-02: rgba(255, 255, 255, 0.23); //glass //border+, bg+
+$white-03: rgba(255, 255, 255, 0.36); //bg+, border+
+$white-05: rgba(255, 255, 255, 0.521); //@
+$white-07: rgba(255, 255, 255, 0.705); //@
+$silk: rgb(182, 182, 182); //@
+$seashell: rgb(236, 240, 241); //@body !light+
+
+$black: rgb(0, 0, 0); //a+, color+, @
+$black-05: rgba(0, 0, 0, 0.5); //shadow+
+$black-02: rgba(0, 0, 0, 0.233); //shadow+
+$black-0: rgba(0, 0, 0, 0); //shadow+
+
+$cinder: rgb(20, 20, 20); //bg,!dark+
+$zeus: rgba(32, 32, 32, 0.4); //@ shadow+,
+// $dune: rgba(51, 51, 51, 0.918); //@ bg, !middle+
+$dune: rgba(51, 51, 51, 1); //@ bg, !middle+
+$black-cow: rgb(75, 74, 74); //color+
+$carbon-gray: rgb(90, 90, 90); //bg+
+
+$bittersweet: rgb(255, 127, 80); //border?+
+$gamboge: rgb(255, 141, 10); //bg,+ @
+$squash: rgb(255, 166, 0); //bg+, border+ @
+$texas-rose: rgb(255, 187, 61); //bg+
+$grandis: rgba(255, 209, 140, 0.37); //bg+
+
+$rosso-corsa: rgb(230, 0, 0); //@
+$venetian-red: rgb(206, 2, 2); //@
+$class-red: rgb(255, 0, 0); //@ .red
+$bright-red: rgb(255, 0, 0); //decor
+
+$shadow-black-0: $black-0;
+$shadow-black-02: $black-02;
+$shadow-black-05: $black-05;
+$shadow-black-1: $black;
+$shadow-black: $zeus;
+
+$text-white: $white;
+$text-gray: $black-cow;
+$text-black: $black;
+
+$link-white: $white;
+$link-black: $black;
+
+$border-white: $white;
+$border-white-02: $white-02;
+$border-white-03: $white-03;
+$border-black: $black;
+$border-dark-orange: $gamboge;
+$border-orange: $squash;
+
+$bg-light-orange: $squash;
+$bg-orange: $gamboge; //header
+$bg-yellow: $texas-rose;
+
+$bg-white: $white-03;
+$bg-light-gray: $seashell;
+$bg-middle-gray: $dune;
+$bg-middle-two-gray: $carbon-gray;
+$bg-dark-gray: $cinder;
+
+$bg-glass: $white-02;
+//$bg-glass-hover-white
+$bg-glass-hover-orange: $grandis;
+
+$error: $rosso-corsa;
+$error-dark: $venetian-red;
+
+//404
+//$colors:
+// rgba(0, 141, 210, 0.63)
+// rgba(0, 0, 0, 0)
+// rgba(239, 137, 26, 1)
+// rgba(239, 137, 26, 1)
+// rgba(235, 242, 138, 1)
+// rgb(255, 132, 0)
+// rgb(235, 235, 235)
+// rgb(255, 255, 255)
+// rgb(127, 164, 167)
+// #3b949b
+// #008d9b
+// rgb(244, 207, 209)
+// rgb(128, 128, 128)
+// rgb(255, 147, 147)
+// rgb(255, 107, 107)
+// rgb(127, 164, 167)
+// rgb(235, 235, 235)
+// rgba(134, 134, 134, 0.23)
+// rgba(134, 134, 134, 0.23)
+// rgba(0, 141, 210, 0.3)
+// rgba(153, 189, 207, 0.3)
+// rgba(255, 255, 255, 0.63)
+
+$time: 0.9s;
+
+//
+// :root {
+//   --ng-animation: 0.3s ease-in;
+//   --ng-max-z-index: 999;
+// }

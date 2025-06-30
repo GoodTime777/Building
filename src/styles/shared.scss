@@ -1,0 +1,166 @@
+@use "variables";
+@use "decoration";
+@use "./mixins" as mixins;
+
+body {
+  font-family: "Open Sans", "Helvetica Neue", sans-serif;
+  min-height: 100vh;
+  background: variables.$seashell;
+  margin: 0 auto;
+  padding-top: 66px;
+
+  @media (min-width: 1024px) and (max-width: 1919px) {
+    padding-top: 60px;
+  }
+  @media (min-width: 320px) and (max-width: 1023px) {
+    padding-top: 61px;
+  }
+
+  @media (min-width: 320px) and (max-width: 1023px) {
+  }
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: Oswald, "Helvetica Neue", sans-serif;
+  color: variables.$black;
+}
+
+h2,
+h3,
+h4 {
+  text-transform: uppercase;
+}
+
+h1 {
+  font-size: clamp(1.625rem, 1.35rem + 1.375vw, 3rem); //26-48
+}
+
+h2 {
+  font-size: clamp(1.375rem, 1.2rem + 0.875vw, 2.25rem); //22-36
+  margin-bottom: 20px;
+  @media (min-width: 320px) and (max-width: 1220px) {
+    margin-bottom: 10px;
+  }
+}
+h3 {
+  font-size: clamp(1.125rem, 1.05rem + 0.375vw, 1.5rem); //24-18
+}
+
+h4 {
+  font-size: clamp(0.875rem, 0.8rem + 0.375vw, 1.25rem); //20-14
+}
+
+a,
+button {
+  font-size: clamp(0.875rem, 0.5893rem + 0.4464vw, 1.125rem);
+}
+
+a {
+  color: variables.$white;
+}
+
+.wrapper {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  margin: 0 auto;
+  @media (min-width: 320px) and (max-width: 1023px) {
+    // background-color: greenyellow;
+  }
+}
+
+.content {
+  width: 100%;
+  max-width: 1920px;
+  margin: 0 auto;
+
+  @media (min-width: 320px) and (max-width: 1023px) {
+    max-width: 320px;
+    //  padding: 0 10px;
+  }
+}
+
+.btn {
+  margin-bottom: 30px;
+  @media (min-width: 1024px) and (max-width: 1620px) {
+    margin-bottom: 10px;
+  }
+  @media (min-width: 320px) and (max-width: 1023px) {
+    margin-bottom: 10px;
+  }
+
+  button {
+    min-width: 240px;
+    text-align: center;
+    color: variables.$black;
+    background-color: transparent;
+    border: 1px solid variables.$border-black;
+    border-radius: 6px;
+    padding: 15px 0;
+    transition: color 0.4s ease, border 0.4s ease, background-color 0.4s ease;
+
+    @media (min-width: 1200px) and (max-width: 1599px) {
+      min-width: 212px;
+    }
+
+    @media (min-width: 1024px) and (max-width: 1199px) {
+      min-width: 160px;
+    }
+
+    @media (min-width: 320px) and (max-width: 1023px) {
+      width: 100%;
+    }
+  }
+
+  button:hover {
+    color: variables.$seashell;
+    border: 1px solid transparent;
+    background-color: variables.$bg-dark-gray;
+  }
+  button:active {
+    color: variables.$black;
+    border: 1px solid variables.$black;
+    background-color: inherit;
+  }
+}
+
+.btns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+
+  @media (min-width: 320px) and (max-width: 1023px) {
+    flex-direction: column;
+    gap: 5px;
+  }
+}
+
+.red {
+  font-family: Oswald, "Helvetica Neue", sans-serif;
+  //font-size: 20px;
+  // color: variables.$squash;
+  // color: variables.$class-red;
+  // color: variables.$gamboge;
+  color: variables.$bittersweet;
+}
+
+::-webkit-scrollbar {
+  width: 0px; /* remove scrollbar space */
+  background: transparent; /* optional: just make scrollbar invisible */
+}
+.main-txt {
+  font-size: clamp(0.875rem, 0.8rem + 0.375vw, 1.25rem); //min14
+}
+
+.emphasized-txt {
+  font-size: clamp(0.875rem, 0.775rem + 0.5vw, 1.375rem); //22-14
+}
+
+.txt {
+  font-size: clamp(1rem, 0.7143rem + 0.4464vw, 1.25rem);
+  // font-size: clamp(0.875rem, 0.8rem + 0.375vw, 1.25rem);
+}

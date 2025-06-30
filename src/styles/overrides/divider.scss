@@ -1,0 +1,11 @@
+@use "variables";
+@use "@angular/material" as mat;
+
+:root {
+  @include mat.divider-overrides(
+    (
+      color: variables.$border-dark-orange,
+      width: 1px,
+    )
+  );
+}

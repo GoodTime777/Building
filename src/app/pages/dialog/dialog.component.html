@@ -1,0 +1,79 @@
+
+<div class="modal">
+  <h2 mat-dialog-title class="modal__title">Обратный звонок / заявка</h2>
+  <p class="modal__subtitle">Выезд в день обращения</p>
+
+  <mat-dialog-content class="modal__dialog">
+    <form
+      class="modal__dialog-form"
+      [formGroup]="applicationForm"
+      (ngSubmit)="onSubmit()"
+    >
+      <mat-form-field class="modal__dialog-form-field">
+        <mat-label>Ваше имя</mat-label>
+        <input matInput type="text" formControlName="name" name="name" />
+        <mat-error>
+          @if(name?.invalid && (name?.dirty || name?.touched)){
+          @if(name?.hasError('required')){ Это обязательное поле }@else {
+          Допустимы только русский и английский алфавит} }
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="modal__dialog-form-field">
+        <mat-label>Вид работ</mat-label>
+        <mat-select formControlName="works" multiple>
+          @for (work of workList; track work) {
+          <mat-option [value]="work">{{ work }}</mat-option>
+          }
+        </mat-select>
+        <mat-error *ngIf="works?.hasError('required')">
+          Это обязательное поле
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="modal__dialog-form-field">
+        <mat-label>Адрес</mat-label>
+        <input matInput type="text" formControlName="address" name="address" />
+        <mat-error *ngIf="address?.hasError('required')">
+          Это обязательное поле
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="modal__dialog-form-field">
+        <mat-label>Tel</mat-label>
+        <input
+          matInput
+          type="text"
+          prefix="+7 "
+          mask="000 000 00 00"
+          [showMaskTyped]="true"
+          formControlName="tel"
+          name="tel"
+        />
+        <mat-error *ngIf="tel?.hasError('required')">
+          Это обязательное поле
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="modal__dialog-form-field">
+        <mat-label>Комментарии</mat-label>
+        <textarea matInput></textarea>
+      </mat-form-field>
+    </form>
+  </mat-dialog-content>
+  <mat-dialog-actions class="modal__actions">
+    <button mat-dialog-close class="modal__actions-btn btn-decor-flash-black">
+      Отмена
+    </button>
+    <button
+      class="modal__actions-btn btn-decor-flash"
+      [disabled]="applicationForm.invalid"
+      cdkFocusInitial
+      type="submit"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      Отправить
+    </button>
+  </mat-dialog-actions>
+</div>

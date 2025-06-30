@@ -1,0 +1,145 @@
+@use "variables";
+
+.wrapper {
+  margin-bottom: 80px;
+
+  // @media (min-width: 1024px) and (max-width: 1600px) {
+  //   margin-bottom: 40px;
+  // }
+
+  // @media (min-width: 320px) and (max-width: 1023px) {
+  // margin-bottom: 40px;
+  // }
+  @media (min-width: 320px) and (max-width: 1600px) {
+    margin-bottom: 40px;
+  }
+
+  .cooperation {
+    padding: 0 60px;
+    @media (min-width: 320px) and (max-width: 1023px) {
+      padding: 0 10px;
+    }
+
+    &__title {
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      text-decoration: underline solid variables.$squash;
+    }
+
+    &__wrapper {
+      width: 98.5%;
+
+      &-content {
+        &-list {
+          display: flex;
+          margin-bottom: 40px;
+
+          @media (min-width: 1024px) and (max-width: 1680px) {
+            margin-bottom: 25px;
+          }
+
+          @media (min-width: 320px) and (max-width: 1023px) {
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 28px;
+            margin-bottom: 70px;
+          }
+
+          &-item {
+            position: relative;
+            margin-left: -0.1%;
+
+            @media (min-width: 320px) and (max-width: 1023px) {
+              margin-left: 0;
+            }
+
+            &-box {
+              @media (min-width: 320px) and (max-width: 1023px) {
+              }
+            }
+
+            .spans {
+              top: 50%;
+              transform: translateY(-50%);
+              width: 100%;
+              position: absolute;
+              z-index: 10;
+              margin-left: 11%;
+
+
+              @media (min-width: 320px) and (max-width: 1023px) {
+                display: flex;
+                //flex-direction: column;
+                justify-content: center;
+                align-items: flex-end;
+                 gap: 10px;
+                margin-left: 0;              
+                padding: 0 20px;
+                top: 70px;
+               
+              
+              }
+            }
+            span {
+              display: block;
+              text-align: center;
+            }
+
+            .red {
+              font-size: clamp(1.875rem, 1.575rem + 1.5vw, 3.375rem); //30-54
+              // font-size: clamp(
+              //   2.625rem,
+              //   2.4519rem + 0.7692vw,
+              //   3.375rem
+              // ); //max54
+              font-weight: 200;
+              line-height: 1.15;
+              @media (min-width: 320px) and (max-width: 1023px) {
+                font-size: 50px;
+              }
+            }
+
+            .txts {
+              font-weight: 300;
+              font-size: clamp(0.625rem, 0.475rem + 0.75vw, 1.375rem); //min10
+
+              color: variables.$text-white;
+              @media (min-width: 320px) and (max-width: 1023px) {
+                font-family: Oswald, "Helvetica Neue", sans-serif;
+                text-transform: uppercase;
+                font-size: 26px;
+                font-weight: 100;
+              }
+            }
+          }
+        }
+      }
+      &-btn {
+        text-align: right;
+
+        @media (min-width: 320px) and (max-width: 1023px) {
+          text-align: center;
+        }
+        button {
+          @media (min-width: 320px) and (max-width: 1023px) {
+            background-color: rgba(255, 187, 61, 1);
+            border: none;
+          }
+        }
+
+        button:hover {
+          color: variables.$black;
+          border: 1px solid transparent;
+          background-color: rgba(255, 187, 61, 1);
+        }
+
+        button:active {
+          color: variables.$seashell;
+          border: 1px solid variables.$seashell;
+          background-color: variables.$bg-dark-gray;
+        }
+      }
+    }
+  }
+}

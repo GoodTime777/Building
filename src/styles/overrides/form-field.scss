@@ -1,0 +1,32 @@
+@use "variables";
+@use '@angular/material' as mat;
+
+:root {
+  @include mat.form-field-overrides(
+    (
+      filled-caret-color: variables.$white,
+      filled-focus-active-indicator-color: variables.$white,
+      filled-focus-label-text-color: variables.$white,
+      filled-container-color: variables.$cinder,
+      // filled-disabled-container-color: green,
+      filled-label-text-color: variables.$white-07,
+      filled-hover-label-text-color: variables.$white,
+      filled-disabled-label-text-color: variables.$squash,
+      filled-input-text-color: variables.$white,
+      filled-disabled-input-text-color: variables.$squash,
+      //filled-input-text-placeholder-color: rgb(0, 255, 13),
+      filled-error-hover-label-text-color: variables.$rosso-corsa,
+      filled-error-focus-label-text-color: variables.$rosso-corsa,
+      filled-error-label-text-color: variables.$rosso-corsa,
+      filled-active-indicator-color: variables.$white-07,
+      filled-disabled-active-indicator-color: variables.$squash,
+      filled-hover-active-indicator-color: variables.$white,
+      filled-error-active-indicator-color: variables.$rosso-corsa,
+      filled-error-hover-active-indicator-color: variables.$rosso-corsa,
+      filled-error-focus-active-indicator-color: variables.$rosso-corsa,
+      state-layer-color: variables.$cinder,
+      error-text-color: variables.$venetian-red,
+      subscript-text-size: 14px,
+    )
+  );
+}

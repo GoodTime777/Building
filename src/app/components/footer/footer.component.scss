@@ -1,0 +1,321 @@
+@use "variables";
+@use "decoration";
+
+.wrapper {
+  background-color: variables.$bg-dark-gray;
+
+  .footer {
+    padding: 8px 25px;
+    display: flex;
+    justify-content: space-between;
+
+    @media (min-width: 1024px) and (max-width: 1250px) {
+    }
+    @media (min-width: 320px) and (max-width: 1023px) {
+      padding: 8px 10px;
+      display: grid;
+      grid-template-areas: "A A" "B C";
+      gap: 10px;
+    }
+
+    &__right {
+      width: 50%;
+      @media (min-width: 1024px) and (max-width: 1380px) {
+        width: 60%;
+      }
+      @media (min-width: 320px) and (max-width: 1023px) {
+        width: 100%;
+        grid-area: A;
+        position: relative;
+        border-bottom: 1px solid variables.$texas-rose;
+      }
+      &-info {
+        display: flex;
+        @media (min-width: 320px) and (max-width: 1023px) {
+          flex-direction: column;
+          width: 100%;
+          gap: 10px;
+          // flex-flow: wrap;
+        }
+        &-schedule {
+          // margin-left: auto;
+          margin-right: 15px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+
+          @media (min-width: 1024px) and (max-width: 1700px) {
+            margin-right: 10px;
+          }
+          @media (min-width: 320px) and (max-width: 1023px) {
+            margin-right: 0;
+          }
+
+          &-title {
+            font-size: 22px;
+            color: variables.$texas-rose;
+            font-weight: 300;
+
+            @media (min-width: 320px) and (max-width: 1700px) {
+              font-size: 18px;
+            }
+
+            @media (min-width: 320px) and (max-width: 1023px) {
+              border-bottom: 1px solid variables.$texas-rose;
+            }
+          }
+
+          &-description {
+            font-size: 16px;
+
+            @media (min-width: 320px) and (max-width: 1700px) {
+              font-size: 14px;
+            }
+            &-detail-one {
+              @media (min-width: 320px) and (max-width: 1023px) {
+                color: variables.$texas-rose;
+              }
+            }
+            &-detail-two {
+              margin-left: 5px;
+              @media (min-width: 320px) and (max-width: 1023px) {
+                margin-left: 0;
+              }
+            }
+          }
+        }
+        &-box {
+          margin: 0 15px;
+          // width: 35%;
+          // margin-left: auto;
+          @media (min-width: 1024px) and (max-width: 1700px) {
+            margin: 0 10px;
+          }
+          @media (min-width: 320px) and (max-width: 1023px) {
+            // order: 3;
+          }
+
+          &-address {
+            display: flex;
+            // align-items: center;
+            // justify-content: flex-end;
+
+            &-container {
+              display: flex;
+              flex-direction: column;
+              text-align: center;
+              gap: 10px;
+              margin-bottom: 5px;
+              //margin-right: 15px;
+
+              @media (min-width: 1024px) and (max-width: 1700px) {
+                //margin-right: 10px;
+              }
+
+              &-txt {
+                a {
+                  position: relative;
+                  font-size: 18px;
+                  word-wrap: break-word;
+                  // width: 20px;
+                  // height: 20px;
+                  @media (min-width: 1024px) and (max-width: 1700px) {
+                    font-size: 14px;
+                  }
+                  @media (min-width: 320px) and (max-width: 1023px) {
+                    font-size: 14px;
+                  }
+                  img {
+                    position: absolute;
+                    width: 22px;
+                    height: 22px;
+                    right: -25px;
+                    bottom: 3px;
+                  }
+                }
+              }
+
+              &-tel {
+                a {
+                  display: flex;
+                  //  justify-content: flex-end;
+                  gap: 5px;
+                  transition: color 0.5s ease;
+
+                  @media (min-width: 1024px) and (max-width: 1700px) {
+                    font-size: 14px;
+                  }
+                  @media (min-width: 320px) and (max-width: 1023px) {
+                    color: variables.$texas-rose;
+                  }
+
+                  mat-icon {
+                    font-size: 16px;
+                    color: variables.$texas-rose;
+                    margin-bottom: -10px;
+                  }
+                }
+                a:hover {
+                  color: variables.$texas-rose;
+                }
+              }
+            }
+          }
+        }
+
+        &-messengers {
+          //  background-color: aquamarine;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+          margin-left: auto;
+          margin-right: 10px;
+          // display: flex;
+          // align-items: center;
+          //gap: 10px;
+          @media (min-width: 1024px) and (max-width: 1700px) {
+            margin-right: 5px;
+          }
+          @media (min-width: 320px) and (max-width: 1023px) {
+            position: absolute;
+            bottom: 12px;
+            right: 0;
+            flex-direction: row;
+          }
+
+          a {
+            display: flex;
+            //align-items: center;
+            justify-content: center;
+            width: 40px;
+            text-align: center;
+            transform: scale(1, 1);
+            transition: transform 0.3s ease-in-out;
+          }
+          a:hover {
+            transform: scale(1.1, 1.1);
+          }
+
+          img {
+            width: 30px;
+            height: 30px;
+          }
+        }
+      }
+    }
+    &__logo {
+      width: 4%;
+      margin: auto 0;
+
+      @media (min-width: 1024px) and (max-width: 1240px) {
+        width: 7%;
+      }
+      @media (min-width: 320px) and (max-width: 1023px) {
+        grid-area: B;
+        width: 40px;
+        padding-top: 30px;
+      }
+
+      // background-color: pink;
+      a {
+        width: 100%;
+
+        @media (min-width: 320px) and (max-width: 1023px) {
+          //  display: block;
+          // display: flex;
+          // justify-content: center;
+          // align-items: center;
+        }
+
+        img {
+          width: 100%;
+        }
+      }
+    }
+
+    &__left {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      //  justify-content: space-between;
+      //  margin-left: 15px;
+      @media (min-width: 1024px) and (max-width: 1380px) {
+        width: 40%;
+      }
+      @media (min-width: 320px) and (max-width: 1023px) {
+        width: 100%;
+        grid-area: C;
+      }
+
+      &-nav {
+        margin-left: auto;
+
+        &-menu {
+          text-align: right;
+          display: flex;
+          gap: 15px;
+          @media (min-width: 320px) and (max-width: 1023px) {
+            gap: 6px;
+          }
+
+          &-item {
+            &-link {
+              @media (min-width: 1024px) and (max-width: 1919px) {
+                font-size: 14px;
+              }
+              @media (min-width: 320px) and (max-width: 1023px) {
+                border-bottom: 1px dashed variables.$texas-rose;
+              }
+            }
+            .mat-icon {
+              transition: color 0.3s ease-in-out;
+              @media (min-width: 320px) and (max-width: 1023px) {
+                color: variables.$texas-rose;
+              }
+            }
+            .mat-icon:hover {
+              color: variables.$texas-rose;
+            }
+          }
+        }
+      }
+      &-docs {
+        margin-left: auto;
+        text-align: right;
+        &-copyright {
+          &-txt {
+            font-size: 14px;
+          }
+        }
+        &-privacy {
+          &-link {
+            font-size: 14px;
+            transition: color 0.3s ease-in-out;
+            @media (min-width: 320px) and (max-width: 1023px) {
+              border-bottom: 1px dashed variables.$texas-rose;
+            }
+          }
+          &-link:hover {
+            color: variables.$texas-rose;
+            @media (min-width: 320px) and (max-width: 1023px) {
+              color: variables.$white;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .decor::after {
+    right: 0;
+    background-color: variables.$texas-rose;
+  }
+
+  .line,
+  .decor::after {
+    @media (min-width: 320px) and (max-width: 1023px) {
+      display: none;
+    }
+  }
+}

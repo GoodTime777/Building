@@ -1,0 +1,164 @@
+@use "variables";
+@use "decoration";
+
+.wrapper {
+  margin-bottom: 15px;
+  @media (min-width: 320px) and (max-width: 1023px) {
+    margin-bottom: 0px;
+  }
+
+  .services {
+    padding: 10px 10px;
+
+    @media (min-width: 1024px) and (max-width: 1919px) {
+    }
+
+    @media (min-width: 320px) and (max-width: 1023px) {
+      padding: 5px;
+    }
+
+    &__tabs {
+      &-label {
+        @media (min-width: 320px) and (max-width: 1023px) {
+        }
+        &-card {
+          width: 55%;
+          height: auto; //70%;
+          // font-size: 18px;
+          font-weight: 300;
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          padding: 12px;
+          border-radius: 10px;
+          border: 1px solid variables.$border-white-02;
+          box-shadow: 3px 4px 6px variables.$shadow-black-02;
+          background: variables.$bg-glass; //glass
+          backdrop-filter: blur(5.1px);
+          -webkit-backdrop-filter: blur(5.1px);
+
+          @media (min-width: 1024px) and (max-width: 1620px) {
+            padding: 7px;
+          }
+          @media (min-width: 320px) and (max-width: 1023px) {
+            width: 95%;
+            top: 20%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(41, 41, 41, 0.267); //glass
+            // color: variables.$text-white;
+            // box-shadow: 3px 4px 6px rgba(44, 44, 44, 0.479);
+            //  bottom: 0;
+            padding: 10px;
+            font-weight: 300;
+          }
+
+          &-txt {
+            color: variables.$text-white;
+            margin-bottom: 20px;
+            //  font-size: 20px;
+
+            // @media (min-width: 1024px) and (max-width: 1919px) {
+            //   font-size: 18px;
+            // }
+
+            // @media (min-width: 1000px) and (max-width: 1400px) {
+            //   font-size: 18px;
+            // }
+
+            @media (min-width: 320px) and (max-width: 1023px) {
+              color: variables.$text-white;
+            }
+          }
+
+          &-foto {
+            width: 50%;
+            // height: 50%;
+            margin-left: auto;
+            @media (min-width: 320px) and (max-width: 1023px) {
+              width: 100%;
+              height: 30%;
+              margin-left: 0;
+            }
+
+            img {
+              object-fit: cover;
+              width: 100%;
+              height: 100%;
+              border-radius: 10px;
+              box-shadow: 0px 0px 2px 3px variables.$shadow-black;
+            }
+          }
+          &-buttons{
+            width: 100%;
+            &-btn{
+width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+  button {
+    min-width: 212px;
+      @media (min-width: 320px) and (max-width: 1023px){
+        width: 100%;
+      }
+  }
+  button,
+  button:active {
+    color: variables.$seashell;
+    border: 1px solid variables.$seashell;
+  }
+
+  button:hover {
+    color: variables.$black;
+    border: 1px solid transparent;
+    background-color: variables.$seashell;
+
+    @media (min-width: 320px) and (max-width: 1023px) {
+      color: variables.$seashell;
+      border: 1px solid variables.$seashell;
+      background-color: transparent;
+    }
+  }
+
+  button:active {
+    // color: variables.$seashell;
+    // border: 1px solid variables.$seashell;
+    background-color: inherit;
+  }
+}
+
+:host ::ng-deep .mdc-tab {
+  padding: 0 10px;
+}
+
+:host ::ng-deep .mat-mdc-tab-header {
+  background-color: variables.$bg-dark-gray;
+  border-radius: 10px;
+  margin-bottom: 5px;
+}
+
+:host ::ng-deep .mat-mdc-tab-body-wrapper {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px variables.$shadow-black-05;
+  margin: 0 auto;
+}
+
+:host ::ng-deep .mat-mdc-tab-body-content {
+  // position: relative;
+  display: flex;
+  text-align: center;
+  width: 100%;
+  //height: 50%;
+  height: 80vh;
+  background-color: variables.$bg-dark-gray;
+  border-radius: 10px;
+  padding: 5px 5px;
+  box-shadow: 5px 5px 5px variables.$shadow-black-05;
+  @media (min-width: 320px) and (max-width: 1023px) {
+    height: 180vh;
+  }
+}

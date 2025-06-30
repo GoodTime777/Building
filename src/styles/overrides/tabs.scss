@@ -1,0 +1,38 @@
+@use "variables";
+@use '@angular/material' as mat;
+
+:root {
+  @include mat.tabs-overrides(
+    (
+      container-height: 50px,
+      active-focus-label-text-color: variables.$squash,
+      active-hover-label-text-color: variables.$squash,
+      active-label-text-color: variables.$squash,
+      active-indicator-color: variables.$squash,
+      active-focus-indicator-color: variables.$squash,
+      active-hover-indicator-color: variables.$squash,
+      inactive-label-text-color: variables.$silk,
+      divider-color: variables.$white-05,
+      label-text-size: 26px,
+      label-text-font: Oswald,
+      //label-text-weight: 500,
+    )
+  ); //1850
+  @media (min-width: 1024px) and (max-width: 1300px) {
+    @include mat.tabs-overrides(
+      (
+        label-text-size: 22px,
+        container-height: 40px,
+      )
+    );
+  }
+
+  @media (min-width: 320px) and (max-width: 1023px) {
+       @include mat.tabs-overrides(
+      (
+        label-text-size: 18px,
+        container-height: 50px,
+      )
+    );
+  }
+}

@@ -1,0 +1,91 @@
+<div class="wrapper">
+  <div class="content header">
+    <div class="header__container">
+      <div class="header__container-logo">
+        <div class="header__container-logo-box logo">
+          <a href="#" class="header__container-logo-box-img">
+            <img src="/assets/images/icons/logo-svg-border.svg" alt="logo" />
+          </a>
+        </div>
+        <h2 class="header__container-logo-name">ВЕРТИКАЛЬ</h2>
+
+        <!-- <h4>МЕХАНИЗИРОВАННАЯ СТЯЖКА ПОЛА</h4>
+        <h4>ШТУКАТУРКА СТЕН</h4> -->
+      </div>
+      <div class="header__container-burger">clck</div>
+      <nav class="header__container-nav ">
+        <ul class="header__container-nav-menu">
+          <li class="header__container-nav-menu-item">
+            <a
+              [routerLinkActiveOptions]="{ exact: true }"
+              routerLink=""
+              routerLinkActive="active"
+            >
+              <span>
+                <mat-icon>cottage</mat-icon>
+              </span>
+            </a>
+          </li>
+          <li class="header__container-nav-menu-item">
+            <a class="decor" routerLink="services" routerLinkActive="active">
+              Услуги</a
+            >
+          </li>
+
+          <!-- <li class="header__container-nav-menu-item">
+            <a class="decor" routerLink="price" routerLinkActive="active"
+              >Цены</a
+            >
+          </li> -->
+          <li class="header__container-nav-menu-item">
+            <a class="decor" routerLink="calculator" routerLinkActive="active"
+              >Калькулятор</a
+            >
+          </li>
+          <li class="header__container-nav-menu-item">
+            <a class="decor" routerLink="gallery" routerLinkActive="active"
+              >Проекты</a
+            >
+          </li>
+          <li class="header__container-nav-menu-item">
+            <a class="decor" routerLink="contacts" routerLinkActive="active"
+              >Контакты</a
+            >
+          </li>
+          <!-- <li class="header__container-nav-menu-item">
+        <a routerLink="calculator" routerLinkActive="active"
+          ><span>
+            <mat-icon>calculate</mat-icon>
+          </span></a
+        >
+      </li> -->
+          <li class="header__container-nav-menu-item">
+            <button (click)="openDialog()">
+              <span>
+                <mat-icon>engineering</mat-icon>
+              </span>
+            </button>
+          </li>
+        </ul>
+      </nav>
+      <div class="header__container-tel tel">
+        <div class="header__container-tel-item">
+          <a
+            href="tel:89201711771"
+            class="header__container-tel-item-link tel-one"
+          >
+            <span> <mat-icon>call</mat-icon> </span> 8-920-171-17-71
+          </a>
+        </div>
+        <div class="header__container-tel-item">
+          <a
+            href="tel:89043586195"
+            class="header__container-tel-item-link tel-two"
+          >
+            <span> <mat-icon>call</mat-icon> </span> 8-904-358-61-95
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
