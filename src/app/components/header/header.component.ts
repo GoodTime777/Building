@@ -31,10 +31,16 @@ import { DialogComponent } from '../../pages/dialog/dialog.component';
 })
 export class HeaderComponent {
   readonly dialog = inject(MatDialog);
-  leftHidden = "-95%";
-  leftVisible = "2%";
-  // hidden = "scale(0,0)";
-  // visible = "scale(1,1)";
+  // leftHidden = "-95%";
+  // leftVisible = "2%";
+  hidden = "translateY(-100%)";
+  visible = "translateY(55%)";
+  heightFull = '100vh';
+  heightNone = '0vh';
+  widthFull = "310px";
+  widthNone = "0"
+  radiusNone = "0";
+  radiusFull = "35%";
   zoom = false;
 
   openDialog(): void {

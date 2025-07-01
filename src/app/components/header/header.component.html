@@ -12,14 +12,19 @@
         <!-- <h4>МЕХАНИЗИРОВАННАЯ СТЯЖКА ПОЛА</h4>
         <h4>ШТУКАТУРКА СТЕН</h4> -->
       </div>
-    
-      <nav
-        class="header__container-nav"
-        [style.transform]="zoom ? leftVisible : leftHidden"
-      >
-        <button class="header__container-burger" (click)="menuBurger()">
+      <button class="header__container-burger" (click)="menuBurger()">
         <span> <mat-icon>menu</mat-icon> </span>
       </button>
+      <nav
+        class="header__container-nav"
+        [style.transform]="zoom ? visible : hidden"
+         [style.width]="zoom ? widthFull : widthNone"
+        [style.height]="zoom ? heightFull : heightNone"
+      
+        [style.border-bottom-left-radius]="zoom ? radiusNone : radiusFull"
+        [style.border-bottom-right-radius]="zoom ? radiusNone : radiusFull"
+      
+      >
         <ul class="header__container-nav-menu">
           <li class="header__container-nav-menu-item">
             <a
