@@ -12,17 +12,24 @@
         <!-- <h4>МЕХАНИЗИРОВАННАЯ СТЯЖКА ПОЛА</h4>
         <h4>ШТУКАТУРКА СТЕН</h4> -->
       </div>
-      <button class="header__container-burger" (click)="menuBurger()">
-        <span> <mat-icon>menu</mat-icon> </span>
+      <button class="header__container-burger">
+        <input
+          class="menu-trigger hidden"
+          id="togglenav"
+          type="checkbox"
+          [checked]="isCheckboxChecked"
+        />
+        <label class="burger-wrapper" for="togglenav">
+          <div class="hamburger" (click)="menuBurger()"></div>
+        </label>
+
+        <!-- <span> <mat-icon>menu</mat-icon> </span> -->
       </button>
       <nav
-        class="header__container-nav"
-        [style.transform]="zoom ? visible : hidden"
-         [style.width]="zoom ? widthFull : widthNone"
-        [style.height]="zoom ? heightFull : heightNone"
-      
-        [style.border-bottom-left-radius]="zoom ? radiusNone : radiusFull"
-        [style.border-bottom-right-radius]="zoom ? radiusNone : radiusFull"
+        class="header__container-nav"   
+            [ngClass]="{'show':zoom, 'hide':!zoom}"
+       
+        
       
       >
         <ul class="header__container-nav-menu">
@@ -31,6 +38,7 @@
               [routerLinkActiveOptions]="{ exact: true }"
               routerLink=""
               routerLinkActive="active"
+              (click)="menuBurgerClose()"
             >
               <span>
                 <mat-icon>cottage</mat-icon>
@@ -38,7 +46,12 @@
             </a>
           </li>
           <li class="header__container-nav-menu-item">
-            <a class="decor" routerLink="services" routerLinkActive="active">
+            <a
+              class="decor"
+              routerLink="services"
+              routerLinkActive="active"
+              (click)="menuBurgerClose()"
+            >
               Услуги</a
             >
           </li>
@@ -49,17 +62,29 @@
             >
           </li> -->
           <li class="header__container-nav-menu-item">
-            <a class="decor" routerLink="calculator" routerLinkActive="active"
+            <a
+              class="decor"
+              routerLink="calculator"
+              routerLinkActive="active"
+              (click)="menuBurgerClose()"
               >Калькулятор</a
             >
           </li>
           <li class="header__container-nav-menu-item">
-            <a class="decor" routerLink="gallery" routerLinkActive="active"
+            <a
+              class="decor"
+              routerLink="gallery"
+              routerLinkActive="active"
+              (click)="menuBurgerClose()"
               >Проекты</a
             >
           </li>
           <li class="header__container-nav-menu-item">
-            <a class="decor" routerLink="contacts" routerLinkActive="active"
+            <a
+              class="decor"
+              routerLink="contacts"
+              routerLinkActive="active"
+              (click)="menuBurgerClose()"
               >Контакты</a
             >
           </li>
@@ -71,7 +96,7 @@
         >
       </li> -->
           <li class="header__container-nav-menu-item">
-            <button (click)="openDialog()">
+            <button (click)="openDialog()" (click)="menuBurgerClose()">
               <span>
                 <mat-icon>engineering</mat-icon>
               </span>

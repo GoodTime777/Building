@@ -20,27 +20,28 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { DialogComponent } from '../../pages/dialog/dialog.component';
+import { NgClass } from '@angular/common';
 
 
 
 @Component({
   selector: 'app-header',
-  imports: [RouterLink, RouterLinkActive, MatMenuModule, MatIconModule, MatDialogModule],
+  imports: [RouterLink, RouterLinkActive, MatMenuModule, MatIconModule, MatDialogModule, NgClass],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
   readonly dialog = inject(MatDialog);
+  isCheckboxChecked = false;
   // leftHidden = "-95%";
   // leftVisible = "2%";
-  hidden = "translateY(-100%)";
+  hidden = "translateY(-100vh)";
   visible = "translateY(55%)";
   heightFull = '100vh';
-  heightNone = '0vh';
   widthFull = "310px";
-  widthNone = "0"
-  radiusNone = "0";
   radiusFull = "35%";
+  valueNone = "0"
+
   zoom = false;
 
   openDialog(): void {
@@ -48,9 +49,16 @@ export class HeaderComponent {
   }
 
   menuBurger() {
-    //alert('click')
+    this.isCheckboxChecked = true;  
     this.zoom = !this.zoom
+
   }
+
+  menuBurgerClose() {  
+    this.isCheckboxChecked = false;
+    this.zoom = false
+  }
+
 }
 
 
