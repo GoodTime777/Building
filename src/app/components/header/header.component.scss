@@ -150,11 +150,12 @@ $s: 5px;
             @media (min-width: 1420px) and (max-width: 1570px) {
               margin-right: 0;
             }
-            @media (min-width: 1000px) and (max-width: 1419px) {
+            @media (min-width: 1024px) and (max-width: 1419px) {
               margin-right: -5px;
             }
 
-            @media (min-width: 360px) and (max-width: 999px) {
+            @media (min-width: 320px) and (max-width: 1023px) {
+              margin-right: -5px;
             }
 
             mat-icon {
@@ -166,11 +167,12 @@ $s: 5px;
               @media (min-width: 1420px) and (max-width: 1570px) {
                 font-size: 18px;
               }
-              @media (min-width: 1000px) and (max-width: 1419px) {
+              @media (min-width: 1024px) and (max-width: 1419px) {
                 font-size: 16px;
               }
 
-              @media (min-width: 360px) and (max-width: 999px) {
+              @media (min-width: 320px) and (max-width: 1023px) {
+                font-size: 16px;
               }
             }
           }
@@ -189,7 +191,7 @@ $s: 5px;
           height: 40px;
           margin-right: 4px;
         }
-   
+
         .burger-wrapper {
           cursor: pointer;
           position: relative;
@@ -223,7 +225,7 @@ $s: 5px;
               top: 12px;
             }
           }
-          .layer-click {          
+          .layer-click {
             position: absolute;
             z-index: 3;
             width: 40px;

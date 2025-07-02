@@ -18,18 +18,21 @@
     }
 
     &__tabs {
+      width: 100%;
+      // min-height: 700px;
       &-label {
+        height: 100%;
+        width: 100%;
+        // padding: 20px;
         @media (min-width: 320px) and (max-width: 1023px) {
         }
         &-card {
           width: 55%;
-          height: auto; //70%;
-          // font-size: 18px;
           font-weight: 300;
           position: absolute;
           top: 50%;
           transform: translateY(-50%);
-          padding: 12px;
+          padding: 10px;
           border-radius: 10px;
           border: 1px solid variables.$border-white-02;
           box-shadow: 3px 4px 6px variables.$shadow-black-02;
@@ -42,7 +45,7 @@
           }
           @media (min-width: 320px) and (max-width: 1023px) {
             width: 95%;
-            top: 20%;
+            top: 250px;
             left: 50%;
             transform: translateX(-50%);
             background: rgba(41, 41, 41, 0.267); //glass
@@ -71,31 +74,34 @@
             }
           }
 
-          &-foto {
-            width: 50%;
-            // height: 50%;
-            margin-left: auto;
-            @media (min-width: 320px) and (max-width: 1023px) {
-              width: 100%;
-              height: 30%;
-              margin-left: 0;
-            }
-
-            img {
-              object-fit: cover;
-              width: 100%;
-              height: 100%;
-              border-radius: 10px;
-              box-shadow: 0px 0px 2px 3px variables.$shadow-black;
-            }
-          }
           &-buttons {
             margin: 0 auto;
-            width:45%;
+            width: 45%;
+            @media (min-width: 320px) and (max-width: 1023px) {
+              width: 100%;
+            }
             // width: 100%;
             &-btn {
               width: 100%;
             }
+          }
+        }
+        &-foto {
+          width: 50%;
+          // height: 50%;
+          margin-left: auto;
+          @media (min-width: 320px) and (max-width: 1023px) {
+            width: 100%;
+            height: 40%;
+            margin-left: 0;
+          }
+
+          img {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+            box-shadow: 0px 0px 2px 3px variables.$shadow-black;
           }
         }
       }
@@ -131,10 +137,27 @@
     background-color: inherit;
   }
 }
-
-:host ::ng-deep .mdc-tab {
-  padding: 0 10px;
+:host ::ng-deep .mat-mdc-tab-labels {
+  @media (min-width: 320px) and (max-width: 1023px) {
+    gap: 20px;
+    padding: 0 10px;
+  }
 }
+:host ::ng-deep .mdc-tab {
+  //?
+  padding: 0 10px;
+  @media (min-width: 320px) and (max-width: 1023px) {
+    width: 90px;
+    padding: 0;
+    // padding: 0 15px;
+    white-space: normal;
+  }
+}
+// :host ::ng-deep .mat-mdc-tab-list {
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+// }
 
 :host ::ng-deep .mat-mdc-tab-header {
   background-color: variables.$bg-dark-gray;
@@ -144,9 +167,16 @@
 
 :host ::ng-deep .mat-mdc-tab-body-wrapper {
   width: 100%;
+  height: 90vh;
   border-radius: 10px;
   box-shadow: 5px 5px 5px variables.$shadow-black-05;
   margin: 0 auto;
+  @media (min-width: 1024px) and (max-width: 1600px) {
+    height: 80vh;
+  }
+  @media (min-width: 320px) and (max-width: 1023px) {
+    height: 100vh;
+  }
 }
 
 :host ::ng-deep .mat-mdc-tab-body-content {
@@ -154,13 +184,16 @@
   display: flex;
   text-align: center;
   width: 100%;
-  //height: 50%;
-  height: 80vh;
+  /// height: auto;
+  // height: 90%;
+  //   height: 100vh;//*
   background-color: variables.$bg-dark-gray;
   border-radius: 10px;
   padding: 5px 5px;
   box-shadow: 5px 5px 5px variables.$shadow-black-05;
+
   @media (min-width: 320px) and (max-width: 1023px) {
-    height: 180vh;
+    // height: 180vh;//*
+    min-height: 1090px; //160%;
   }
 }

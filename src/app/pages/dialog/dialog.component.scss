@@ -16,6 +16,7 @@
   &__subtitle {
     text-align: center;
     color: variables.$text-black;
+    margin-bottom: 8px;
   }
 
   &__dialog {
@@ -35,6 +36,8 @@
   &__actions {
     gap: 40px;
     padding: 0 0 20px 0;
+     margin-top: 10px;
+
 
     &-btn {
       font-family: Oswald, "Helvetica Neue", sans-serif;
