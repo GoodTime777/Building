@@ -20,18 +20,12 @@
           [checked]="isCheckboxChecked"
         />
         <label class="burger-wrapper" for="togglenav">
-          <div class="hamburger" (click)="menuBurger()"></div>
+          <div class="hamburger"></div>
+          <div class="layer-click" (click)="menuBurger()"></div>
         </label>
 
-        <!-- <span> <mat-icon>menu</mat-icon> </span> -->
       </button>
-      <nav
-        class="header__container-nav"   
-            [ngClass]="{'show':zoom, 'hide':!zoom}"
-       
-        
-      
-      >
+      <nav class="header__container-nav" [class.show]="show">
         <ul class="header__container-nav-menu">
           <li class="header__container-nav-menu-item">
             <a
@@ -56,11 +50,7 @@
             >
           </li>
 
-          <!-- <li class="header__container-nav-menu-item">
-            <a class="decor" routerLink="price" routerLinkActive="active"
-              >Цены</a
-            >
-          </li> -->
+        
           <li class="header__container-nav-menu-item">
             <a
               class="decor"
@@ -88,13 +78,7 @@
               >Контакты</a
             >
           </li>
-          <!-- <li class="header__container-nav-menu-item">
-        <a routerLink="calculator" routerLinkActive="active"
-          ><span>
-            <mat-icon>calculate</mat-icon>
-          </span></a
-        >
-      </li> -->
+         
           <li class="header__container-nav-menu-item">
             <button (click)="openDialog()" (click)="menuBurgerClose()">
               <span>
@@ -126,3 +110,6 @@
     </div>
   </div>
 </div>
+<!-- *ngIf="show" [class.hide]="show" -->
+<!-- *ngIf="!show" [class.hide]="show" -->
+<!-- *ngIf="(screen===true && show===false)||(screen===false && show===true)"  -->
