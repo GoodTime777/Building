@@ -1,16 +1,16 @@
 @use "variables";
 
 .wrapper {
-  background-color: variables.$bg-dark-gray;
+  background-color: variables.$bg-dark-gray; 
+  border-bottom: 1px solid rgba(255, 255, 255, 0.199);
   @media (min-width: 320px) and (max-width: 1023px) {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.199);
+   
   }
 
   .gallery {
-    padding: 20px;
-    //width: 98%;
-    position: relative;
     height: 100%;
+    padding: 20px;
+    position: relative;
 
     @media (min-width: 320px) and (max-width: 1023px) {
       padding: 10px;
@@ -20,107 +20,73 @@
       flex-direction: column;
       flex-flow: wrap;
     }
-
-    &__video {
+    swiper-container {
       width: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: flex-end;
-      gap: 15px;
       background-color: variables.$bg-middle-two-gray;
       box-shadow: 0 0 3px 0 variables.$shadow-black-02;
-      padding: 15px 15px 11px 15px;
-      margin-bottom: 20px;
       border-radius: 10px;
+    }
+    swiper-slide {
+      width: 25%;
+      text-align: center;
+      font-size: 18px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 5px;
+      padding: 5px;
+      border: solid 1px variables.$border-black;
+      box-shadow: 5px 5px 5px variables.$shadow-black-05;
+      background-color: variables.$bg-dark-gray;
 
       @media (min-width: 320px) and (max-width: 1023px) {
-        padding: 5px 5px 5.5px 5px;
-        margin-bottom: 0px; //10px
-        order: 2;
-        display: flex;
-        flex-wrap: wrap;
+        width: 95%;
       }
+    }
+    swiper-slide:hover img,
+    swiper-slide:hover video {
+      filter: grayscale(0);
+    }
+    swiper-container::part(button-next),
+    swiper-container::part(button-prev) {
+      color: orange;
+    }
+    swiper-container::part(pagination) {
+      display: none;
+    }
 
-      &-item {
-        width: 25%;
-        //background-color: #5a5a5a;
-        border-radius: 10px;
-        padding: 5px 5px 0 5px;
-        border: solid 1px variables.$border-black;
-        box-shadow: 5px 5px 5px variables.$shadow-black-05;
-        border-radius: 5px;
-        background-color: variables.$bg-dark-gray;
-        transition: all 0.25s ease-in-out;
+    img,
+    video {
+      filter: grayscale(60%);
+      border-radius: 5px;
+      transition: all 0.25s ease-in-out;
+    }
+    .gallery-box {
+      height: 100%;
+      width: 100%;
+    }
 
-        @media (min-width: 320px) and (max-width: 1023px) {
-          width: 45%;
-        }
-        &:hover {
-          border-color: variables.$border-dark-orange;
-          transform: scale(1.03, 1.03);
+    &__video {
+      margin-bottom: 20px;
 
-          @media (min-width: 320px) and (max-width: 1023px) {
-            transform: scale(1, 1);
-          }
-        }
-        &:hover video {
-          filter: grayscale(0);
-        }
+      @media (min-width: 320px) and (max-width: 1023px) {
+        order: 2;
+        margin-bottom: 0px;
+      }
+      &-swiper {
+        padding: 10px 0;
+
         video {
-          height: 100%;
           width: 100%;
-          border-radius: 10px;
-          filter: grayscale(85%);
+          // height: 700px;
+          object-fit: cover;
           cursor: pointer;
-
-          @media (min-width: 320px) and (max-width: 1023px) {
-          }
+          padding: 0px 0;
         }
       }
     }
 
-    // &__photo {
-    //   columns: 5 260px;
-    //   column-gap: 16px;
-    //   width: 100%;
-    //   background-color: variables.$bg-middle-two-gray;
-    //   box-shadow: 0 0 3px 0 variables.$shadow-black-02;
-    //   padding: 15px 15px 11px 15px;
-    //   border-radius: 10px;
-
-    //   &-item {
-    //     margin: 0 16px 16px 0;
-    //     width: 100%;
-    //     padding: 5px;
-    //     border: solid 1px variables.$border-black;
-    //     box-shadow: 5px 5px 5px variables.$shadow-black-05;
-    //     border-radius: 5px;
-    //     background-color: variables.$bg-dark-gray;
-    //     transition: all 0.25s ease-in-out;
-
-    //     &:hover {
-    //       border-color: variables.$border-dark-orange;
-    //       transform: scale(1.1, 1.1);
-    //     }
-
-    //     img {
-    //       width: 100%;
-    //       filter: grayscale(60%);
-    //       border-radius: 5px;
-    //       transition: all 0.25s ease-in-out;
-    //       object-fit: cover;
-    //     }
-
-    //     &:hover img {
-    //       filter: grayscale(0);
-    //     }
-    //   }
-    // }
-
     &__swiper {
-      height: 100%;
-      width: 100%;
-      //padding-bottom: 5%;
       @media (min-width: 320px) and (max-width: 1023px) {
         order: 1;
         margin-bottom: 10px;
@@ -128,34 +94,13 @@
         z-index: 0;
       }
 
-      swiper-container {
-        width: 100%;
-        background-color: variables.$bg-middle-two-gray;
-        box-shadow: 0 0 3px 0 variables.$shadow-black-02;
-        border-radius: 10px;
-      }
-
       swiper-slide {
-        text-align: center;
-        font-size: 18px;
-        background: #444;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
         margin: 40px 10px;
-        padding: 5px;
-        border: solid 1px variables.$border-black;
-        box-shadow: 5px 5px 5px variables.$shadow-black-05;
-        border-radius: 5px;
-        background-color: variables.$bg-dark-gray;
         transform: scale(1, 1);
         transition: transform 0.7s ease-in-out;
-        width: 25%;
 
         @media (min-width: 320px) and (max-width: 1023px) {
           margin: 5px 0px;
-          width: 90%;
         }
 
         &:hover {
@@ -169,108 +114,11 @@
 
         img {
           width: 100%;
-          filter: grayscale(60%);
-          border-radius: 5px;
-          transition: all 0.25s ease-in-out;
-          object-fit: cover;
-          //
-          display: block;
-          //   width: 100%;
           height: 100%;
-          // object-fit: cover;
-        }
-
-        &:hover img {
-          filter: grayscale(0);
-        }
-      }
-
-      swiper-container::part(pagination) {
-        display: none;
-      }
-
-      &-icon {
-        display: none;
-
-        @media (min-width: 320px) and (max-width: 1023px) {
+          object-fit: cover;
           display: block;
-          position: absolute;
-          z-index: 2;
-          bottom: 10px;
-          right: 22px;
-        }
-
-        mat-icon {
-          @media (min-width: 320px) and (max-width: 1023px) {
-            font-size: 38px;
-            //font-weight: 300;
-            // color: orange;
-            width: 100%;
-            height: 100%;
-
-            animation: color-icon 4s linear infinite;
-          }
         }
       }
-      // swiper-slide:nth-child(2n) {
-      //   width: 40%;
-      // }
-
-      // swiper-slide:nth-child(3n) {
-      //   width: 20%;
-      // }
-      ///////////////////////////////////////
-      // swiper-slide {
-      //   width: 60%;
-      // }
-
-      // swiper-slide:nth-child(2n) {
-      //   width: 40%;
-      // }
-
-      // swiper-slide:nth-child(3n) {
-      //   width: 20%;
-      // }
-    }
-  }
-
-  @keyframes color-icon {
-    0% {
-      color: white;
-      opacity: 0;
-    }
-    25% {
-      color: white;
-      opacity: 1;
-    }
-    50% {
-      opacity: 0;
-    }
-    75% {
-      color: black;
-      opacity: 1;
-    }
-    100% {
-      color: black;
-      opacity: 0;
     }
   }
 }
-
-// @media (max-width: 767px) {
-//   .gallery-container {
-//     width: 100%;
-//   }
-//   .gallery-item {
-//     flex-basis: 49.8%;
-//     margin-bottom: 3px;
-//   }
-
-// }
-// @media (max-width: 480px) {
-//   .gallery-item {
-//     flex-basis: 100%;
-//     margin-bottom: 1px;
-//   }
-
-// }

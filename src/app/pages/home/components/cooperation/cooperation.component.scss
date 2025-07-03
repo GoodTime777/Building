@@ -124,7 +124,7 @@
         button {
           @media (min-width: 320px) and (max-width: 1023px) {
             background-color: rgba(255, 187, 61, 1);
-            border: none;
+            border:  1px solid transparent;
           }
         }
 

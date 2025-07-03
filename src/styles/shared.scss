@@ -53,11 +53,18 @@ h4 {
   font-size: clamp(0.875rem, 0.8rem + 0.375vw, 1.25rem); //20-14
 }
 
+
 a,
 button {
   font-size: clamp(0.875rem, 0.5893rem + 0.4464vw, 1.125rem);
 }
-
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+input[type='number'] {
+    -moz-appearance: textfield;
+}
 a {
   color: variables.$white;
 }

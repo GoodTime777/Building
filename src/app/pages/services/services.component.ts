@@ -1,75 +1,44 @@
-import { Component,  ContentChild,ViewChild,ElementRef } from '@angular/core';
-import {MatTabsModule} from '@angular/material/tabs';
+import { Component, inject } from '@angular/core';
+import { MatTabsModule } from '@angular/material/tabs';
 import { MatIconModule } from '@angular/material/icon';
+import {
+  MAT_DIALOG_DATA,
+  MatDialog,
+  MatDialogActions,
+  MatDialogClose,
+  MatDialogContent,
+  MatDialogRef,
+  MatDialogTitle,
+} from '@angular/material/dialog';
+import { MatDialogModule } from '@angular/material/dialog';
+import { DialogComponent } from '../dialog/dialog.component';
+import { RouterLink, RouterLinkActive } from '@angular/router';
+
 
 
 
 @Component({
   selector: 'app-services',
-  imports: [MatTabsModule,MatIconModule],
+  imports: [MatTabsModule, MatIconModule, MatDialogModule, RouterLink, RouterLinkActive, DialogComponent],
   templateUrl: './services.component.html',
   styleUrl: './services.component.scss'
 })
 export class ServicesComponent {
-  // @ContentChild("headerFloor", {static:false})
-  // headerF: ElementRef|undefined;
-
-
-
-//   fOne(event:Event){
-// console.log('click1')
-//   }
-  fTwo():void{
- // this.clickTest=true;
-   console.log('click2')
+   fTwo(): void {
+    console.log('click2')
   }
+  
+  readonly dialog = inject(MatDialog);
+  openDialog(): void {
+    this.dialog.open(DialogComponent);
+  }
+
+ 
 
 
 }
-/////////////////////////////////////////
-//display=true
-//hide(){
-// this.display=false
-// }
-
-//show(){
-// this.display=true
-// }
-
-// toogle(){
-//   this.display= !this.display
-// }
 
 
 
 
 
-
-
-
-
-
-
-/////////////////////////////////////
-// const tabs = document.querySelectorAll(".tab");
-// const cards = document.querySelectorAll(".card__container-content");//card-item
-
-// tabs.forEach((tab) => {
-//   tab.addEventListener("click", (e) => {
-//     const tabAttribute = e.target.getAttribute("data-tab");
-
-//     tabs.forEach((item) => {
-//       item.classList.remove("active");
-//     });
-
-//     tab.classList.add("active");
-
-//     cards.forEach((card) => {
-//       const cardAttribute = card.getAttribute("data-card");
-
-//       cardAttribute === tabAttribute
-//         ? card.classList.add("active-card")
-//         : card.classList.remove("active-card");
-//     });
-//   });
-// });

@@ -4,10 +4,11 @@
       <div class="contacts__info-content txt">
         <h2 class="contacts__info-content-title">О нас</h2>
         <p class="contacts__info-content-txt">
-         Уже более пяти лет наша компания "Вертикаль" занимается механизированной стяжкой
-          пола и штукатуркой стен в Твери, Тверской области, Москве и Московской
-          области. За годы работы у нас сложилась успешная команда, где в своей
-          области каждый является компетентным специалистом.
+          Уже более пяти лет наша компания "Вертикаль" занимается
+          механизированной стяжкой пола и штукатуркой стен в Твери, Тверской
+          области, Москве и Московской области. За годы работы у нас сложилась
+          успешная команда, где в своей области каждый является компетентным
+          специалистом.
         </p>
         <p class="contacts__info-content-txt">
           Качество всех работ - наш приоритет. В процесс работы мы регулярно
@@ -43,7 +44,7 @@
             >
           </div>
         </div>
-         <div class="contacts__contacts-contact-time">
+        <div class="contacts__contacts-contact-time">
           <h2 class="contacts__contacts-contact-time-title">Часы работы</h2>
           <div class="contacts__contacts-contact-time-detail txt">
             <p><span class="day">ПН-ПТ </span><span>09:00-18:00</span></p>
@@ -57,9 +58,8 @@
         <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Aff2156f2b429a6fc6234b28b3c6088b9993faa9d73edb08298a5f8544bacdb7f&amp;source=constructor" width="400" height="200" frameborder="0"></iframe>
       </div> -->
         </div>
-       
       </div>
- <div class="contacts__contacts-map">
+      <div class="contacts__contacts-map">
         <!-- <a
               href="https://yandex.ru/map-widget/v1/?um=constructor%3Aff2156f2b429a6fc6234b28b3c6088b9993faa9d73edb08298a5f8544bacdb7f&amp;source=constructor"
             >
@@ -76,7 +76,7 @@
 
       <div class="contacts__contacts-buttons btns">
         <div class="contacts__contacts-buttons-btn btn">
-          <button>
+          <button (click)="openDialog()">
             <!-- <span> <mat-icon>engineering</mat-icon> </span> -->
             Оставить заявку
           </button>
@@ -84,13 +84,12 @@
 
         <div class="contacts__contacts-buttons-btn btn">
           <button>
-            <!-- <span> <mat-icon>engineering</mat-icon> </span> -->
-            Рассчитать стоимость
+            <a routerLink="../calculator" routerLinkActive="active">
+              Рассчитать стоимость</a
+            >
           </button>
         </div>
       </div>
-
-     
     </div>
   </div>
   <div class="background">

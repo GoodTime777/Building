@@ -2,13 +2,13 @@
   <div class="content calculator">
     <h2 class="calculator__title">Цены</h2>
     <div class="calculator__price">
-      <table>
+      <table class="table-one">
         <thead>
           <tr>
-            <th>Вид работы</th>
+            <th>Вид работ</th>
             <th>Площадь</th>
             <th>Толщина</th>
-            <th>Цена руб.(за м<sup>2</sup>)</th>
+            <th class="inline-flex">Цена руб/м<sup>2</sup></th>
             <th>Дополнительно</th>
             <th>*</th>
           </tr>
@@ -19,7 +19,7 @@
             <td>1м<sup>2</sup></td>
             <td>6см</td>
             <td>800</td>
-            <td>каждый см свыше - 150 руб.</td>
+            <td>каждый см свыше: 150 руб.</td>
             <td>-</td>
           </tr>
           <tr>
@@ -30,13 +30,31 @@
             <td>-</td>
             <td>*от 300 м<sup>2</sup></td>
           </tr>
-          <tr>
+          <!-- <tr>
             <td>Откосы</td>
             <td>1м</td>
             <td>до 20мм</td>
             <td>950</td>
             <td>-</td>
             <td>-</td>
+          </tr> -->
+        </tbody>
+      </table>
+      <table class="table-two">
+        <thead>
+          <tr>
+            <th>Вид работ</th>
+            <th>Площадь</th>
+            <th>Толщина</th>
+            <th>Цена руб/м<sup>2</sup></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Откосы</td>
+            <td>1м</td>
+            <td>до 20мм</td>
+            <td>950</td>
           </tr>
         </tbody>
       </table>
@@ -51,15 +69,12 @@
               Площадь (м<sup>2</sup>)
             </div>
             <div class="calculator__container-calc-wrap-item-input">
-              <input
-                type="number"
-                name="area"
-                value=""
-                [formControl]="areaFloor"
-              />
-              <span *ngIf="areaFloor?.hasError('required')"
-                >Это обязательное поле</span
-              >
+              <input type="number" name="area" [formControl]="areaFloor" />
+              <mat-error>
+                @if(areaFloor.hasError('required')){ Это обязательное поле
+                }@else if(areaFloor.hasError('min')){ Площать от
+                1(м<sup>2</sup>)}
+              </mat-error>
             </div>
           </div>
           <div class="calculator__container-calc-wrap-item">
@@ -67,26 +82,27 @@
               Толщина (см)
             </div>
             <div class="calculator__container-calc-wrap-item-input">
-              <input
-                type="number"
-                name="width"
-                value=""
-                [formControl]="widthFloor"
-              />
-              <span *ngIf="widthFloor?.hasError('required')"
-                >Это обязательное поле</span
-              >
+              <input type="number" name="width" [formControl]="widthFloor" />
+              <mat-error>
+                @if(widthFloor.hasError('required')){ Это обязательное поле
+                }@else if(widthFloor.hasError('min')){ Толщина от 6см}
+              </mat-error>
             </div>
           </div>
           <div class="calculator__container-calc-wrap-item result-floor">
             <button
               class="calculator__container-calc-wrap-item-btn"
               (click)="calculateFloor()"
+              [disabled]="
+                (widthFloor.invalid && areaFloor.invalid) ||
+                widthFloor.invalid ||
+                areaFloor.invalid
+              "
             >
               Рассчитать
             </button>
             <div class="calculator__container-calc-wrap-item-result">
-              Итого:{{ resultFloor }},{{ widthFloor.value }}
+              Итого:{{ resultFloor }}
             </div>
           </div>
         </div>
@@ -100,15 +116,12 @@
               Площадь (м<sup>2</sup>)
             </div>
             <div class="calculator__container-calc-wrap-item-input">
-              <input
-                type="number"
-                name="area"
-                value=""
-                [formControl]="areaWall"
-              />
-              <span *ngIf="areaWall?.hasError('required')"
-                >Это обязательное поле</span
-              >
+              <input type="number" name="area" [formControl]="areaWall" />
+              <mat-error>
+                @if(areaWall.hasError('required') ){ Это обязательное поле
+                }@else if(areaWall.hasError('min')){ Площать от
+                1(м<sup>2</sup>)}
+              </mat-error>
             </div>
           </div>
 
@@ -116,6 +129,7 @@
             <button
               class="calculator__container-calc-wrap-item-btn"
               (click)="calculateWall()"
+              [disabled]="areaWall.invalid"
             >
               Рассчитать
             </button>
@@ -135,7 +149,7 @@
         Точная стоимость будет рассчитана после замеров мастером.
       </p>
       <div class="calculator__result-btn btn">
-        <button>Оставить заявку</button>
+        <button (click)="openDialog()">Оставить заявку</button>
       </div>
     </div>
   </div>
