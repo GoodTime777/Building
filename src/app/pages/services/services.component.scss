@@ -75,8 +75,12 @@
           }
 
           &-buttons {
-            margin: 0 auto;
             width: 45%;
+            margin: 0 auto;
+            @media (min-width: 1024px) and (max-width: 1300px) {
+              flex-direction: row;
+               gap: 10px;
+            }
             @media (min-width: 320px) and (max-width: 1023px) {
               width: 100%;
             }
@@ -109,26 +113,34 @@
   }
   button {
     min-width: 212px;
-    a{
-       color: variables.$seashell; 
-    }
-    @media (min-width: 320px) and (max-width: 1023px) {
-      width: 100%;
-    }
+    // a {
+    //   color: variables.$seashell;
+    // }
+    // @media (min-width: 320px) and (max-width: 1023px) {
+    //   width: 100%;
+    // }
   }
   button,
   button:active {
     color: variables.$seashell;
     border: 1px solid variables.$seashell;
-    
+
+    a{
+      color: variables.$seashell;
+    }
   }
 
   button:hover {
     color: variables.$black;
     border: 1px solid transparent;
     background-color: variables.$seashell;
-     a{
-       color: black; 
+    a {
+      color: black;
+       @media (min-width: 320px) and (max-width: 1023px){
+       color: variables.$seashell;
+     
+    
+  }
     }
 
     @media (min-width: 320px) and (max-width: 1023px) {

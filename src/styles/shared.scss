@@ -35,28 +35,38 @@ h4 {
 }
 
 h1 {
-  font-size: clamp(1.625rem, 1.35rem + 1.375vw, 3rem); //26-48
+  font-size: clamp(1.625rem, 1.35rem + 1.375vw, 3rem); //26-48 320-1920
 }
 
 h2 {
-  font-size: clamp(1.375rem, 1.2rem + 0.875vw, 2.25rem); //22-36
+  font-size: clamp(1.375rem, 1.2rem + 0.875vw, 2.25rem); //22-36 320-1920
   margin-bottom: 20px;
   @media (min-width: 320px) and (max-width: 1220px) {
     margin-bottom: 10px;
   }
 }
 h3 {
-  font-size: clamp(1.125rem, 1.05rem + 0.375vw, 1.5rem); //24-18
+ // font-size: clamp(1.125rem, 1.05rem + 0.375vw, 1.5rem); //24-18
+ font-size: clamp(1.125rem, 1.075rem + 0.25vw, 1.375rem);//18-22 320-1920
 }
 
 h4 {
-  font-size: clamp(0.875rem, 0.8rem + 0.375vw, 1.25rem); //20-14
+  font-size: clamp(0.875rem, 0.8rem + 0.375vw, 1.25rem); //20-14 320-1920
+}
+th{
+  font-size: clamp(0.875rem, 0.8rem + 0.375vw, 1.25rem);
 }
 
 
+mat-error{
+  font-size: 12px;
+  color: red;
+}
+
 a,
 button {
-  font-size: clamp(0.875rem, 0.5893rem + 0.4464vw, 1.125rem);
+  cursor: pointer;
+  font-size: clamp(0.875rem, 0.5893rem + 0.4464vw, 1.125rem);//14-18 320-1920
 }
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
@@ -65,6 +75,7 @@ input::-webkit-inner-spin-button {
 input[type='number'] {
     -moz-appearance: textfield;
 }
+
 a {
   color: variables.$white;
 }
@@ -100,6 +111,7 @@ a {
   }
 
   button {
+    
     min-width: 240px;
     text-align: center;
     color: variables.$black;
@@ -110,16 +122,19 @@ a {
     transition: color 0.4s ease, border 0.4s ease, background-color 0.4s ease;
      a {
     color: black;
+     @media (min-width: 320px) and (max-width: 1023px){
+       color: variables.$seashell;
+     }
     
   }
+ 
+    // @media (min-width: 1200px) and (max-width: 1599px) {
+    //   min-width: 212px;
+    // }
 
-    @media (min-width: 1200px) and (max-width: 1599px) {
-      min-width: 212px;
-    }
-
-    @media (min-width: 1024px) and (max-width: 1199px) {
-      min-width: 160px;
-    }
+    // @media (min-width: 1024px) and (max-width: 1199px) {
+    //   min-width: 160px;
+    // }
 
     @media (min-width: 320px) and (max-width: 1023px) {
       width: 100%;
@@ -132,6 +147,12 @@ a {
     background-color: variables.$bg-dark-gray;
      a {
     color: variables.$seashell;
+    
+     @media (min-width: 320px) and (max-width: 1023px){
+       color: variables.$seashell;
+     
+    
+  }
     
   }
   }
@@ -147,6 +168,10 @@ a {
   justify-content: center;
   align-items: center;
   gap: 15px;
+    @media (min-width: 1024px) and (max-width: 1300px) {
+              flex-direction: column;
+              gap: 0px;
+            }
 
   @media (min-width: 320px) and (max-width: 1023px) {
     flex-direction: column;
@@ -168,14 +193,16 @@ a {
   background: transparent; /* optional: just make scrollbar invisible */
 }
 .main-txt {
-  font-size: clamp(0.875rem, 0.8rem + 0.375vw, 1.25rem); //min14
+  //font-size: clamp(0.875rem, 0.8rem + 0.375vw, 1.25rem); //min14-20
+  font-size: clamp(1rem, 0.95rem + 0.25vw, 1.25rem);//16-20 320-1920
 }
 
-.emphasized-txt {
-  font-size: clamp(0.875rem, 0.775rem + 0.5vw, 1.375rem); //22-14
+.emphasized-txt {//Выделенный
+ // font-size: clamp(0.875rem, 0.775rem + 0.5vw, 1.375rem); //22-14
+ font-size: clamp(1rem, 0.925rem + 0.375vw, 1.375rem);//16-22 320-1920
 }
 
 .txt {
-  font-size: clamp(1rem, 0.7143rem + 0.4464vw, 1.25rem);
-  // font-size: clamp(0.875rem, 0.8rem + 0.375vw, 1.25rem);
+  //font-size: clamp(1rem, 0.7143rem + 0.4464vw, 1.25rem);//16-20
+  font-size: clamp(0.875rem, 0.8rem + 0.375vw, 1.25rem);//14-20 320-1920
 }

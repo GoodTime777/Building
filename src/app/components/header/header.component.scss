@@ -159,21 +159,12 @@ $s: 5px;
             }
 
             mat-icon {
-              font-size: 21px;
+           font-size: clamp(0.875rem, 0.7875rem + 0.4375vw, 1.3125rem);//14-21 320-1920
+         
               height: 100%;
               font-weight: 600;
               margin-bottom: -3px;
 
-              @media (min-width: 1420px) and (max-width: 1570px) {
-                font-size: 18px;
-              }
-              @media (min-width: 1024px) and (max-width: 1419px) {
-                font-size: 16px;
-              }
-
-              @media (min-width: 320px) and (max-width: 1023px) {
-                font-size: 16px;
-              }
             }
           }
         }
