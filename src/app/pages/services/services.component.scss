@@ -109,6 +109,9 @@
   }
   button {
     min-width: 212px;
+    a{
+       color: variables.$seashell; 
+    }
     @media (min-width: 320px) and (max-width: 1023px) {
       width: 100%;
     }
@@ -117,12 +120,16 @@
   button:active {
     color: variables.$seashell;
     border: 1px solid variables.$seashell;
+    
   }
 
   button:hover {
     color: variables.$black;
     border: 1px solid transparent;
     background-color: variables.$seashell;
+     a{
+       color: black; 
+    }
 
     @media (min-width: 320px) and (max-width: 1023px) {
       color: variables.$seashell;

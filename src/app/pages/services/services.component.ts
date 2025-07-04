@@ -19,7 +19,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
   selector: 'app-services',
-  imports: [MatTabsModule, MatIconModule, MatDialogModule, RouterLink, RouterLinkActive, DialogComponent],
+  imports: [MatTabsModule, MatIconModule, MatDialogModule, RouterLink, RouterLinkActive],
   templateUrl: './services.component.html',
   styleUrl: './services.component.scss'
 })

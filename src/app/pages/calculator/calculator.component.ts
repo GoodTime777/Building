@@ -16,7 +16,7 @@ import {
 } from '@angular/material/dialog';
 @Component({
   selector: 'app-calculator',
-  imports: [ReactiveFormsModule,MatDialogModule,  NgIf, MatFormFieldModule],
+  imports: [ReactiveFormsModule,MatDialogModule,   MatFormFieldModule],
   templateUrl: './calculator.component.html',
   styleUrl: './calculator.component.scss'
 })

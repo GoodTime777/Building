@@ -18,7 +18,7 @@ import { DialogComponent } from '../dialog/dialog.component';
 
 @Component({
   selector: 'app-contacts',
-  imports: [MatIconModule, MatDialogModule, DialogComponent, RouterLink, RouterLinkActive],
+  imports: [MatIconModule, MatDialogModule,  RouterLink, RouterLinkActive],
   templateUrl: './contacts.component.html',
   styleUrl: './contacts.component.scss'
 })

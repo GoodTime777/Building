@@ -9,7 +9,7 @@ import { BackgroundComponent } from './components/background/background.componen
 
 @Component({
   selector: 'app-home',
-  imports: [RouterLink, TechnologiesComponent, SliderComponent, CooperationComponent, BenefitComponent, AdvantageComponent, BackgroundComponent],
+  imports: [ TechnologiesComponent, SliderComponent, CooperationComponent, BenefitComponent, AdvantageComponent, BackgroundComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })

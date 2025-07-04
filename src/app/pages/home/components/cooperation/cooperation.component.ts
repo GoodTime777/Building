@@ -15,7 +15,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
   selector: 'app-cooperation',
-  imports: [MatDialogModule, DialogComponent, RouterLink, RouterLinkActive],
+  imports: [MatDialogModule],
   templateUrl: './cooperation.component.html',
   styleUrl: './cooperation.component.scss'
 })

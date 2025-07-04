@@ -15,7 +15,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
   selector: 'app-slider',
-  imports: [MatIconModule,MatDialogModule,DialogComponent,RouterLink, RouterLinkActive],
+  imports: [MatIconModule,MatDialogModule,RouterLink, RouterLinkActive],
   templateUrl: './slider.component.html',
   styleUrl: './slider.component.scss',
    schemas: [CUSTOM_ELEMENTS_SCHEMA]

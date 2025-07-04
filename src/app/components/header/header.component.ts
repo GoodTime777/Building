@@ -25,7 +25,7 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 
 @Component({
   selector: 'app-header',
-  imports: [RouterLink, RouterLinkActive, MatMenuModule, MatIconModule, MatDialogModule, NgIf, NgClass],
+  imports: [RouterLink, RouterLinkActive, MatMenuModule, MatIconModule, MatDialogModule],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
