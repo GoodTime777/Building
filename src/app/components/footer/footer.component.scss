@@ -65,6 +65,7 @@
           }
 
           &-description {
+            color: white;
             &-detail-one {
               @media (min-width: 320px) and (max-width: 1023px) {
                 color: variables.$texas-rose;
@@ -240,6 +241,7 @@
             }
             .mat-icon {
               transition: color 0.3s ease-in-out;
+              color: white;
               @media (min-width: 320px) and (max-width: 1023px) {
                 color: variables.$texas-rose;
               }
@@ -261,6 +263,7 @@
         }
         &-copyright {
           &-txt {
+            color: white;
             @media (min-width: 320px) and (max-width: 1023px) {
               font-size: 13px !important;
             }
