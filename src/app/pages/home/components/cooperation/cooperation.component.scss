@@ -2,14 +2,7 @@
 
 .wrapper {
   margin-bottom: 80px;
-
-  // @media (min-width: 1024px) and (max-width: 1600px) {
-  //   margin-bottom: 40px;
-  // }
-
-  // @media (min-width: 320px) and (max-width: 1023px) {
-  // margin-bottom: 40px;
-  // }
+  
   @media (min-width: 320px) and (max-width: 1600px) {
     margin-bottom: 40px;
   }
@@ -54,10 +47,7 @@
               margin-left: 0;
             }
 
-            &-box {
-              @media (min-width: 320px) and (max-width: 1023px) {
-              }
-            }
+           
 
             .spans {
               top: 50%;
@@ -70,7 +60,6 @@
 
               @media (min-width: 320px) and (max-width: 1023px) {
                 display: flex;
-                //flex-direction: column;
                 justify-content: center;
                 align-items: flex-end;
                  gap: 10px;

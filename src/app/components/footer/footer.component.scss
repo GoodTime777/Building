@@ -71,8 +71,7 @@
                 color: variables.$texas-rose;
               }
             }
-            &-detail-two {
-            }
+        
           }
         }
         &-box {
@@ -81,8 +80,7 @@
           @media (min-width: 1024px) and (max-width: 1700px) {
             margin: 0 10px;
           }
-          @media (min-width: 320px) and (max-width: 1023px) {
-          }
+        
 
           &-address {
             display: flex;
@@ -230,9 +228,7 @@
           }
 
           &-item {
-            @media (min-width: 320px) and (max-width: 1023px) {
-              //  text-align: left;
-            }
+           
             &-link {
               @media (min-width: 320px) and (max-width: 1023px) {
                 border-bottom: 1px dashed variables.$texas-rose;
@@ -271,8 +267,7 @@
         }
         &-privacy {
           &-link {
-            //  font-size: clamp(0.875rem, 0.85rem + 0.125vw, 1rem); //14-16
-
+           
             transition: color 0.3s ease-in-out;
             @media (min-width: 320px) and (max-width: 1023px) {
               border-bottom: 1px dashed variables.$texas-rose;

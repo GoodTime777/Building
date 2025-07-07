@@ -36,7 +36,6 @@ $s: 5px;
           order: 2;
         }
         &-box {
-          // margin-bottom: -5px;
           img {
             width: 40px;
           }
@@ -102,7 +101,7 @@ $s: 5px;
                 height: 100%;
                 font-size: 28px;
                 transition: transform 0.5s ease;
-                 color:white ;
+                color: white;
                 @media (min-width: 320px) and (max-width: 1023px) {
                   color: black;
                 }
@@ -160,12 +159,15 @@ $s: 5px;
             }
 
             mat-icon {
-           font-size: clamp(0.875rem, 0.7875rem + 0.4375vw, 1.3125rem);//14-21 320-1920
-         
+              font-size: clamp(
+                0.875rem,
+                0.7875rem + 0.4375vw,
+                1.3125rem
+              ); //14-21 320-1920
+
               height: 100%;
               font-weight: 600;
               margin-bottom: -3px;
-
             }
           }
         }
@@ -177,7 +179,6 @@ $s: 5px;
         display: none;
         @media (min-width: 320px) and (max-width: 1023px) {
           display: block;
-
           color: rgb(0, 0, 0);
           width: 40px;
           height: 40px;
@@ -190,8 +191,8 @@ $s: 5px;
 
           .hamburger {
             background: black;
-            width: 32px; //10
-            height: 2px; //5px
+            width: 32px; 
+            height: 2px; 
             position: relative;
             transition: background 10ms 300ms ease;
             margin: auto;
@@ -203,8 +204,8 @@ $s: 5px;
               transition: top 300ms 350ms ease, transform 300ms 50ms ease;
               position: absolute;
               background: black;
-              width: 32px; //10
-              height: 2px; //5px
+              width: 32px; 
+              height: 2px; 
               left: 0;
               border-radius: 10px;
               content: "";

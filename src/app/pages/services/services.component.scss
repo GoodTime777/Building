@@ -9,23 +9,18 @@
 
   .services {
     padding: 10px 10px;
-
-    @media (min-width: 1024px) and (max-width: 1919px) {
-    }
-
+    
     @media (min-width: 320px) and (max-width: 1023px) {
       padding: 5px;
     }
 
     &__tabs {
       width: 100%;
-      // min-height: 700px;
+      
       &-label {
         height: 100%;
         width: 100%;
-        // padding: 20px;
-        @media (min-width: 320px) and (max-width: 1023px) {
-        }
+        
         &-card {
           width: 55%;
           font-weight: 300;
@@ -48,10 +43,7 @@
             top: 250px;
             left: 50%;
             transform: translateX(-50%);
-            background: rgba(41, 41, 41, 0.267); //glass
-            // color: variables.$text-white;
-            // box-shadow: 3px 4px 6px rgba(44, 44, 44, 0.479);
-            //  bottom: 0;
+            background: rgba(41, 41, 41, 0.267); //glass           
             padding: 10px;
             font-weight: 300;
           }
@@ -59,15 +51,6 @@
           &-txt {
             color: variables.$text-white;
             margin-bottom: 20px;
-            //  font-size: 20px;
-
-            // @media (min-width: 1024px) and (max-width: 1919px) {
-            //   font-size: 18px;
-            // }
-
-            // @media (min-width: 1000px) and (max-width: 1400px) {
-            //   font-size: 18px;
-            // }
 
             @media (min-width: 320px) and (max-width: 1023px) {
               color: variables.$text-white;
@@ -77,14 +60,16 @@
           &-buttons {
             width: 45%;
             margin: 0 auto;
+
             @media (min-width: 1024px) and (max-width: 1300px) {
               flex-direction: row;
                gap: 10px;
             }
+
             @media (min-width: 320px) and (max-width: 1023px) {
               width: 100%;
             }
-            // width: 100%;
+            
             &-btn {
               width: 100%;
             }
@@ -92,8 +77,8 @@
         }
         &-foto {
           width: 50%;
-          // height: 50%;
           margin-left: auto;
+
           @media (min-width: 320px) and (max-width: 1023px) {
             width: 100%;
             height: 40%;
@@ -111,15 +96,11 @@
       }
     }
   }
+
   button {
     min-width: 212px;
-    // a {
-    //   color: variables.$seashell;
-    // }
-    // @media (min-width: 320px) and (max-width: 1023px) {
-    //   width: 100%;
-    // }
   }
+
   button,
   button:active {
     color: variables.$seashell;
@@ -134,12 +115,11 @@
     color: variables.$black;
     border: 1px solid transparent;
     background-color: variables.$seashell;
+
     a {
       color: black;
        @media (min-width: 320px) and (max-width: 1023px){
-       color: variables.$seashell;
-     
-    
+       color: variables.$seashell;    
   }
     }
 
@@ -151,8 +131,6 @@
   }
 
   button:active {
-    // color: variables.$seashell;
-    // border: 1px solid variables.$seashell;
     background-color: inherit;
   }
 }
@@ -163,20 +141,13 @@
   }
 }
 :host ::ng-deep .mdc-tab {
-  //?
   padding: 0 10px;
   @media (min-width: 320px) and (max-width: 1023px) {
     width: 90px;
     padding: 0;
-    // padding: 0 15px;
     white-space: normal;
   }
 }
-// :host ::ng-deep .mat-mdc-tab-list {
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-// }
 
 :host ::ng-deep .mat-mdc-tab-header {
   background-color: variables.$bg-dark-gray;
@@ -190,6 +161,7 @@
   border-radius: 10px;
   box-shadow: 5px 5px 5px variables.$shadow-black-05;
   margin: 0 auto;
+
   @media (min-width: 1024px) and (max-width: 1600px) {
     height: 80vh;
   }
@@ -199,20 +171,15 @@
 }
 
 :host ::ng-deep .mat-mdc-tab-body-content {
-  // position: relative;
   display: flex;
   text-align: center;
   width: 100%;
-  /// height: auto;
-  // height: 90%;
-  //   height: 100vh;//*
   background-color: variables.$bg-dark-gray;
   border-radius: 10px;
   padding: 5px 5px;
   box-shadow: 5px 5px 5px variables.$shadow-black-05;
 
   @media (min-width: 320px) and (max-width: 1023px) {
-    // height: 180vh;//*
     min-height: 1090px; //160%;
   }
 }

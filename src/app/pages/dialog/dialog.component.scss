@@ -2,8 +2,6 @@
 @use "decoration";
 
 .modal {
-  //position: relative;
-
   outline: 1.5px solid variables.$border-black;
   outline-offset: -4.5px;
   border-radius: 30px;
@@ -42,7 +40,6 @@
     &-btn {
       font-family: Oswald, "Helvetica Neue", sans-serif;
       padding: 10px 20px;
-     // font-size: 16px;
       text-transform: uppercase;
       letter-spacing: 2px;
       font-weight: 400;
