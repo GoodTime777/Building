@@ -1,4 +1,5 @@
 @use "variables";
+@use "./mixins" as mixins;
 
 .wrapper {
   margin-bottom: 80px;
@@ -9,6 +10,7 @@
 
   .cooperation {
     padding: 0 60px;
+
     @media (min-width: 320px) and (max-width: 1023px) {
       padding: 0 10px;
     }
@@ -32,9 +34,8 @@
           }
 
           @media (min-width: 320px) and (max-width: 1023px) {
+            @include mixins.flex();
             flex-direction: column;
-            justify-content: center;
-            align-items: center;
             gap: 28px;
             margin-bottom: 70px;
           }
@@ -56,9 +57,7 @@
               margin-left: 11%;
 
               @media (min-width: 320px) and (max-width: 1023px) {
-                display: flex;
-                justify-content: center;
-                align-items: flex-end;
+                @include mixins.flex($align-i: flex-end);
                 gap: 10px;
                 margin-left: 0;
                 padding: 0 20px;
@@ -104,27 +103,8 @@
       &-btn {
         text-align: right;
 
-        @media (min-width: 320px) and (max-width: 1023px) {
-          text-align: center;
-        }
-        button {
-          @media (min-width: 320px) and (max-width: 1023px) {
-            background-color: rgba(255, 187, 61, 1);
-            border: 1px solid transparent;
-          }
-        }
 
-        button:hover {
-          color: var(--color-black);
-          border: 1px solid transparent;
-          background-color: rgba(255, 187, 61, 1);
-        }
-
-        button:active {
-          color: var(--color-seashell);
-          border: 1px solid var(--color-seashell);
-          background-color: var(--color-bg-dark-gray);
-        }
+     
       }
     }
   }

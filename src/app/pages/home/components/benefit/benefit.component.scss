@@ -1,4 +1,6 @@
 @use "variables";
+@use "./mixins" as mixins;
+
 .wrapper {
   margin-bottom: 80px;
 

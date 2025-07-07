@@ -1,4 +1,6 @@
 @use "variables";
+@use "./mixins" as mixins;
+
 .wrapper {
   margin-bottom: 80px;
 
@@ -30,9 +32,7 @@
         &-photo {
           width: 34%;
           position: relative;
-          display: flex;
-          align-items: center;
-          justify-content: end;
+          @include mixins.flex($justify-c: end);
           clip-path: polygon(25% 0, 100% 0%, 100% 100%, 0 100%);
           float: right;
           shape-outside: polygon(20% 0, 100% 0%, 100% 100%, 0 100%);

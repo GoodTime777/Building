@@ -1,10 +1,9 @@
 @use "variables";
+@use "./mixins" as mixins;
 
 .wrapper {
   background-color: var(--color-bg-dark-gray);
   border-bottom: 1px solid rgba(255, 255, 255, 0.199);
-  @media (min-width: 320px) and (max-width: 1023px) {
-  }
 
   .gallery {
     height: 100%;
@@ -28,9 +27,7 @@
     swiper-slide {
       width: 25%;
       text-align: center;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      @include mixins.flex();
       border-radius: 5px;
       padding: 5px;
       border: solid 1px var(--color-border-black);

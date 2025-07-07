@@ -1,3 +1,6 @@
+@use "variables";
+@use "./mixins" as mixins;
+
 .jelly-container {
   width: 100%;
   position: relative;
@@ -15,8 +18,8 @@
 }
 
 .jelly-hair {
-  height: 75px;
-  width: 100px;
+  @include mixins.size($height: 75px, $width: 100px);
+
   background: linear-gradient(
     to bottom,
     rgba(239, 137, 26, 1) 0%,
@@ -39,8 +42,7 @@
   );
   //background: linear-gradient(to bottom, rgba(0,141,210,1) 0%, rgba(235,242,138,1) 100% ); /* W3C */;
   position: relative;
-  height: 250px;
-  width: 100%;
+  @include mixins.size($height: 250px, $width: 100%);
   overflow: hidden;
   z-index: 1;
   animation: head-movement 10s infinite linear;
@@ -56,9 +58,10 @@
 %jelly-eye {
   content: "";
   position: absolute;
-  height: 15px;
+  @include mixins.size($height: 15px, $width: 15px);
+
   bottom: -25px;
-  width: 15px;
+
   border-radius: 50%;
   background-color: rgb(255, 255, 255);
   animation: eyes-blink 3.5s infinite linear;
@@ -83,12 +86,10 @@
 %jelly-hand {
   content: "";
   position: absolute;
-  height: 50px;
-  width: 45px;
+  @include mixins.size($height: 50px, $width: 45px);
   border-top: 0;
   border-radius: 0 0 50% 50%;
   box-shadow: 0px 5px 6px rgb(127, 164, 167);
-  //box-shadow: 0px 5px 6px #3b949b;
 }
 
 .jelly-hands {
@@ -108,8 +109,7 @@
 
 .jelly-mouth {
   position: absolute;
-  height: 80px;
-  width: 200px;
+  @include mixins.size($height: 80px, $width: 200px);
   left: 50%;
   top: 35%;
   transform: translate3D(-50%, 0, 0);
@@ -120,8 +120,8 @@
   &:after {
     content: "";
     position: absolute;
-    height: 3%;
-    width: 60%;
+    @include mixins.size($height: 3%, $width: 60%);
+
     background-color: rgb(255, 147, 147);
     left: 50%;
     top: 50%;
@@ -132,13 +132,13 @@
 }
 
 div[class^="jelly-tentacle-"] {
-  height: 50px;
-  width: 50px;
+  @include mixins.size($height: 50px, $width: 50px);
+
   position: absolute;
   background-color: rgb(235, 235, 235);
   //background-color:rgba(235,242,138,1);
   border-radius: 0 0 25px 25px;
-  box-shadow: 0px 2.5px 0px rgb(127, 164, 167);// #008d9b;
+  box-shadow: 0px 2.5px 0px rgb(127, 164, 167); // #008d9b;
 }
 
 .jelly-tentacle-1 {
@@ -181,10 +181,9 @@ div[class^="jelly-tentacle-"] {
 }
 
 div[class^="bubble-"] {
-  height: 1px;
-  width: 1px;
+  @include mixins.size($height: 1px, $width: 1px);
+
   position: absolute;
-  //background-color: rgba(0, 141, 210, 0.3);
   background-color: rgba(153, 189, 207, 0.3);
   border-radius: 50%;
   transform: translateX(-50%);
@@ -192,8 +191,8 @@ div[class^="bubble-"] {
   &:after {
     content: "";
     position: absolute;
-    height: 85%;
-    width: 85%;
+    @include mixins.size($height: 85%, $width: 85%);
+
     border-top: 1px solid rgba(255, 255, 255, 0.63);
     border-radius: 50%;
     left: 50%;
@@ -201,107 +200,6 @@ div[class^="bubble-"] {
     transform: translate3d(-50%, -50%, 0) rotateZ(-45deg);
   }
 }
-
-// .bubble-1 {
-//   bottom: random(10) + 1px;
-//   left: random(99) + 1%;
-//   animation: bubble-movement 4s infinite ease-in random(300) * -0.01s;
-// }
-// .bubble-2 {
-//   bottom: random(10) + 1px;
-//   left: random(99) + 1%;
-//   animation: bubble-movement 4s infinite ease-in random(300) * -0.01s;
-// }
-// .bubble-3 {
-//   bottom: random(10) + 1px;
-//   left: random(99) + 1%;
-//   animation: bubble-movement 4s infinite ease-in random(300) * -0.01s;
-// }
-// .bubble-4 {
-//   bottom: random(10) + 1px;
-//   left: random(99) + 1%;
-//   animation: bubble-movement 4s infinite ease-in random(300) * -0.01s;
-// }
-// .bubble-5 {
-//   bottom: random(10) + 1px;
-//   left: random(99) + 1%;
-//   animation: bubble-movement 4s infinite ease-in random(300) * -0.01s;
-// }
-// .bubble-6 {
-//   bottom: random(10) + 1px;
-//   left: random(99) + 1%;
-//   animation: bubble-movement 4s infinite ease-in random(300) * -0.01s;
-// }
-// .bubble-7 {
-//   bottom: random(10) + 1px;
-//   left: random(99) + 1%;
-//   animation: bubble-movement 4s infinite ease-in random(300) * -0.01s;
-// }
-// .bubble-8 {
-//   bottom: random(10) + 1px;
-//   left: random(99) + 1%;
-//   animation: bubble-movement 4s infinite ease-in random(300) * -0.01s;
-// }
-// .bubble-9 {
-//   bottom: random(10) + 1px;
-//   left: random(99) + 1%;
-//   animation: bubble-movement 4s infinite ease-in random(300) * -0.01s;
-// }
-// .bubble-10 {
-//   bottom: random(10) + 1px;
-//   left: random(99) + 1%;
-//   animation: bubble-movement 4s infinite ease-in random(300) * -0.01s;
-// }
-// .bubble-11 {
-//   bottom: random(10) + 1px;
-//   left: random(99) + 1%;
-//   animation: bubble-movement 3s infinite ease-in random(300) * -0.01s;
-// }
-// .bubble-12 {
-//   bottom: random(10) + 1px;
-//   left: random(99) + 1%;
-//   animation: bubble-movement 3s infinite ease-in random(300) * -0.01s;
-// }
-// .bubble-13 {
-//   bottom: random(10) + 1px;
-//   left: random(99) + 1%;
-//   animation: bubble-movement 3s infinite ease-in random(300) * -0.01s;
-// }
-// .bubble-14 {
-//   bottom: random(10) + 1px;
-//   left: random(99) + 1%;
-//   animation: bubble-movement 3s infinite ease-in random(300) * -0.01s;
-// }
-// .bubble-15 {
-//   bottom: random(10) + 1px;
-//   left: random(99) + 1%;
-//   animation: bubble-movement 3s infinite ease-in random(300) * -0.01s;
-// }
-// .bubble-16 {
-//   bottom: random(10) + 1px;
-//   left: random(99) + 1%;
-//   animation: bubble-movement 3s infinite ease-in random(300) * -0.01s;
-// }
-// .bubble-17 {
-//   bottom: random(10) + 1px;
-//   left: random(99) + 1%;
-//   animation: bubble-movement 3s infinite ease-in random(300) * -0.01s;
-// }
-// .bubble-18 {
-//   bottom: random(10) + 1px;
-//   left: random(99) + 1%;
-//   animation: bubble-movement 3s infinite ease-in random(300) * -0.01s;
-// }
-// .bubble-19 {
-//   bottom: random(10) + 1px;
-//   left: random(99) + 1%;
-//   animation: bubble-movement 3s infinite ease-in random(300) * -0.01s;
-// }
-// .bubble-20 {
-//   bottom: random(10) + 1px;
-//   left: random(99) + 1%;
-//   animation: bubble-movement 3s infinite ease-in random(300) * -0.01s;
-// }
 
 @keyframes jelly-movement {
   0% {
@@ -622,16 +520,3 @@ div[class^="bubble-"] {
     height: 15px;
   }
 }
-
-// @keyframes bubble-movement {
-//   0% {
-//     transform: translate3d(-50%, 0, 0);
-//     height: 1px;
-//     width: 1px;
-//   }
-//   100% {
-//     transform: translate3d(-50%, -500px, 0);
-//     height: 75px;
-//     width: 75px;
-//   }
-// }

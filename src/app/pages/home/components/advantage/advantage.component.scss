@@ -1,4 +1,5 @@
 @use "variables";
+@use "./mixins" as mixins;
 
 .wrapper {
   background: rgba(236, 240, 241, 0.3); //@body !light+
@@ -70,9 +71,8 @@
             }
 
             &-top {
-              display: flex;
-              justify-content: end;
-              align-items: center;
+              @include mixins.flex($justify-c: end);
+
               gap: 5px;
               padding-right: 18px;
 

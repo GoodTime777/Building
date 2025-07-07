@@ -1,6 +1,31 @@
 //@use 'sass:list';
-@use 'variables' as vars;
+@use "variables" as vars;
 
+@mixin flex($display: flex, $justify-c: center, $align-i: center) {
+  display: $display;
+  justify-content: $justify-c;
+  align-items: $align-i;
+}
+
+@mixin size($height: 100%, $width: 100%) {
+  width: $width;
+  height: $height;
+}
+
+// @mixin border($border-l:transparent, $border-t:transparent,$border-b:transparent,$border-r:transparent){
+//    border-left: 1px solid rgba(0, 0, 0, 0.75);
+//       border-top: 1px solid rgba(0, 0, 0, 0.5);
+//       border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+//       border-right: 1px solid var(--color-border-white-02);
+// }
+
+
+
+
+// @include mixins.btn()
+// @mixin linkInBtn(){
+
+// }
 
 // @mixin bg($path) {
 //   background-image: url('#{vars.$project-url}/#{$path}');
@@ -121,14 +146,7 @@
 //   }
 // }
 
-
-
-
-
 //////////////////////////////////////////////
-
-
-
 
 // @mixin font($letter-spacing: $ls, $font-weight: $fw_bold, $color: $white) {
 //   letter-spacing: $letter-spacing;

@@ -1,4 +1,5 @@
 @use "variables";
+@use "./mixins" as mixins;
 @use "decoration";
 
 .contacts {
@@ -72,9 +73,7 @@
     }
   }
   &__contacts {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include mixins.flex();
     width: 50%;
     text-align: center;
     flex-direction: column;
@@ -149,7 +148,7 @@
         }
         button:hover {
           @media (min-width: 320px) and (max-width: 1023px) {
-            background-color: black;
+            background-color: rgb(0, 0, 0);
             color: white;
           }
         }

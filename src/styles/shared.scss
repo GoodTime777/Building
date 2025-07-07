@@ -77,7 +77,6 @@ input[type="number"] {
 a {
   color: var(--color-white);
 }
-
 .wrapper {
   width: 100%;
   overflow: hidden;
@@ -99,55 +98,159 @@ a {
   margin-bottom: 30px;
   @media (min-width: 320px) and (max-width: 1620px) {
     margin-bottom: 10px;
+    
   }
-
   button {
     min-width: 240px;
     text-align: center;
-    color: var(--color-black);
-    background-color: transparent;
-    border: 1px solid var(--color-border-black);
     border-radius: 6px;
     padding: 15px 0;
+  //  background-color: transparent;
     transition: color 0.4s ease, border 0.4s ease, background-color 0.4s ease;
-
-    a {
-      color: var(--color-black);
-      @media (min-width: 320px) and (max-width: 1023px) {
-        color: var(--color-seashell);
-      }
-    }
 
     @media (min-width: 320px) and (max-width: 1023px) {
       width: 100%;
     }
   }
+  // button:hover {
+  //   // @include mixins.btn(
+  //   //   $color: var(--color-seashell),
+  //   //   $border: 1px solid transparent,
+  //   //   $background-c: var(--color-bg-dark-gray)
+  //   // );
 
-  button:hover {
-    color: var(--color-seashell);
-    border: 1px solid transparent;
-    background-color: var(--color-bg-dark-gray);
+  //   a {
+  //     color: var(--color-seashell);
 
-    a {
+  //     @media (min-width: 320px) and (max-width: 1023px) {
+  //       color: var(--color-seashell);
+  //     }
+  //   }
+  // }
+
+  // button:active {
+  //   // @include mixins.btnBlack(
+  //   //   $border: 1px solid var(--color-black),
+  //   //   $background-c:inherit
+  //   // );
+
+  //    a {
+  //     color: var(--color-black);
+  //     @media (min-width: 320px) and (max-width: 1023px) {
+  //       color: var(--color-seashell);
+  //     }
+  //   }
+  // }
+}
+.btn-black {
+  color: var(--color-black);
+  border: 1px solid var(--color-border-black);
+
+  a {
+    color: var(--color-black);
+
+    @media (min-width: 320px) and (max-width: 1023px) {
       color: var(--color-seashell);
-
-      @media (min-width: 320px) and (max-width: 1023px) {
-        color: var(--color-seashell);
-      }
     }
   }
+}
+.btn-black:hover {
+  color: var(--color-seashell);
+  border: 1px solid transparent;
+  background-color: var(--color-bg-dark-gray);
 
-  button:active {
+  a {
+    color: var(--color-seashell);
+
+    // @media (min-width: 320px) and (max-width: 1023px) {
+    //   color: var(--color-seashell);
+    // }
+  }
+}
+
+.btn-black:active {
+   color: var(--color-black);
+  border: 1px solid var(--color-black);
+  background-color: inherit;
+
+  a {
     color: var(--color-black);
-    border: 1px solid var(--color-black);
-    background-color: inherit;
+    @media (min-width: 320px) and (max-width: 1023px) {
+      color: var(--color-seashell);
+    }
+  }
+}
+
+.btn-white {
+  color: var(--color-seashell);
+  border: 1px solid var(--color-seashell);
+
+  a {
+    color: var(--color-seashell);
+  }
+}
+.btn-white:hover {
+  color: var(--color-black);
+  border: 1px solid transparent;
+  background-color: var(--color-seashell);
+
+  a {
+    color: var(--color-black);
+  }
+}
+
+.btn-white:active {
+  color: var(--color-seashell);
+  border: 1px solid var(--color-seashell);
+  background-color: inherit;
+
+  a {
+    color: var(--color-seashell);
+  }
+}
+.btn-orange {
+  color: var(--color-black);
+  border: 1px solid var(--color-border-black);
+  //background-color: transparent;
+
+  @media (min-width: 320px) and (max-width: 1023px) {
+    background-color: rgba(255, 187, 61, 1);
+    border: 1px solid transparent;
+  }
+
+  a {
+    color: var(--color-black);
+
+    @media (min-width: 320px) and (max-width: 1023px) {
+      color: var(--color-seashell);
+    }
+  }
+}
+.btn-orange:hover {
+  color: var(--color-black);
+  background-color: rgba(255, 187, 61, 1);
+  border: 1px solid transparent;
+
+  a {
+    color: var(--color-black);
+    //color: var(--color-seashell);
+  }
+}
+
+.btn-orange:active {
+  color: var(--color-seashell);
+  background-color: var(--color-bg-dark-gray);
+
+  a {
+    color: var(--color-black);
+    @media (min-width: 320px) and (max-width: 1023px) {
+      color: var(--color-seashell);
+    }
   }
 }
 
 .btns {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include mixins.flex();
   gap: 15px;
 
   @media (min-width: 1024px) and (max-width: 1300px) {
@@ -156,6 +259,7 @@ a {
   }
 
   @media (min-width: 320px) and (max-width: 1023px) {
+    width: 100%;
     flex-direction: column;
     gap: 5px;
   }
