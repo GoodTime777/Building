@@ -2,7 +2,7 @@
 @use "decoration";
 
 .wrapper {
-  background-color: variables.$bg-dark-gray;
+  background-color: var(--color-bg-dark-gray);
 
   .footer {
     padding: 8px 25px;
@@ -34,7 +34,7 @@
         width: 100%;
         grid-area: A;
         position: relative;
-        border-bottom: 1px solid variables.$texas-rose;
+        border-bottom: 1px solid var(--color-texas-rose);
       }
       &-info {
         display: flex;
@@ -59,19 +59,18 @@
           }
 
           &-title {
-            color: variables.$texas-rose;
+            color: var(--color-texas-rose);
             font-weight: 300;
-            border-bottom: 1px solid variables.$texas-rose;
+            border-bottom: 1px solid var(--color-texas-rose);
           }
 
           &-description {
             color: white;
             &-detail-one {
               @media (min-width: 320px) and (max-width: 1023px) {
-                color: variables.$texas-rose;
+                color: var(--color-texas-rose);
               }
             }
-        
           }
         }
         &-box {
@@ -80,7 +79,6 @@
           @media (min-width: 1024px) and (max-width: 1700px) {
             margin: 0 10px;
           }
-        
 
           &-address {
             display: flex;
@@ -121,17 +119,17 @@
                   transition: color 0.5s ease;
 
                   @media (min-width: 320px) and (max-width: 1023px) {
-                    color: variables.$texas-rose;
+                    color: var(--color-texas-rose);
                   }
 
                   mat-icon {
                     font-size: 16px;
-                    color: variables.$texas-rose;
+                    color: var(--color-texas-rose);
                     margin-bottom: -10px;
                   }
                 }
                 a:hover {
-                  color: variables.$texas-rose;
+                  color: var(--color-texas-rose);
                 }
               }
             }
@@ -228,10 +226,9 @@
           }
 
           &-item {
-           
             &-link {
               @media (min-width: 320px) and (max-width: 1023px) {
-                border-bottom: 1px dashed variables.$texas-rose;
+                border-bottom: 1px dashed var(--color-texas-rose);
                 font-size: 13px !important;
               }
             }
@@ -239,11 +236,11 @@
               transition: color 0.3s ease-in-out;
               color: white;
               @media (min-width: 320px) and (max-width: 1023px) {
-                color: variables.$texas-rose;
+                color: var(--color-texas-rose);
               }
             }
             .mat-icon:hover {
-              color: variables.$texas-rose;
+              color: var(--color-texas-rose);
             }
           }
         }
@@ -267,17 +264,16 @@
         }
         &-privacy {
           &-link {
-           
             transition: color 0.3s ease-in-out;
             @media (min-width: 320px) and (max-width: 1023px) {
-              border-bottom: 1px dashed variables.$texas-rose;
+              border-bottom: 1px dashed var(--color-texas-rose);
               font-size: 13px !important;
             }
           }
           &-link:hover {
-            color: variables.$texas-rose;
+            color: var(--color-texas-rose);
             @media (min-width: 320px) and (max-width: 1023px) {
-              color: variables.$white;
+              color: var(--color-white);
             }
           }
         }
@@ -287,7 +283,7 @@
 
   .decor::after {
     right: 0;
-    background-color: variables.$texas-rose;
+    background-color: var(--color-texas-rose);
   }
 
   .line,

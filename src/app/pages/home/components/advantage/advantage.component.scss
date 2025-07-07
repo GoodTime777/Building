@@ -2,7 +2,7 @@
 
 .wrapper {
   background: rgba(236, 240, 241, 0.3); //@body !light+
-  box-shadow: 0 5px 10px variables.$shadow-black-05;
+  box-shadow: 0 5px 10px var(--color-shadow-black-05);
   backdrop-filter: blur(8.8px);
   -webkit-backdrop-filter: blur(8.8px);
   margin-bottom: 20px;
@@ -19,8 +19,7 @@
       padding-bottom: 30px;
 
       &-title {
-        text-decoration: underline solid variables.$squash;
-       
+        text-decoration: underline solid var(--color-squash);
       }
 
       &-content {
@@ -34,7 +33,7 @@
           padding-bottom: 55px;
         }
         @media (min-width: 320px) and (max-width: 1023px) {
-          padding-bottom: 0px; 
+          padding-bottom: 0px;
         }
 
         &-list {
@@ -53,14 +52,13 @@
             left: 0;
             z-index: 3;
             gap: 0px;
-            background-color: variables.$bg-yellow;
+            background-color: var(--color-bg-yellow);
             border-radius: 10px;
-            outline: 1px solid variables.$border-black;
+            outline: 1px solid var(--color-border-black);
             outline-offset: -4.5px;
-            box-shadow: 3px 1px 4px 0px variables.$shadow-black;
+            box-shadow: 3px 1px 4px 0px var(--color-shadow-black);
             padding: 20px 15px;
 
-         
             @media (min-width: 1024px) and (max-width: 1919px) {
               padding: 10px 7px;
             }
@@ -83,7 +81,7 @@
                   width: auto;
                   height: auto;
                   font-size: 30px;
-                  color: variables.$text-black;
+                  color: var(--color-text-black);
                   margin-bottom: -7px;
                   transition: transform 0.5s ease, color 1s ease;
                   @media (min-width: 320px) and (max-width: 1023px) {
@@ -111,7 +109,7 @@
           }
 
           li:nth-child(1) {
-            color: variables.$text-black;
+            color: var(--color-text-black);
             @media (min-width: 320px) and (max-width: 1023px) {
               left: 0;
             }
@@ -141,15 +139,15 @@
 
           li:nth-child(2),
           li:nth-child(3) {
-            color: variables.$text-white;
+            color: var(--color-text-white);
 
             @media (min-width: 320px) and (max-width: 1023px) {
-              color: variables.$text-black;
+              color: var(--color-text-black);
             }
           }
 
           li:hover {
-            color: variables.$text-black;
+            color: var(--color-text-black);
           }
 
           li:nth-child(2):hover,

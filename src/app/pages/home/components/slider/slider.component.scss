@@ -2,7 +2,7 @@
 
 .wrapper {
   min-height: 500px;
-  box-shadow: 0 6px 10px variables.$shadow-black-05;
+  box-shadow: 0 6px 10px var(--color-shadow-black-05);
 
   @media (min-width: 1024px) and (max-width: 1420px) {
     min-height: 400px;
@@ -53,15 +53,15 @@
     &__slide {
       width: 100%;
       min-height: 500px;
-      background: variables.$bg-dark-gray;
+      background: var(--color-bg-dark-gray);
       display: flex;
       gap: 10px;
       text-align: center;
       position: relative;
-      
+
       @media (min-width: 320px) and (max-width: 1023px) {
         min-height: 400px;
-        color: variables.$text-white;
+        color: var(--color-text-white);
         display: flex;
         text-align: center;
         background-repeat: no-repeat;
@@ -82,7 +82,7 @@
           width: 60%;
           gap: 0;
         }
-       
+
         &-content {
           width: 60%;
           display: flex;
@@ -90,7 +90,7 @@
           align-items: center;
 
           &-title {
-            color: variables.$text-white;
+            color: var(--color-text-white);
             line-height: 100%;
             margin: 8px 8px 30px 8px;
           }
@@ -98,20 +98,20 @@
           &-txt {
             padding: 0 10px;
             margin-bottom: 40px;
-            @media (min-width: 1024px) and (max-width: 1300px){
+            @media (min-width: 1024px) and (max-width: 1300px) {
               margin-bottom: 20px;
             }
           }
 
           .btns {
             width: 100%;
-         }
+          }
         }
         &-foto {
           position: relative;
           width: 38%;
           height: 100%;
-          box-shadow: 0px 0px 3px 2px variables.$shadow-black;
+          box-shadow: 0px 0px 3px 2px var(--color-shadow-black);
           background-repeat: no-repeat;
           background-size: cover;
 
@@ -136,7 +136,7 @@
 
         &-title {
           @media (min-width: 320px) and (max-width: 1023px) {
-            color: variables.$text-white;
+            color: var(--color-text-white);
             line-height: 1;
             margin-bottom: 15px;
           }
@@ -172,54 +172,54 @@
     }
   }
   .slide-1 {
-    color:white ;
+    color: white;
     left: 0;
-    background: variables.$bg-dark-gray;
+    background: var(--color-bg-dark-gray);
     transition: 1s left ease-in-out, 1s background ease;
   }
   .slide-1 button {
-    color: variables.$seashell;
-    border: 1px solid variables.$seashell;
+    color: var(--color-seashell);
+    border: 1px solid var(--color-seashell);
     a {
-      color: variables.$seashell;
+      color: var(--color-seashell);
     }
   }
   .slide-1 button:hover {
-    color: variables.$black;
+    color: var(--color-black);
     border: 1px solid transparent;
-    background-color: variables.$seashell;
+    background-color: var(--color-seashell);
     a {
-      color: variables.$black;
+      color: var(--color-black);
     }
   }
   .slide-1 button:active {
-    color: variables.$seashell;
-    border: 1px solid variables.$seashell;
+    color: var(--color-seashell);
+    border: 1px solid var(--color-seashell);
     background-color: inherit;
   }
   .slide-2 {
     right: 0%;
     transition: 1s right ease-in-out, 1s background ease, 1s color ease;
     z-index: 5;
-    color: variables.$text-black;
-    background: variables.$bg-light-orange;
-    box-shadow: 0 20px 5px 10px variables.$shadow-black;
+    color: var(--color-text-black);
+    background: var(--color-bg-light-orange);
+    box-shadow: 0 20px 5px 10px var(--color-shadow-black);
 
     h1 {
-      color: variables.$text-black;
+      color: var(--color-text-black);
     }
   }
 
   .slide-1:hover {
-    background: variables.$bg-middle-gray;
+    background: var(--color-bg-middle-gray);
   }
   .slide-2:hover {
-    background: variables.$bg-yellow;
-    color: variables.$text-black;
+    background: var(--color-bg-yellow);
+    color: var(--color-text-black);
   }
   .slide-1:hover + .slide-2 {
     right: -18%;
-    color: variables.$text-white;
+    color: var(--color-text-white);
 
     @media (min-width: 1024px) and (max-width: 1289px) {
       right: -25%;

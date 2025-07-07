@@ -2,7 +2,7 @@
 
 .wrapper {
   margin-bottom: 80px;
-  
+
   @media (min-width: 320px) and (max-width: 1600px) {
     margin-bottom: 40px;
   }
@@ -16,7 +16,7 @@
     &__title {
       text-transform: uppercase;
       margin-bottom: 20px;
-      text-decoration: underline solid variables.$squash;
+      text-decoration: underline solid var(--color-squash);
     }
 
     &__wrapper {
@@ -47,8 +47,6 @@
               margin-left: 0;
             }
 
-           
-
             .spans {
               top: 50%;
               transform: translateY(-50%);
@@ -57,17 +55,14 @@
               z-index: 10;
               margin-left: 11%;
 
-
               @media (min-width: 320px) and (max-width: 1023px) {
                 display: flex;
                 justify-content: center;
                 align-items: flex-end;
-                 gap: 10px;
-                margin-left: 0;              
+                gap: 10px;
+                margin-left: 0;
                 padding: 0 20px;
                 top: 70px;
-               
-              
               }
             }
             span {
@@ -76,7 +71,11 @@
             }
 
             .red {
-             font-size: clamp(1.875rem, 0.1607rem + 2.6786vw, 3.375rem);//30-54 1024-1920
+              font-size: clamp(
+                1.875rem,
+                0.1607rem + 2.6786vw,
+                3.375rem
+              ); //30-54 1024-1920
               font-weight: 200;
               line-height: 1.15;
               @media (min-width: 320px) and (max-width: 1023px) {
@@ -86,8 +85,12 @@
 
             .txts {
               font-weight: 300;
-font-size: clamp(0.75rem, 0.0357rem + 1.1161vw, 1.375rem);//12-22 1024-1920
-              color: variables.$text-white;
+              font-size: clamp(
+                0.75rem,
+                0.0357rem + 1.1161vw,
+                1.375rem
+              ); //12-22 1024-1920
+              color: var(--color-text-white);
               @media (min-width: 320px) and (max-width: 1023px) {
                 font-family: Oswald, "Helvetica Neue", sans-serif;
                 text-transform: uppercase;
@@ -107,20 +110,20 @@ font-size: clamp(0.75rem, 0.0357rem + 1.1161vw, 1.375rem);//12-22 1024-1920
         button {
           @media (min-width: 320px) and (max-width: 1023px) {
             background-color: rgba(255, 187, 61, 1);
-            border:  1px solid transparent;
+            border: 1px solid transparent;
           }
         }
 
         button:hover {
-          color: variables.$black;
+          color: var(--color-black);
           border: 1px solid transparent;
           background-color: rgba(255, 187, 61, 1);
         }
 
         button:active {
-          color: variables.$seashell;
-          border: 1px solid variables.$seashell;
-          background-color: variables.$bg-dark-gray;
+          color: var(--color-seashell);
+          border: 1px solid var(--color-seashell);
+          background-color: var(--color-bg-dark-gray);
         }
       }
     }

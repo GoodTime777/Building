@@ -33,9 +33,9 @@
         align-items: center;
         padding: 10px 0;
         border-radius: 10px;
-        border: 1px solid variables.$border-white-02;
-        box-shadow: 3px 4px 6px variables.$shadow-black-02;
-        background:hsla(39, 100%, 92%, 0.315) ;
+        border: 1px solid var(--color-border-white-02);
+        box-shadow: 3px 4px 6px var(--color-shadow-black-02);
+        background: hsla(39, 100%, 92%, 0.315);
         backdrop-filter: blur(5.1px);
         -webkit-backdrop-filter: blur(5.1px);
         margin-bottom: 10px;
@@ -44,7 +44,7 @@
       &-item {
         width: 19%;
         font-weight: 300;
-        color: variables.$text-black;
+        color: var(--color-text-black);
         text-align: center;
         margin: auto 0;
         padding: 2% 0;

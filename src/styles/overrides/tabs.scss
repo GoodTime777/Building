@@ -5,19 +5,19 @@
   @include mat.tabs-overrides(
     (
       container-height: 50px,
-      active-focus-label-text-color: variables.$squash,
-      active-hover-label-text-color: variables.$squash,
-      active-label-text-color: variables.$squash,
-      active-indicator-color: variables.$squash,
-      active-focus-indicator-color: variables.$squash,
-      active-hover-indicator-color: variables.$squash,
-      inactive-label-text-color: variables.$silk,
-      divider-color: variables.$white-05,
+      active-focus-label-text-color: var(--color-squash),
+      active-hover-label-text-color: var(--color-squash),
+      active-label-text-color: var(--color-squash),
+      active-indicator-color: var(--color-squash),
+      active-focus-indicator-color: var(--color-squash),
+      active-hover-indicator-color: var(--color-squash),
+      inactive-label-text-color: var(--color-silk),
+      divider-color: var(--color-white-05),
       label-text-size: 26px,
       label-text-font: Oswald,
       //label-text-weight: 500,
     )
-  ); //1850
+  ); 
   @media (min-width: 1024px) and (max-width: 1300px) {
     @include mat.tabs-overrides(
       (

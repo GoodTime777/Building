@@ -20,9 +20,9 @@
       border-top-left-radius: 50%;
       border-bottom-left-radius: 50%;
       padding: 5px 8px 5px 5px;
-      border: 1px solid variables.$border-white-02;
-      box-shadow: -1px 3px 8px 3px variables.$shadow-black-05;
-      background-color: variables.$bg-light-orange; //  $bg-glass; //glass
+      border: 1px solid var(--color-border-white-02);
+      box-shadow: -1px 3px 8px 3px var(--color-shadow-black-05);
+      background-color: var(--color-bg-light-orange); //  $bg-glass; //glass
       transition: background-color 0.5s ease, transform 0.3s ease,
         box-shadow 0.1s ease, border 0.1s ease;
       a,
@@ -37,7 +37,7 @@
         height: 100%;
         padding: 7px;
         border-radius: 50%;
-        border: 1px solid variables.$border-black;
+        border: 1px solid var(--color-border-black);
         cursor: pointer;
         @media (min-width: 320px) and (max-width: 1023px) {
           padding: 5px;
@@ -46,24 +46,23 @@
       mat-icon {
         width: 100%;
         height: 100%;
-        font-size: clamp(1.5rem, 1.225rem + 1.375vw, 2.875rem);//24-46 320-1920
-        color: variables.$text-black;
-
+        font-size: clamp(1.5rem, 1.225rem + 1.375vw, 2.875rem); //24-46 320-1920
+        color: var(--color-text-black);
       }
     }
 
     &-item:hover {
-      background-color: variables.$bg-light-gray;
+      background-color: var(--color-bg-light-gray);
       transform: scale(1.03, 1.03);
     }
 
     &-item:active {
-      background-color: variables.$bg-light-orange;
+      background-color: var(--color-bg-light-orange);
       box-shadow: -1px 1px 2px 0px rgba(0, 0, 0, 0.75);
       border-left: 1px solid rgba(0, 0, 0, 0.75);
       border-top: 1px solid rgba(0, 0, 0, 0.5);
       border-bottom: 1px solid rgba(0, 0, 0, 0.5);
-      border-right: 1px solid variables.$border-white-02;
+      border-right: 1px solid var(--color-border-white-02);
       transform: scale(1, 1);
     }
   }

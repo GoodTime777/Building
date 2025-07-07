@@ -4,10 +4,10 @@
 :root {
   @include mat.select-overrides(
     (
-      panel-background-color: variables.$dune,
-      enabled-arrow-color: variables.$white-07,
-      focused-arrow-color: variables.$white,
-      invalid-arrow-color: variables.$rosso-corsa,
+      panel-background-color:var(--color-dune),
+      enabled-arrow-color:var(--color-white-07),
+      focused-arrow-color:var(--color-white),
+      invalid-arrow-color:var(--color-rosso-corsa),
     )
   );
 }

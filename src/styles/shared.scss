@@ -5,7 +5,7 @@
 body {
   font-family: "Open Sans", "Helvetica Neue", sans-serif;
   min-height: 100vh;
-  background: variables.$seashell;
+  background: var(--color-seashell);
   margin: 0 auto;
   padding-top: 66px;
 
@@ -25,7 +25,7 @@ h2,
 h3,
 h4 {
   font-family: Oswald, "Helvetica Neue", sans-serif;
-  color: variables.$black;
+  color: var(--color-black);
 }
 
 h2,
@@ -46,38 +46,36 @@ h2 {
   }
 }
 h3 {
- // font-size: clamp(1.125rem, 1.05rem + 0.375vw, 1.5rem); //24-18
- font-size: clamp(1.125rem, 1.075rem + 0.25vw, 1.375rem);//18-22 320-1920
+  font-size: clamp(1.125rem, 1.075rem + 0.25vw, 1.375rem); //18-22 320-1920
 }
 
 h4 {
   font-size: clamp(0.875rem, 0.8rem + 0.375vw, 1.25rem); //20-14 320-1920
 }
-th{
+th {
   font-size: clamp(0.875rem, 0.8rem + 0.375vw, 1.25rem);
 }
 
-
-mat-error{
+mat-error {
   font-size: 12px;
-  color: red;
+  color: var(--color-error);
 }
 
 a,
 button {
   cursor: pointer;
-  font-size: clamp(0.875rem, 0.5893rem + 0.4464vw, 1.125rem);//14-18 320-1920
+  font-size: clamp(0.875rem, 0.5893rem + 0.4464vw, 1.125rem); //14-18 320-1920
 }
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
+  -webkit-appearance: none;
 }
-input[type='number'] {
-    -moz-appearance: textfield;
+input[type="number"] {
+  -moz-appearance: textfield;
 }
 
 a {
-  color: variables.$white;
+  color: var(--color-white);
 }
 
 .wrapper {
@@ -85,9 +83,6 @@ a {
   overflow: hidden;
   position: relative;
   margin: 0 auto;
-  @media (min-width: 320px) and (max-width: 1023px) {
-    // background-color: greenyellow;
-  }
 }
 
 .content {
@@ -97,44 +92,31 @@ a {
 
   @media (min-width: 320px) and (max-width: 1023px) {
     max-width: 320px;
-    //  padding: 0 10px;
   }
 }
 
 .btn {
   margin-bottom: 30px;
-  @media (min-width: 1024px) and (max-width: 1620px) {
-    margin-bottom: 10px;
-  }
-  @media (min-width: 320px) and (max-width: 1023px) {
+  @media (min-width: 320px) and (max-width: 1620px) {
     margin-bottom: 10px;
   }
 
   button {
-    
     min-width: 240px;
     text-align: center;
-    color: variables.$black;
+    color: var(--color-black);
     background-color: transparent;
-    border: 1px solid variables.$border-black;
+    border: 1px solid var(--color-border-black);
     border-radius: 6px;
     padding: 15px 0;
     transition: color 0.4s ease, border 0.4s ease, background-color 0.4s ease;
-     a {
-    color: black;
-     @media (min-width: 320px) and (max-width: 1023px){
-       color: variables.$seashell;
-     }
-    
-  }
- 
-    // @media (min-width: 1200px) and (max-width: 1599px) {
-    //   min-width: 212px;
-    // }
 
-    // @media (min-width: 1024px) and (max-width: 1199px) {
-    //   min-width: 160px;
-    // }
+    a {
+      color: var(--color-black);
+      @media (min-width: 320px) and (max-width: 1023px) {
+        color: var(--color-seashell);
+      }
+    }
 
     @media (min-width: 320px) and (max-width: 1023px) {
       width: 100%;
@@ -142,23 +124,22 @@ a {
   }
 
   button:hover {
-    color: variables.$seashell;
+    color: var(--color-seashell);
     border: 1px solid transparent;
-    background-color: variables.$bg-dark-gray;
-     a {
-    color: variables.$seashell;
-    
-     @media (min-width: 320px) and (max-width: 1023px){
-       color: variables.$seashell;
-     
-    
+    background-color: var(--color-bg-dark-gray);
+
+    a {
+      color: var(--color-seashell);
+
+      @media (min-width: 320px) and (max-width: 1023px) {
+        color: var(--color-seashell);
+      }
+    }
   }
-    
-  }
-  }
+
   button:active {
-    color: variables.$black;
-    border: 1px solid variables.$black;
+    color: var(--color-black);
+    border: 1px solid var(--color-black);
     background-color: inherit;
   }
 }
@@ -168,10 +149,11 @@ a {
   justify-content: center;
   align-items: center;
   gap: 15px;
-    @media (min-width: 1024px) and (max-width: 1300px) {
-              flex-direction: column;
-              gap: 0px;
-            }
+
+  @media (min-width: 1024px) and (max-width: 1300px) {
+    flex-direction: column;
+    gap: 0px;
+  }
 
   @media (min-width: 320px) and (max-width: 1023px) {
     flex-direction: column;
@@ -181,11 +163,7 @@ a {
 
 .red {
   font-family: Oswald, "Helvetica Neue", sans-serif;
-  //font-size: 20px;
-  // color: variables.$squash;
-  // color: variables.$class-red;
-  // color: variables.$gamboge;
-  color: variables.$bittersweet;
+  color: var(--color-bittersweet);
 }
 
 ::-webkit-scrollbar {
@@ -193,16 +171,14 @@ a {
   background: transparent; /* optional: just make scrollbar invisible */
 }
 .main-txt {
-  //font-size: clamp(0.875rem, 0.8rem + 0.375vw, 1.25rem); //min14-20
-  font-size: clamp(1rem, 0.95rem + 0.25vw, 1.25rem);//16-20 320-1920
+  font-size: clamp(1rem, 0.95rem + 0.25vw, 1.25rem); //16-20 320-1920
 }
 
-.emphasized-txt {//Выделенный
- // font-size: clamp(0.875rem, 0.775rem + 0.5vw, 1.375rem); //22-14
- font-size: clamp(1rem, 0.925rem + 0.375vw, 1.375rem);//16-22 320-1920
+.emphasized-txt {
+  //Выделенный
+  font-size: clamp(1rem, 0.925rem + 0.375vw, 1.375rem); //16-22 320-1920
 }
 
 .txt {
-  //font-size: clamp(1rem, 0.7143rem + 0.4464vw, 1.25rem);//16-20
-  font-size: clamp(0.875rem, 0.8rem + 0.375vw, 1.25rem);//14-20 320-1920
+  font-size: clamp(0.875rem, 0.8rem + 0.375vw, 1.25rem); //14-20 320-1920
 }

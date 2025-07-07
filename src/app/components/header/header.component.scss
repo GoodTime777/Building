@@ -5,7 +5,7 @@ $s: 5px;
   position: fixed;
   top: 0;
   z-index: 100;
-  background-color: variables.$bg-orange;
+  background-color: var(--color-bg-orange);
   @media (min-width: 320px) and (max-width: 1023px) {
     overflow: visible;
   }
@@ -17,7 +17,7 @@ $s: 5px;
       flex-flow: wrap;
       justify-content: space-between;
       align-items: center;
-      background-color: variables.$bg-orange;
+      background-color: var(--color-bg-orange);
       padding: 7px 35px;
 
       @media (min-width: 1024px) and (max-width: 1919px) {
@@ -141,7 +141,7 @@ $s: 5px;
         }
 
         a {
-          color: variables.$link-black;
+          color: var(--color-link-black);
           transition: color 0.3s ease;
           font-weight: 400;
 
@@ -172,7 +172,7 @@ $s: 5px;
           }
         }
         a:hover {
-          color: variables.$link-white;
+          color: var(--color-link-white);
         }
       }
       &-burger {
@@ -191,8 +191,8 @@ $s: 5px;
 
           .hamburger {
             background: black;
-            width: 32px; 
-            height: 2px; 
+            width: 32px;
+            height: 2px;
             position: relative;
             transition: background 10ms 300ms ease;
             margin: auto;
@@ -204,8 +204,8 @@ $s: 5px;
               transition: top 300ms 350ms ease, transform 300ms 50ms ease;
               position: absolute;
               background: black;
-              width: 32px; 
-              height: 2px; 
+              width: 32px;
+              height: 2px;
               left: 0;
               border-radius: 10px;
               content: "";

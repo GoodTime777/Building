@@ -1,10 +1,9 @@
 @use "variables";
 
 .wrapper {
-  background-color: variables.$bg-dark-gray; 
+  background-color: var(--color-bg-dark-gray);
   border-bottom: 1px solid rgba(255, 255, 255, 0.199);
   @media (min-width: 320px) and (max-width: 1023px) {
-   
   }
 
   .gallery {
@@ -22,8 +21,8 @@
     }
     swiper-container {
       width: 100%;
-      background-color: variables.$bg-middle-two-gray;
-      box-shadow: 0 0 3px 0 variables.$shadow-black-02;
+      background-color: var(--color-bg-middle-two-gray);
+      box-shadow: 0 0 3px 0 var(--color-shadow-black-02);
       border-radius: 10px;
     }
     swiper-slide {
@@ -34,9 +33,9 @@
       align-items: center;
       border-radius: 5px;
       padding: 5px;
-      border: solid 1px variables.$border-black;
-      box-shadow: 5px 5px 5px variables.$shadow-black-05;
-      background-color: variables.$bg-dark-gray;
+      border: solid 1px var(--color-border-black);
+      box-shadow: 5px 5px 5px var(--color-shadow-black-05);
+      background-color: var(--color-bg-dark-gray);
 
       @media (min-width: 320px) and (max-width: 1023px) {
         width: 95%;
@@ -102,7 +101,7 @@
         }
 
         &:hover {
-          border-color: variables.$border-dark-orange;
+          border-color: var(--color-border-dark-orange);
           transform: scale(1.1, 1.1);
 
           @media (min-width: 320px) and (max-width: 1023px) {

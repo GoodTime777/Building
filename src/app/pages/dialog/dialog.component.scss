@@ -2,7 +2,7 @@
 @use "decoration";
 
 .modal {
-  outline: 1.5px solid variables.$border-black;
+  outline: 1.5px solid var(--color-border-black);
   outline-offset: -4.5px;
   border-radius: 30px;
 
@@ -13,7 +13,7 @@
   }
   &__subtitle {
     text-align: center;
-    color: variables.$text-black;
+    color: var(--color-text-black);
     margin-bottom: 8px;
   }
 
@@ -34,8 +34,7 @@
   &__actions {
     gap: 40px;
     padding: 0 0 20px 0;
-     margin-top: 10px;
-
+    margin-top: 10px;
 
     &-btn {
       font-family: Oswald, "Helvetica Neue", sans-serif;
@@ -48,12 +47,12 @@
 }
 
 ::ng-deep mat-pseudo-checkbox {
-  background-color: variables.$bg-dark-gray !important;
-  border-color: variables.$border-white !important;
+  background-color: var(--color-bg-dark-gray) !important;
+  border-color: var(--color-border-white) !important;
 }
 
 ::ng-deep mat-pseudo-checkbox::after {
-  color: variables.$text-white !important;
+  color: var(--color-text-white) !important;
 }
 
 :host ::ng-deep .mat-mdc-select-value-text {

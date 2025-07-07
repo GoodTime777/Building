@@ -1,70 +1,90 @@
-$white: rgb(255, 255, 255); //@  a:hover+, color+, border+
-$white-02: rgba(255, 255, 255, 0.23); //glass //border+, bg+
-$white-03: rgba(255, 255, 255, 0.36); //bg+, border+
-$white-05: rgba(255, 255, 255, 0.521); //@
-$white-07: rgba(255, 255, 255, 0.705); //@
-$silk: rgb(182, 182, 182); //@
-$seashell: rgb(236, 240, 241); //@body !light+
+:root {
+  //*white
+  --color-white: rgb(255, 255, 255); //@  a:hover+, color+, border+
+  --color-white-02: rgba(255, 255, 255, 0.23); //glass //border+, bg+
+  --color-white-03: rgba(255, 255, 255, 0.36); //bg+, border+
+  --color-white-05: rgba(255, 255, 255, 0.521); //@
+  --color-white-07: rgba(255, 255, 255, 0.705); //@
 
-$black: rgb(0, 0, 0); //a+, color+, @
-$black-05: rgba(0, 0, 0, 0.5); //shadow+
-$black-02: rgba(0, 0, 0, 0.233); //shadow+
-$black-0: rgba(0, 0, 0, 0); //shadow+
+  //*gray
+  --color-silk: rgb(182, 182, 182); //@
+  --color-seashell: rgb(236, 240, 241); //@body !light+
+  --color-cinder: rgb(20, 20, 20); //bg,!dark+
+  --color-zeus: rgba(32, 32, 32, 0.4); //@ shadow+,
+  --color-dune: rgba(51, 51, 51, 1); //@ bg, !middle+
+  --color-black-cow: rgb(75, 74, 74); //color+
+  --color-carbon-gray: rgb(90, 90, 90); //bg+
 
-$cinder: rgb(20, 20, 20); //bg,!dark+
-$zeus: rgba(32, 32, 32, 0.4); //@ shadow+,
-// $dune: rgba(51, 51, 51, 0.918); //@ bg, !middle+
-$dune: rgba(51, 51, 51, 1); //@ bg, !middle+
-$black-cow: rgb(75, 74, 74); //color+
-$carbon-gray: rgb(90, 90, 90); //bg+
+  //*black
+  --color-black: rgb(0, 0, 0); //a+, color+, @
+  --color-black-05: rgba(0, 0, 0, 0.5); //shadow+
+  --color-black-02: rgba(0, 0, 0, 0.233); //shadow+
+  --color-black-0: rgba(0, 0, 0, 0); //shadow+
 
-$bittersweet: rgb(255, 127, 80); //border?+
-$gamboge: rgb(255, 141, 10); //bg,+ @
-$squash: rgb(255, 166, 0); //bg+, border+ @
-$texas-rose: rgb(255, 187, 61); //bg+
-$grandis: rgba(255, 209, 140, 0.37); //bg+
+  //*orange
+  --color-bittersweet: rgb(255, 127, 80); //border?+
+  --color-gamboge: rgb(255, 141, 10); //bg,+ @
+  --color-squash: rgb(255, 166, 0); //bg+, border+ @
+  --color-texas-rose: rgb(255, 187, 61); //bg+
+  --color-grandis: rgba(255, 209, 140, 0.37); //bg+
 
-$rosso-corsa: rgb(230, 0, 0); //@
-$venetian-red: rgb(206, 2, 2); //@
-$class-red: rgb(255, 0, 0); //@ .red
-$bright-red: rgb(255, 0, 0); //decor
+  //*red
+  --color-rosso-corsa: rgb(230, 0, 0); //@
+  --color-venetian-red: rgb(206, 2, 2); //@
+  --color-class-red: rgb(255, 0, 0); //@ .red
+  --color-bright-red: rgb(255, 0, 0); //decor
 
-$shadow-black-0: $black-0;
-$shadow-black-02: $black-02;
-$shadow-black-05: $black-05;
-$shadow-black-1: $black;
-$shadow-black: $zeus;
+  //*txt
+  --color-text-white: var(--color-white);
+  --color-text-gray: var(--color-black-cow);
+  --color-text-black: var(--color-black);
 
-$text-white: $white;
-$text-gray: $black-cow;
-$text-black: $black;
+  //*link
+  --color-link-white: var(--color-white);
+  --color-link-black: var(--color-black);
 
-$link-white: $white;
-$link-black: $black;
+  //*shadow
+  --color-shadow-black-0: var(--color-black-0);
+  --color-shadow-black-02: var(--color-black-02);
+  --color-shadow-black-05: var(--color-black-05);
+  --color-shadow-black-1: var(--color-black);
+  --color-shadow-black: var(--color-zeus);
 
-$border-white: $white;
-$border-white-02: $white-02;
-$border-white-03: $white-03;
-$border-black: $black;
-$border-dark-orange: $gamboge;
-$border-orange: $squash;
+  //*border
+  --color-border-white: var(--color-white);
+  --color-border-white-02: var(--color-white-02);
+  --color-border-white-03: var(--color-white-03);
+  --color-border-black: var(--color-black);
+  --color-border-dark-orange: var(--color-gamboge);
+  --color-border-orange: var(--color-squash);
 
-$bg-light-orange: $squash;
-$bg-orange: $gamboge; //header
-$bg-yellow: $texas-rose;
+  //*background-orange
+  --color-bg-light-orange: var(--color-squash);
+  --color-bg-orange: var(--color-gamboge); //header
+  --color-bg-yellow: var(--color-texas-rose);
 
-$bg-white: $white-03;
-$bg-light-gray: $seashell;
-$bg-middle-gray: $dune;
-$bg-middle-two-gray: $carbon-gray;
-$bg-dark-gray: $cinder;
+  //*background-gray
+  --color-bg-white: var(--color-white-03);
+  --color-bg-light-gray: var(--color-seashell);
+  --color-bg-middle-gray: var(--color-dune);
+  --color-bg-middle-two-gray: var(--color-carbon-gray);
+  --color-bg-dark-gray: var(--color-cinder);
+  --color-bg-glass: var(--color-white-02);
+  --color-bg-glass-hover-orange: var(--color-grandis);
 
-$bg-glass: $white-02;
-//$bg-glass-hover-white
-$bg-glass-hover-orange: $grandis;
+  //*state
+  --color-error: var(--color-rosso-corsa);
+  --color-error-dark: var(--color-venetian-red);
 
-$error: $rosso-corsa;
-$error-dark: $venetian-red;
+  //*time
+  --color-time: 0.9s;
+
+  //decor
+  --c-white: var(--color-white);
+  --c-black: var(--color-black);
+  --ani-dur: 8s;
+  --size: 112px;
+}
 
 //404
 //$colors:
@@ -91,10 +111,31 @@ $error-dark: $venetian-red;
 // rgba(153, 189, 207, 0.3)
 // rgba(255, 255, 255, 0.63)
 
-$time: 0.9s;
-
 //
 // :root {
 //   --ng-animation: 0.3s ease-in;
 //   --ng-max-z-index: 999;
+// }
+//   // * Gray
+//   --ng-color-gray-0: #fff;
+//   --ng-color-gray-50: #f8f8f8;
+//   --ng-color-gray-100: #f1f1f1;
+//   --ng-color-gray-150: #d9d9d9;
+//   --ng-color-gray-200: #ccc;
+//   --ng-color-gray-300: #b2b2b2;
+//   --ng-color-gray-400: #999;
+//   --ng-color-gray-500: #7f7f7f;
+//   --ng-color-gray-600: #606060;
+//   --ng-color-gray-700: #4c4c4c;
+//   --ng-color-gray-800: #333;
+//   --ng-color-gray-850: #262626;
+//   --ng-color-gray-900: #191919;
+//   --ng-color-gray-950: #0d0d0d;
+//   --ng-color-gray-1000: #000;
+
+//   // * Radius
+//   --ng-radius-s: 8px;
+//   --ng-radius-m: 16px;
+//   --ng-radius-l: 20px;
+//   --ng-radius-xl: 32px;
 // }

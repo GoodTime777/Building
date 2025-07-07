@@ -11,7 +11,7 @@
     padding: 10px 10px 0px 10px;
     justify-content: center;
   }
-  h2{
+  h2 {
     margin-bottom: 0px;
   }
 
@@ -43,13 +43,13 @@
     }
 
     &-content {
-      color: variables.$text-gray;
-      background: variables.$bg-glass;
+      color: var(--color-text-gray);
+      background: var(--color-bg-glass);
       border-radius: 16px;
-      box-shadow: 0 4px 10px variables.$shadow-black-05;
+      box-shadow: 0 4px 10px var(--color-shadow-black-05);
       backdrop-filter: blur(8.8px);
       -webkit-backdrop-filter: blur(8.8px);
-      border: 1px solid variables.$border-white-03;
+      border: 1px solid var(--color-border-white-03);
       transition: background 0.7s ease, transform 0.7s ease,
         box-shadow 0.7s ease;
 
@@ -57,20 +57,18 @@
       }
 
       &:hover {
-        color: variables.$text-black;
-        background: variables.$bg-glass-hover-orange;
-        box-shadow: 0 4px 30px variables.$shadow-black-02;
+        color: var(--color-text-black);
+        background: var(--color-bg-glass-hover-orange);
+        box-shadow: 0 4px 30px var(--color-shadow-black-02);
         transform: translate(10px, -14px);
 
         @media (min-width: 320px) and (max-width: 1023px) {
           transform: translate(0px, 0px);
-          color: variables.$text-gray;
-          background: variables.$bg-glass;
-          box-shadow: 0 4px 10px variables.$shadow-black-05;
+          color: var(--color-text-gray);
+          background: var(--color-bg-glass);
+          box-shadow: 0 4px 10px var(--color-shadow-black-05);
         }
       }
-
-    
     }
   }
   &__contacts {
@@ -81,31 +79,30 @@
     text-align: center;
     flex-direction: column;
 
-
     @media (min-width: 320px) and (max-width: 1023px) {
       order: 1;
       width: 100%;
     }
     &-contact {
-      color: variables.$text-black;
+      color: var(--color-text-black);
       margin: 0 auto;
 
       &-phones {
         &-box {
           a {
-            font-size: clamp(0.875rem, 0.8rem + 0.375vw, 1.25rem); //20-14 320-1920         
-            color: variables.$text-black;
-
+            font-size: clamp(
+              0.875rem,
+              0.8rem + 0.375vw,
+              1.25rem
+            ); //20-14 320-1920
+            color: var(--color-text-black);
           }
           span mat-icon {
             font-size: 20px;
             margin-bottom: -7px;
-
-           
           }
         }
       }
-
 
       &-time {
         &-detail {

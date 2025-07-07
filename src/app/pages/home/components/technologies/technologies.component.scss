@@ -19,12 +19,12 @@
 
     &__title {
       margin-bottom: 20px;
-      text-decoration: underline solid variables.$squash;
+      text-decoration: underline solid var(--color-squash);
     }
 
     &__content {
       &-text {
-        color: variables.$text-black;
+        color: var(--color-text-black);
         text-align: justify;
 
         &-photo {
@@ -57,7 +57,7 @@
             clip-path: polygon(40% 0, 100% 0%, 100% 100%, 0 100%);
 
             img {
-              box-shadow: 0px 0px 6px 1px variables.$shadow-black-1;
+              box-shadow: 0px 0px 6px 1px var(--color-shadow-black-1);
             }
           }
 
@@ -65,14 +65,13 @@
             width: 52%;
 
             img {
-              box-shadow: 0px 2px 3px 0px variables.$shadow-black-1;
+              box-shadow: 0px 2px 3px 0px var(--color-shadow-black-1);
             }
           }
         }
         &-item {
           &-txt:not(:last-child) {
             margin-bottom: 20px;
-           
           }
         }
       }

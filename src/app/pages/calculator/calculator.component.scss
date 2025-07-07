@@ -1,10 +1,8 @@
 @use "variables";
 @use "decoration";
 
-.wrapper {
-}
 .calculator {
-  color: variables.$text-black;
+  color: var(--color-text-black);
   padding: 0 40px;
   @media (min-width: 320px) and (max-width: 1023px) {
     padding: 0 10px;
@@ -16,11 +14,11 @@
         font-family: Oswald, "Helvetica Neue", sans-serif;
         text-transform: uppercase;
         border-bottom: none;
-        background-color: variables.$bg-yellow;
+        background-color: var(--color-bg-yellow);
 
         @media (min-width: 320px) and (max-width: 1023px) {
           height: 60px;
-     
+
           font-weight: 400;
           padding: 0 5px;
         }
@@ -124,7 +122,7 @@
           }
         }
         tr:nth-child(2) {
-          background-color: variables.$bg-yellow;
+          background-color: var(--color-bg-yellow);
           @media (min-width: 320px) and (max-width: 1023px) {
             background-color: transparent;
           }
@@ -134,7 +132,7 @@
         td:nth-child(3),
         td:nth-child(5) {
           @media (min-width: 320px) and (max-width: 1023px) {
-            background-color: variables.$bg-yellow;
+            background-color: var(--color-bg-yellow);
           }
         }
       }
@@ -196,7 +194,6 @@
               border-radius: 6px;
               background-color: rgb(20, 20, 20);
             }
-        
           }
           &-btn {
             width: 100%;
@@ -255,9 +252,9 @@
     &-number {
       font-family: Oswald, "Helvetica Neue", sans-serif;
       font-size: 26px;
-      border-bottom: 2px solid variables.$border-orange;
+      border-bottom: 2px solid var(--color-border-orange);
     }
-  
+
     &-btn {
       @media (min-width: 320px) and (max-width: 1023px) {
         width: 100%;
@@ -271,15 +268,15 @@
       }
 
       button:hover {
-        color: variables.$black;
+        color: var(--color-black);
         border: 1px solid transparent;
         background-color: rgba(255, 187, 61, 1);
       }
 
       button:active {
-        color: variables.$seashell;
-        border: 1px solid variables.$seashell;
-        background-color: variables.$bg-dark-gray;
+        color: var(--color-seashell);
+        border: 1px solid var(--color-seashell);
+        background-color: var(--color-bg-dark-gray);
       }
     }
   }

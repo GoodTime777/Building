@@ -4,10 +4,10 @@
 :root {
   @include mat.dialog-overrides(
     (
-      container-color: variables.$squash,
-      // container-color: variables.$carrot-orange,
-      // container-color: variables.$cantaloupe,
-      subhead-color: variables.$black,
+      container-color: var(--color-squash),
+      // container-color: var(--color-carrot-orange),
+      // container-color: var(--color-cantaloupe),
+      subhead-color: var(--color-black),
       // supporting-text-color: green,
       container-max-width: 100%,
       container-min-width: 30%,

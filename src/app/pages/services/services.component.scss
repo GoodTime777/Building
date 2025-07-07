@@ -9,18 +9,18 @@
 
   .services {
     padding: 10px 10px;
-    
+
     @media (min-width: 320px) and (max-width: 1023px) {
       padding: 5px;
     }
 
     &__tabs {
       width: 100%;
-      
+
       &-label {
         height: 100%;
         width: 100%;
-        
+
         &-card {
           width: 55%;
           font-weight: 300;
@@ -29,9 +29,9 @@
           transform: translateY(-50%);
           padding: 10px;
           border-radius: 10px;
-          border: 1px solid variables.$border-white-02;
-          box-shadow: 3px 4px 6px variables.$shadow-black-02;
-          background: variables.$bg-glass; //glass
+          border: 1px solid var(--color-border-white-02);
+          box-shadow: 3px 4px 6px var(--color-shadow-black-02);
+          background: var(--color-bg-glass); //glass
           backdrop-filter: blur(5.1px);
           -webkit-backdrop-filter: blur(5.1px);
 
@@ -43,17 +43,17 @@
             top: 250px;
             left: 50%;
             transform: translateX(-50%);
-            background: rgba(41, 41, 41, 0.267); //glass           
+            background: rgba(41, 41, 41, 0.267); //glass
             padding: 10px;
             font-weight: 300;
           }
 
           &-txt {
-            color: variables.$text-white;
+            color: var(--color-text-white);
             margin-bottom: 20px;
 
             @media (min-width: 320px) and (max-width: 1023px) {
-              color: variables.$text-white;
+              color: var(--color-text-white);
             }
           }
 
@@ -63,13 +63,13 @@
 
             @media (min-width: 1024px) and (max-width: 1300px) {
               flex-direction: row;
-               gap: 10px;
+              gap: 10px;
             }
 
             @media (min-width: 320px) and (max-width: 1023px) {
               width: 100%;
             }
-            
+
             &-btn {
               width: 100%;
             }
@@ -90,7 +90,7 @@
             width: 100%;
             height: 100%;
             border-radius: 10px;
-            box-shadow: 0px 0px 2px 3px variables.$shadow-black;
+            box-shadow: 0px 0px 2px 3px var(--color-shadow-black);
           }
         }
       }
@@ -103,29 +103,29 @@
 
   button,
   button:active {
-    color: variables.$seashell;
-    border: 1px solid variables.$seashell;
+    color: var(--color-seashell);
+    border: 1px solid var(--color-seashell);
 
-    a{
-      color: variables.$seashell;
+    a {
+      color: var(--color-seashell);
     }
   }
 
   button:hover {
-    color: variables.$black;
+    color: var(--color-black);
     border: 1px solid transparent;
-    background-color: variables.$seashell;
+    background-color: var(--color-seashell);
 
     a {
       color: black;
-       @media (min-width: 320px) and (max-width: 1023px){
-       color: variables.$seashell;    
-  }
+      @media (min-width: 320px) and (max-width: 1023px) {
+        color: var(--color-seashell);
+      }
     }
 
     @media (min-width: 320px) and (max-width: 1023px) {
-      color: variables.$seashell;
-      border: 1px solid variables.$seashell;
+      color: var(--color-seashell);
+      border: 1px solid var(--color-seashell);
       background-color: transparent;
     }
   }
@@ -150,7 +150,7 @@
 }
 
 :host ::ng-deep .mat-mdc-tab-header {
-  background-color: variables.$bg-dark-gray;
+  background-color: var(--color-bg-dark-gray);
   border-radius: 10px;
   margin-bottom: 5px;
 }
@@ -159,7 +159,7 @@
   width: 100%;
   height: 90vh;
   border-radius: 10px;
-  box-shadow: 5px 5px 5px variables.$shadow-black-05;
+  box-shadow: 5px 5px 5px var(--color-shadow-black-05);
   margin: 0 auto;
 
   @media (min-width: 1024px) and (max-width: 1600px) {
@@ -174,10 +174,10 @@
   display: flex;
   text-align: center;
   width: 100%;
-  background-color: variables.$bg-dark-gray;
+  background-color: var(--color-bg-dark-gray);
   border-radius: 10px;
   padding: 5px 5px;
-  box-shadow: 5px 5px 5px variables.$shadow-black-05;
+  box-shadow: 5px 5px 5px var(--color-shadow-black-05);
 
   @media (min-width: 320px) and (max-width: 1023px) {
     min-height: 1090px; //160%;

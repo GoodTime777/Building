@@ -4,13 +4,13 @@
   color: transparent;
   background-image: linear-gradient(
     to right,
-    variables.$text-gray,
-    variables.$text-gray,
-    variables.$seashell,
-    variables.$seashell,
-    variables.$text-black,
-    variables.$text-gray,
-    variables.$text-gray
+    var(--color-text-gray),
+    var(--color-text-gray),
+    var(--color-seashell),
+    var(--color-seashell),
+    var(--color-text-black),
+    var(--color-text-gray),
+    var(--color-text-gray)
   );
   background-size: 500% auto;
   background-clip: text;
@@ -33,14 +33,14 @@
   background: linear-gradient(
     -50deg,
 
-    variables.$bg-yellow,
-    variables.$bg-yellow,
-    variables.$bg-yellow,
-    #ffffff79,
-    variables.$bg-yellow,
-    variables.$bg-yellow,
-    variables.$bg-yellow,
-    variables.$bg-yellow
+    var(--color-bg-yellow),
+    var(--color-bg-yellow),
+    var(--color-bg-yellow),
+    rgba(255, 255, 255, 0.475),
+    var(--color-bg-yellow),
+    var(--color-bg-yellow),
+    var(--color-bg-yellow),
+    var(--color-bg-yellow)
   );
   background-size: 400% 400%;
   animation: gradient 3s linear infinite;
@@ -63,11 +63,6 @@
 }
 ////////////////////for advantage
 
-$c-white: #fff;
-$c-black: #000;
-$ani-dur: 8s;
-$size: 112px;
-
 @mixin fill {
   position: absolute;
   top: 0;
@@ -85,29 +80,19 @@ $size: 112px;
   transform-style: preserve-3d;
   transform: rotateX(60deg) rotateZ(45deg);
 
-  // @media (min-width: 1301px) and (max-width: 1650px) {
-  //   font-size: 98px;
-  // }
-  // @media (min-width: 1000px) and (max-width: 1300px) {
-  //   font-size: 90px;
-  // }
-
   @media (min-width: 320px) and (max-width: 1023px) {
     font-size: 20px;
-     min-height:0px;
-  max-height: 0px;
-  
+    min-height: 0px;
+    max-height: 0px;
   }
 
   &__cube {
     position: absolute;
     width: 1em;
     height: 1em;
-    border: 1px solid rgb(0, 0, 0);
-    animation: move $ani-dur ease-in-out infinite;
+    border: 1px solid var(--color-black);
+    animation: move var(--ani-dur) ease-in-out infinite;
     transform-style: preserve-3d;
-
-
 
     &::before,
     &::after {
@@ -118,7 +103,7 @@ $size: 112px;
       left: 0;
       right: 0;
       bottom: 0;
-      border: 1px solid black;
+      border: 1px solid var(--color-black);
     }
 
     &::before {
@@ -133,7 +118,7 @@ $size: 112px;
 
     @for $i from 1 through 4 {
       &:nth-of-type(#{$i}) {
-        animation-delay: $ani-dur * calc($i / 4 - 4);
+        animation-delay: 8s * calc($i / 4 - 4);
       }
     }
 
@@ -192,20 +177,12 @@ $size: 112px;
       border-top-width: 45px;
       border-bottom-width: 45px;
     }
-    @media (min-width: 320px) and (max-width: 1023px) {
-     
-      
-    }
   }
 
   &__block-arrow {
-    border-top-color: variables.$bg-dark-gray;
-    border-bottom-color: variables.$bg-dark-gray;
-    border-right-color: variables.$bg-dark-gray;
-    // border-top-color: green;
-    // border-bottom-color: yellow;
-    // border-right-color: orange;
-    // border-left-color: blue;
+    border-top-color: var(--color-bg-dark-gray);
+    border-bottom-color: var(--color-bg-dark-gray);
+    border-right-color: var(--color-bg-dark-gray);
     border-left-color: transparent;
     border-right-width: 170px;
     border-left-width: 65px;
@@ -245,9 +222,9 @@ $size: 112px;
       border-left-width: 150px;
       border-right-width: 150px;
       border-top-color: transparent;
-      border-left-color: variables.$bg-dark-gray;
-      border-right-color: variables.$bg-dark-gray;
-      border-bottom-color: variables.$bg-dark-gray;
+      border-left-color: var(--color-bg-dark-gray);
+      border-right-color: var(--color-bg-dark-gray);
+      border-bottom-color: var(--color-bg-dark-gray);
       border-radius: 3px;
     }
   }
@@ -271,7 +248,7 @@ $size: 112px;
 
   &__block-arrow::before {
     right: -59px;
-    border-left-color: variables.$bg-dark-gray;
+    border-left-color: var(--color-bg-dark-gray);
     border-left-width: 60px;
     z-index: 10;
 
@@ -285,14 +262,14 @@ $size: 112px;
       border-left-width: 150px;
       border-top-width: 30px;
       border-left-color: transparent;
-      border-top-color: variables.$bg-dark-gray;
+      border-top-color: var(--color-bg-dark-gray);
       right: 0;
     }
   }
 
   &__block-arrow::after {
     right: -65px;
-    border-left-color: variables.$border-orange;
+    border-left-color: var(--color-border-orange);
     border-left-width: 65px;
     z-index: 0;
     transition: right 0.5s ease;
@@ -309,7 +286,7 @@ $size: 112px;
       border-right-width: 150px;
       border-left-width: 150px;
       border-left-color: transparent;
-      border-top-color: variables.$border-orange;
+      border-top-color: var(--color-border-orange);
     }
   }
 }
@@ -337,7 +314,7 @@ $size: 112px;
 ///////////////
 .btn-decor-flash {
   position: relative;
-  color: variables.$text-white;
+  color: var(--color-text-white);
   overflow: hidden;
   transition: 0.7s;
 
@@ -351,7 +328,7 @@ $size: 112px;
     left: -100%;
     width: 100%;
     height: 2px;
-    background: linear-gradient(90deg, transparent, white);
+    background: linear-gradient(90deg, transparent, var(--color-white));
     animation: btn-anim1 1.2s linear infinite;
   }
 
@@ -360,7 +337,7 @@ $size: 112px;
     right: 0;
     width: 2px;
     height: 100%;
-    background: linear-gradient(180deg, transparent, white);
+    background: linear-gradient(180deg, transparent, var(--color-white));
     animation: btn-anim2 1.2s linear infinite;
     animation-delay: 0.25s;
   }
@@ -370,7 +347,7 @@ $size: 112px;
     right: -100%;
     width: 100%;
     height: 2px;
-    background: linear-gradient(270deg, transparent, white);
+    background: linear-gradient(270deg, transparent, var(--color-white));
     animation: btn-anim3 1.2s linear infinite;
     animation-delay: 0.5s;
   }
@@ -380,42 +357,43 @@ $size: 112px;
     left: 0;
     width: 2px;
     height: 100%;
-    background: linear-gradient(360deg, transparent, white);
+    background: linear-gradient(360deg, transparent, var(--color-white));
     animation: btn-anim4 1.2s linear infinite;
     animation-delay: 0.75s;
   }
 }
 
 .btn-decor-flash:hover {
-  background: white;
-  color: variables.$text-black;
+  background: var(--color-white);
+  color: var(--color-text-black);
   border-radius: 5px;
-  box-shadow: 0 0 5px white, 0 0 20px white, 0 0 20px white, 0 0 20px white;
+  box-shadow: 0 0 5px var(--color-white), 0 0 20px var(--color-white),
+    0 0 20px var(--color-white), 0 0 20px var(--color-white);
 }
 
 .btn-decor-flash:disabled {
   cursor: not-allowed;
 
   span:nth-child(1) {
-    background: linear-gradient(90deg, transparent, variables.$black);
+    background: linear-gradient(90deg, transparent, var(--color-black));
   }
 
   span:nth-child(2) {
-    background: linear-gradient(180deg, transparent, variables.$black);
+    background: linear-gradient(180deg, transparent, var(--color-black));
   }
 
   span:nth-child(3) {
-    background: linear-gradient(270deg, transparent, variables.$black);
+    background: linear-gradient(270deg, transparent, var(--color-black));
   }
 
   span:nth-child(4) {
-    background: linear-gradient(360deg, transparent, variables.$black);
+    background: linear-gradient(360deg, transparent, var(--color-black));
   }
 }
 
 .btn-decor-flash:disabled:hover {
-  background: variables.$black;
-  color: variables.$text-white;
+  background: var(--color-black);
+  color: var(--color-text-white);
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.5), 0 0 15px rgba(0, 0, 0, 0.507),
     0 0 15px rgba(0, 0, 0, 0.445), 0 0 15px rgba(0, 0, 0, 0.5);
 }
@@ -462,13 +440,13 @@ $size: 112px;
 
 ///////////
 .btn-decor-flash-black {
-  color: variables.$text-black;
+  color: var(--color-text-black);
   border: 1px solid rgba(0, 0, 0, 0);
   transition: 0.7s;
 }
 .btn-decor-flash-black:hover {
-  background: rgb(0, 0, 0);
-  color: variables.$text-white;
+  background: var(--color-black);
+  color: var(--color-text-white);
   border-radius: 5px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.5), 0 0 15px rgba(0, 0, 0, 0.507),
     0 0 15px rgba(0, 0, 0, 0.445), 0 0 15px rgba(0, 0, 0, 0.5);
@@ -556,7 +534,7 @@ $size: 112px;
       position: absolute;
       right: 2px;
       top: 0px;
-      border-bottom: 78px solid rgb(255, 255, 255);
+      border-bottom: 78px solid var(--color-white);
       border-left: 17.5px solid rgba(8, 65, 8, 0);
       border-right: 17.5px solid rgba(4, 56, 4, 0);
     }
@@ -564,7 +542,7 @@ $size: 112px;
       position: absolute;
       bottom: 0;
       right: 17px;
-      background: rgb(255, 255, 255);
+      background: var(--color-white);
       width: 4px;
       height: 25px;
     }
@@ -630,10 +608,10 @@ $size: 112px;
       &-top {
         width: 55px;
         height: 44.5px;
-        border-top: 3px solid rgb(255, 255, 255);
-        border-bottom: 0px solid rgb(255, 255, 255);
-        border-left: 3px solid rgb(255, 255, 255);
-        border-right: 3px solid rgb(255, 255, 255);
+        border-top: 3px solid var(--color-white);
+        border-bottom: 0px solid var(--color-white);
+        border-left: 3px solid var(--color-white);
+        border-right: 3px solid var(--color-white);
         border-top-left-radius: 4px;
         border-top-right-radius: 4px;
       }
@@ -641,16 +619,16 @@ $size: 112px;
       &-left {
         width: 8px;
         left: 0;
-        border-right: 0px solid rgb(255, 255, 255);
-        border-left: 3px solid rgb(255, 255, 255);
+        border-right: 0px solid var(--color-white);
+        border-left: 3px solid var(--color-white);
         border-bottom-left-radius: 4px;
       }
 
       &-right {
         width: 30px;
         right: 30px;
-        border-left: 0px solid rgb(255, 255, 255);
-        border-right: 3px solid rgb(255, 255, 255);
+        border-left: 0px solid var(--color-white);
+        border-right: 3px solid var(--color-white);
         border-bottom-right-radius: 4px;
       }
 
@@ -658,8 +636,8 @@ $size: 112px;
       &-right {
         height: 13px;
         bottom: -53px;
-        border-top: 0px solid rgb(255, 255, 255);
-        border-bottom: 3px solid rgb(255, 255, 255);
+        border-top: 0px solid var(--color-white);
+        border-bottom: 3px solid var(--color-white);
       }
 
       &-circle {
@@ -676,7 +654,7 @@ $size: 112px;
         height: 27px;
         right: 4px;
         top: 13px;
-        border-right: 6px solid white;
+        border-right: 6px solid var(--color-white);
         border-bottom-left-radius: 2px;
         border-bottom-right-radius: 7px;
         transform: skewX(27deg);
@@ -687,7 +665,7 @@ $size: 112px;
         width: 25px;
         right: 2px;
         top: 13px;
-        border-left: 6px solid white;
+        border-left: 6px solid var(--color-white);
         border-bottom-left-radius: 4px;
       }
 
@@ -696,7 +674,7 @@ $size: 112px;
         width: 17px;
         right: 10px;
         top: 13px;
-        border-top: 5px solid white;
+        border-top: 5px solid var(--color-white);
       }
 
       &-bottom {
@@ -705,17 +683,17 @@ $size: 112px;
         right: 0px;
         height: 16px;
         top: 37px;
-        border-left: 5px solid white;
-        border-right: 5px solid white;
-        border-top: 7.5px solid white;
-        border-bottom: 0px solid rgb(255, 255, 255);
+        border-left: 5px solid var(--color-white);
+        border-right: 5px solid var(--color-white);
+        border-top: 7.5px solid var(--color-white);
+        border-bottom: 0px solid var(--color-white);
         border-bottom-left-radius: 4px;
         border-bottom-right-radius: 4px;
       }
 
       &-window,
       &-top {
-        border-bottom: 7px solid white;
+        border-bottom: 7px solid var(--color-white);
         border-top-right-radius: 4px;
       }
 
@@ -735,10 +713,10 @@ $size: 112px;
       width: 22px;
       height: 11px;
       bottom: -53px;
-      border-left: 3px solid rgb(255, 255, 255);
-      border-right: 3px solid rgb(255, 255, 255);
-      border-top: 3px solid rgb(255, 255, 255);
-      border-bottom: 0px solid rgb(255, 255, 255);
+      border-left: 3px solid var(--color-white);
+      border-right: 3px solid var(--color-white);
+      border-top: 3px solid var(--color-white);
+      border-bottom: 0px solid var(--color-white);
       border-top-left-radius: 50%;
       border-top-right-radius: 50%;
     }
@@ -748,7 +726,8 @@ $size: 112px;
     content: " ";
     position: absolute;
     width: 25px;
-    box-shadow: -30px 28px 0 1.5px #fff, -35px 18px 0 1.5px #fff;
+    box-shadow: -30px 28px 0 1.5px var(--color-white),
+      -35px 18px 0 1.5px var(--color-white);
     animation: wind 1.5s 0s ease infinite;
   }
 
@@ -762,7 +741,7 @@ $size: 112px;
 
     &-wheel,
     &-wheel:nth-child(2) {
-      background-color: white;
+      background-color: var(--color-white);
       width: 14px;
       height: 14px;
       border-radius: 50%;
@@ -859,7 +838,7 @@ $size: 112px;
   }
 }
 //////////////
-//перенести в decoration!!!
+
 .decor {
   position: relative;
 }
@@ -873,7 +852,7 @@ $size: 112px;
   bottom: 0;
   height: 1px;
   width: 100%;
-  background-color: variables.$white;
+  background-color: var(--color-white);
   transition: transform 0.4s cubic-bezier(0.55, 0, 0.1, 1);
 }
 
@@ -886,5 +865,5 @@ $size: 112px;
 .line {
   width: 1px;
   height: auto;
-  background-color: variables.$texas-rose;
+  background-color: var(--color-texas-rose);
 }
