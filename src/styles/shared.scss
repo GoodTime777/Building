@@ -98,49 +98,18 @@ a {
   margin-bottom: 30px;
   @media (min-width: 320px) and (max-width: 1620px) {
     margin-bottom: 10px;
-    
   }
   button {
     min-width: 240px;
     text-align: center;
     border-radius: 6px;
     padding: 15px 0;
-  //  background-color: transparent;
     transition: color 0.4s ease, border 0.4s ease, background-color 0.4s ease;
 
     @media (min-width: 320px) and (max-width: 1023px) {
       width: 100%;
     }
   }
-  // button:hover {
-  //   // @include mixins.btn(
-  //   //   $color: var(--color-seashell),
-  //   //   $border: 1px solid transparent,
-  //   //   $background-c: var(--color-bg-dark-gray)
-  //   // );
-
-  //   a {
-  //     color: var(--color-seashell);
-
-  //     @media (min-width: 320px) and (max-width: 1023px) {
-  //       color: var(--color-seashell);
-  //     }
-  //   }
-  // }
-
-  // button:active {
-  //   // @include mixins.btnBlack(
-  //   //   $border: 1px solid var(--color-black),
-  //   //   $background-c:inherit
-  //   // );
-
-  //    a {
-  //     color: var(--color-black);
-  //     @media (min-width: 320px) and (max-width: 1023px) {
-  //       color: var(--color-seashell);
-  //     }
-  //   }
-  // }
 }
 .btn-black {
   color: var(--color-black);
@@ -169,7 +138,7 @@ a {
 }
 
 .btn-black:active {
-   color: var(--color-black);
+  color: var(--color-black);
   border: 1px solid var(--color-black);
   background-color: inherit;
 
@@ -211,7 +180,6 @@ a {
 .btn-orange {
   color: var(--color-black);
   border: 1px solid var(--color-border-black);
-  //background-color: transparent;
 
   @media (min-width: 320px) and (max-width: 1023px) {
     background-color: rgba(255, 187, 61, 1);
