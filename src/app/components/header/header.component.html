@@ -12,7 +12,7 @@
           </a>
         </div>
       </div>
-      <button class="header__container-burger">
+      <div class="header__container-burger">
         <input
           class="header__container-burger-trigger hidden"
           id="togglenav"
@@ -31,7 +31,7 @@
             (click)="menuBurger()"
           ></div>
         </label>
-      </button>
+      </div>
       <nav class="header__container-nav" [class.show]="show">
         <ul class="header__container-nav-menu" (click)="menuBurgerClose($event)">
           <li class="header__container-nav-menu-item">

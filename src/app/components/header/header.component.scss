@@ -207,12 +207,13 @@
 
         @include mixins.mobile {
           display: block;
-          @include mixins.size($width: 40px, $height: 40px);
+          //@include mixins.size($width: 40px, $height: 40px);
           color: var(--color-text-black);
           margin-right: 4px;
         }
 
         &-trigger {
+          display: none;
           &:checked {
             ~ .burger-wrapper {
               .hamburger {
@@ -276,10 +277,10 @@
           }
         }
 
-        .hidden {
-          display: none;
-          -webkit-display: none;
-        }
+        // .hidden {
+        //   display: none;
+        //   -webkit-display: none;
+        // }
       }
     }
   }
