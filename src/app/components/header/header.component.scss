@@ -207,7 +207,6 @@
 
         @include mixins.mobile {
           display: block;
-          //@include mixins.size($width: 40px, $height: 40px);
           color: var(--color-text-black);
           margin-right: 4px;
         }
@@ -276,11 +275,6 @@
             z-index: 3;
           }
         }
-
-        // .hidden {
-        //   display: none;
-        //   -webkit-display: none;
-        // }
       }
     }
   }
