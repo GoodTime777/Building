@@ -4,6 +4,7 @@
 
 .contacts {
   @include mixins.flex($justify-c: space-between);
+ // gap: 15px;
   padding: 30px 40px 0px 40px;
 
   @include mixins.tablet {
@@ -34,7 +35,7 @@
   }
 
   &__info {
-    width: 52%;
+    width: 45%;
     border-radius: 16px;
 
     @include mixins.tablet {
@@ -43,7 +44,6 @@
 
     @include mixins.mobile {
       order: 2;
-      width: 100%;
     }
 
     &-content {
@@ -98,7 +98,7 @@
 
     @include mixins.mobile {
       order: 1;
-      width: 100%;
+   //   width: 100%;
     }
 
     &-contact {

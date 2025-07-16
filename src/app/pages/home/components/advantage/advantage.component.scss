@@ -18,7 +18,7 @@
         &-list {
           position: relative;
 
-           @include mixins.mobile {
+          @include mixins.mobile {
             display: flex;
             flex-direction: column;
             gap: 10px;
@@ -26,19 +26,19 @@
           }
 
           &-item {
-            @include mixins.size($width: 43%, $height: auto);
+            @include mixins.size($width: 43%, $height: 200px);
             position: absolute;
             @include mixins.card-outline();
             box-shadow: 3px 1px 4px 0px var(--color-shadow-black);
             padding: 20px 15px;
 
             @include mixins.tablet {
-              height: 200px;
+              // height: 200px;
               padding: 10px 7px;
             }
 
-             @include mixins.mobile {
-              @include mixins.size( );              
+            @include mixins.mobile {
+              @include mixins.size();
               position: relative;
               padding: 10px 7px;
               box-shadow: 0px 2px 4px 0px var(--color-shadow-black);
@@ -57,7 +57,7 @@
                   margin-bottom: -7px;
                   transition: transform 0.5s ease, color 1s ease;
 
-                   @include mixins.mobile {
+                  @include mixins.mobile {
                     font-size: 28px;
                     margin-top: -4px;
                   }
@@ -70,6 +70,33 @@
               text-align: justify;
               color: var(--color-text-black);
               padding: 10px;
+              @include mixins.flex($align-i: normal);
+              //  display: flex;
+              flex-direction: column;
+              // justify-content: center;
+              //align-items: center;
+
+              &-item {
+                text-align: right;
+                font-weight: 500;
+                font-size: 22px;
+                @include mixins.tablet {
+                  font-size: 18px;
+                }
+                @include mixins.mobile {
+                  font-size: 16px;
+                }
+
+                &:nth-child(2) {
+                  margin-bottom: 30px;
+                  @include mixins.tablet {
+                    margin-bottom: 50px;
+                  }
+                  @include mixins.mobile {
+                    margin-bottom: 0px;
+                  }
+                }
+              }
             }
 
             &:nth-child(1) {
@@ -83,8 +110,11 @@
             }
 
             &:nth-child(3) {
+              display: flex;
+              flex-direction: column;
               left: 20%;
               z-index: 1;
+              justify-content: space-between;
             }
 
             &:nth-child(1),
@@ -92,7 +122,7 @@
             &:nth-child(3) {
               transition: transform 1.2s ease;
 
-               @include mixins.mobile {
+              @include mixins.mobile {
                 left: 0;
               }
             }
@@ -101,17 +131,27 @@
               mat-icon {
                 transform: translateX(5px);
 
-                 @include mixins.mobile {
+                @include mixins.mobile {
                   transform: translateX(0px);
                 }
               }
             }
 
-            &:nth-child(2):hover,
-            &:nth-child(3):hover {
+            &:nth-child(2):hover {
               transform: translateX(74%);
 
-               @include mixins.mobile {
+              @include mixins.mobile {
+                transform: translateX(0%);
+              }
+            }
+
+            &:nth-child(3):hover {
+              transform: translateX(34%);
+              @include mixins.tablet {
+                transform: translateX(73%);
+              }
+
+              @include mixins.mobile {
                 transform: translateX(0%);
               }
             }
@@ -119,7 +159,7 @@
             &:nth-child(2):hover + li:nth-child(3) {
               transform: translateX(59%);
 
-               @include mixins.mobile {
+              @include mixins.mobile {
                 transform: translateX(0px);
               }
             }
