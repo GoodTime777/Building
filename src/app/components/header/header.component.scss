@@ -7,7 +7,9 @@
   top: 0;
   z-index: 100;
   background-color: var(--color-bg-orange);
-
+  @include mixins.tablet {
+    overflow: visible;
+  }
   @include mixins.mobile {
     overflow: visible;
   }
@@ -22,6 +24,7 @@
 
       @include mixins.tablet {
         padding: 7px 10px;
+        //  justify-content: center;
       }
 
       @include mixins.mobile {
@@ -29,6 +32,9 @@
       }
 
       &-logo {
+        @include mixins.tablet {
+          order: 2;
+        }
         @include mixins.mobile {
           order: 2;
         }
@@ -70,7 +76,21 @@
         @include mixins.size($width: auto, $height: auto);
         border-radius: 0px;
         transform: translateY(0%);
-
+        @include mixins.tablet {
+          order: 1;
+          @include mixins.size($width: 760px, $height: 0vh);
+          position: absolute;
+          transform: translateY(-100vh);
+          transition-property: transform, border-radius, width, height;
+          transition-duration: 0.6s;
+          transition-timing-function: ease-in-out;
+          background: var(--color-bg-white);
+          border-bottom-left-radius: 10px;
+          border-bottom-right-radius: 100px;
+          margin-left: -9px;
+          // margin: -10px auto 0 auto;
+          z-index: -1;
+        }
         @include mixins.mobile {
           order: 1;
           @include mixins.size($width: 310px, $height: 0vh);
@@ -93,6 +113,8 @@
 
           @include mixins.tablet {
             gap: 15px;
+            flex-direction: column;
+            min-height: 91.5%;
           }
 
           @include mixins.mobile {
@@ -102,6 +124,10 @@
 
           &-item {
             a {
+              @include mixins.tablet {
+                transition: color 0.15s ease-in-out;
+                color: var(--color-text-black);
+              }
               @include mixins.mobile {
                 color: var(--color-text-black);
               }
@@ -115,6 +141,11 @@
                 color: var(--color-text-white);
                 font-size: 28px;
                 transition: transform 0.5s ease;
+
+                @include mixins.tablet {
+                  transition: color 0.15s ease-in-out, transform 0.5s ease;
+                  color: var(--color-text-black);
+                }
 
                 @include mixins.mobile {
                   transition: color 0.15s ease-in-out;
@@ -134,6 +165,15 @@
             @include mixins.size($width: 28px, $height: 28px);
           }
 
+          &-item:hover a {
+            @include mixins.tablet {
+              color: var(--color-squash);
+            }
+            @include mixins.mobile {
+              color: var(--color-text-black);
+            }
+          }
+
           &-item:hover mat-icon {
             transform: scale(1.1, 1.1);
             @include mixins.mobile {
@@ -150,14 +190,22 @@
       }
 
       &-nav.show {
+        @include mixins.tablet {
+          transform: translateY(44.35%);
+          height: 100vh;
+        }
         @include mixins.mobile {
-          transform: translateY(54.35%);
+          transform: translateY(44.35%); //54.35
           height: 100vh;
         }
       }
 
       &-tel,
       .tel {
+        @include mixins.tablet {
+          order: 3;
+          margin-left: auto;
+        }
         @include mixins.mobile {
           order: 3;
           margin-left: auto;
@@ -211,7 +259,12 @@
 
       &-burger {
         display: none;
-
+        @include mixins.tablet {
+          display: block;
+          color: var(--color-text-black);
+          margin-right: 4px;
+          margin-bottom: 4.5px;
+        }
         @include mixins.mobile {
           display: block;
           color: var(--color-text-black);

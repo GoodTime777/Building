@@ -30,7 +30,8 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 })
 
 export class HeaderComponent implements OnInit {
-  public customBreakpoints: string = '(min-width: 1024px)';
+  public customBreakpoints: string = '(min-width: 1599px)';
+  // public customBreakpoints: string = '(min-width: 1024px)';
   public screen: boolean = false;
   public isCheckboxChecked: boolean = false;
   public show: boolean = false;

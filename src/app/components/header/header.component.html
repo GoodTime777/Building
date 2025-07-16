@@ -19,10 +19,7 @@
           type="checkbox"
           [checked]="isCheckboxChecked"
         />
-        <div
-          class="header__container-burger-wrapper burger-wrapper"
-          
-        >
+        <div class="header__container-burger-wrapper burger-wrapper">
           <div
             class="header__container-burger-wrapper-hamburger hamburger"
           ></div>
@@ -33,12 +30,15 @@
         </div>
       </div>
       <nav class="header__container-nav" [class.show]="show">
-        <ul class="header__container-nav-menu" (click)="menuBurgerClose($event)">
+        <ul
+          class="header__container-nav-menu"
+          (click)="menuBurgerClose($event)"
+        >
           <li class="header__container-nav-menu-item">
             <a
               [routerLinkActiveOptions]="{ exact: true }"
               routerLink=""
-              routerLinkActive="active"             
+              routerLinkActive="active"
             >
               <span>
                 <mat-icon>cottage</mat-icon>
@@ -46,39 +46,24 @@
             </a>
           </li>
           <li class="header__container-nav-menu-item">
-            <a
-              class="decor"
-              routerLink="services"
-              routerLinkActive="active"             
-            >
-            <span>  Услуги</span> </a
-            >
-
+            <a class="decor" routerLink="services" routerLinkActive="active">
+              <span> Услуги</span>
+            </a>
           </li>
 
           <li class="header__container-nav-menu-item">
-            <a
-              class="decor"
-              routerLink="calculator"
-              routerLinkActive="active"             
-              > <span>Калькулятор</span></a
+            <a class="decor" routerLink="calculator" routerLinkActive="active">
+              <span>Калькулятор</span></a
             >
           </li>
           <li class="header__container-nav-menu-item">
-            <a
-              class="decor"
-              routerLink="gallery"
-              routerLinkActive="active"             
-              > <span>Проекты</span></a
+            <a class="decor" routerLink="gallery" routerLinkActive="active">
+              <span>Проекты</span></a
             >
           </li>
           <li class="header__container-nav-menu-item">
-            <a
-              class="decor"
-              routerLink="contacts"
-              routerLinkActive="active"
-             
-              > <span>Контакты</span></a
+            <a class="decor" routerLink="contacts" routerLinkActive="active">
+              <span>Контакты</span></a
             >
           </li>
 
