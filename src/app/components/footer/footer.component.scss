@@ -198,18 +198,19 @@
       }
     }
     &__logo {
-      width: 4%;
-      margin: auto 0 0px 10px;
+      width: 80px;
+      margin-top: auto;
+      //  margin: auto 0 0px 10px;
 
       @include mixins.tablet {
-        width: 7%;
-        margin: auto 0 -2px 5px;
+        width: 70px;
+          margin: auto -8px -5px 0px;
       }
 
       @include mixins.mobile {
-        width: 50px;
+        width: 60px;
         position: absolute;
-        bottom: 24%;
+        bottom: 27%;
         right: clamp(0.625rem, -9.3323rem + 49.7866vw, 22.5rem);
       }
 

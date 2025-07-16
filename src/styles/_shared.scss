@@ -8,6 +8,9 @@ body {
   background: var(--color-seashell);
   margin: 0 auto;
   padding-top: 60px;
+  @include mixins.tablet {
+    padding-top: 50px;
+  }
 
   @include mixins.mobile {
     padding-top: 57px;
