@@ -21,38 +21,67 @@
     }
 
     &__list {
-      @include mixins.flex();
-      gap: 20px;
-
-      @include mixins.tablet {
-        gap: 10px;
-      }
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 
       @include mixins.mobile {
         @include mixins.flex();
         flex-direction: column;
         gap: 5px;
         @include mixins.glass($background: rgba(255, 241, 214, 0.315));
-        padding: 10px 0;
+        padding: 10px;
         margin-bottom: 10px;
       }
 
       &-item {
-        width: 100%;
+        position: relative;
+        // width:100%;
         color: var(--color-text-black);
         text-align: center;
         font-weight: 300;
-        padding: 16px 0;
+        padding: 16px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
-        @include mixins.mobile {
+        @include mixins.tablet {
           padding: 10px;
         }
 
-        span {
+        @include mixins.mobile {
+          flex-direction: column;
+          padding: 0;
+          justify-content: center;
+          align-items: center;
+        }
+
+        &-text {
+          @include mixins.mobile {
+            margin-bottom: 10px;
+          }
+        }
+        .red {
           display: inline-block;
           font-size: clamp(1.25rem, 1.15rem + 0.5vw, 1.75rem); //20-28
           font-weight: 400;
           color: var(--color-bittersweet); //акцент
+        }
+      }
+
+      &-item:not(:last-child) {
+        &::after {
+          content: "";
+          position: absolute;
+          top: 0px;
+          right: 0;
+          width: 2px;
+          height: 150px;
+          color: var(--color-texas-rose);
+          background-color: var(--color-texas-rose);
+
+          @include mixins.mobile {
+            display: none;
+          }
         }
       }
     }
@@ -66,11 +95,11 @@
     }
   }
 
-  .line {
-    @include mixins.size($width: 2px, $height: 110px);
+  // .line {
+  //   @include mixins.size($width: 2px, $height: 110px);
 
-    @include mixins.mobile {
-      display: none;
-    }
-  }
+  //   @include mixins.mobile {
+  //     display: none;
+  //   }
+  // }
 }
