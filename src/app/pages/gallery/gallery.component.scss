@@ -51,10 +51,10 @@
     }
 
     swiper-container::part(button-next),
-    swiper-container::part(button-prev) {
+    swiper-container::part(button-prev){
       color: var(--color-squash);
     }
-    swiper-container::part(pagination) {
+    swiper-container::part(pagination){
       display: none;
     }
 

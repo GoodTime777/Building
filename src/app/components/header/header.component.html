@@ -19,9 +19,9 @@
           type="checkbox"
           [checked]="isCheckboxChecked"
         />
-        <label
+        <div
           class="header__container-burger-wrapper burger-wrapper"
-          for="togglenav"
+          
         >
           <div
             class="header__container-burger-wrapper-hamburger hamburger"
@@ -30,7 +30,7 @@
             class="header__container-burger-wrapper-layer-click"
             (click)="menuBurger()"
           ></div>
-        </label>
+        </div>
       </div>
       <nav class="header__container-nav" [class.show]="show">
         <ul class="header__container-nav-menu" (click)="menuBurgerClose($event)">

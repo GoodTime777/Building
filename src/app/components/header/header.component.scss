@@ -61,7 +61,7 @@
 
       &-nav {
         @include mixins.size($width: auto, $height: auto);
-        border-radius: none;
+        border-radius: 0px;
         transform: translateY(0%);
 
         @include mixins.mobile {
