@@ -10,6 +10,8 @@
   );
   text-align: center;
 
+  ::-webkit-scrollbar { display: none; }
+
   &__title {
     font-family: Oswald, "Helvetica Neue", sans-serif;
     margin-bottom: 0px;
@@ -45,20 +47,33 @@
     }
   }
 }
-// :host ::ng-deep .mat-pseudo-checkbox {
-//   background-color: var(--color-bg-dark-gray);
-// }
 
-// :host ::ng-deep .mat-pseudo-checkbox::after {
-//   color: var(--color-text-white);
-// }
+input {
+  font-family: Oswald, "Helvetica Neue", sans-serif;
+  color: var(--color-text-white);
+}
+
+::ng-deep .mdc-list-item__primary-text {
+  color: var(--color-text-white) !important;
+  font-family: "Open Sans", "Helvetica Neue", sans-serif !important;
+  -webkit-color: var(--color-text-white) !important;
+  -webkit-font-family: "Open Sans", "Helvetica Neue", sans-serif !important;
+}
+
+ mat-label, mat-error {
+   font-family: "Open Sans", "Helvetica Neue", sans-serif;
+   -webkit-font-family: "Open Sans", "Helvetica Neue", sans-serif !important;
+}
 
 ::ng-deep .mat-pseudo-checkbox {
   background-color: var(--color-bg-dark-gray) !important;
+  border-color: white !important;
+   -webkit-border-color: white !important;
 }
 
 ::ng-deep .mat-pseudo-checkbox::after {
   color: var(--color-text-white) !important;
+   -webkit-color: var(--color-text-white) !important;
 }
 
 :host ::ng-deep .mat-mdc-select-value-text {
