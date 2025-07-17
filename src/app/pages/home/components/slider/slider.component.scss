@@ -6,10 +6,10 @@
   overflow: visible;
 
   @include mixins.tablet {
-    height: 380px;
+    height: 430px;
   }
   @include mixins.mobile {
-    height: 450px;
+    height: 500px;
     margin-bottom: 20px;
   }
 
@@ -58,11 +58,11 @@
       gap: 10px;
 
       @include mixins.tablet {
-        height: 380px;
+        height: 430px;
       }
 
       @include mixins.mobile {
-        height: 450px;
+        height: 500px;
         color: var(--color-text-white);
         background-repeat: no-repeat;
         background-size: cover;
@@ -93,6 +93,15 @@
 
           @include mixins.tablet {
             gap: 15px;
+          }
+
+          &-txt {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            // span {
+            //   display: block;
+            // }
           }
         }
 
@@ -127,12 +136,16 @@
         }
 
         &-title {
+          //  text-align: center;
           @include mixins.mobile {
             margin-bottom: 12px;
           }
         }
 
         &-txt {
+          span {
+            display: block;
+          }
           @include mixins.mobile {
             margin-bottom: auto;
           }

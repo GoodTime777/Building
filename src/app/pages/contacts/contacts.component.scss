@@ -4,7 +4,7 @@
 
 .contacts {
   @include mixins.flex($justify-c: space-between);
- // gap: 15px;
+  // gap: 15px;
   padding: 30px 40px 0px 40px;
 
   @include mixins.tablet {
@@ -74,7 +74,7 @@
         transform: translate(8px, -5px);
 
         @include mixins.tablet {
-          transform: scale(1.005, 1.005);
+          transform: scale(1, 1);
         }
 
         @include mixins.mobile {
@@ -98,7 +98,7 @@
 
     @include mixins.mobile {
       order: 1;
-   //   width: 100%;
+      //   width: 100%;
     }
 
     &-contact {
@@ -125,8 +125,12 @@
 
       &-time {
         &-detail {
-          .day {
-            font-weight: 600;
+          &-day {
+            font-size: 20px;
+            font-weight: 400;
+            @include mixins.mobile{
+              font-size: 18px;
+            }
           }
         }
       }

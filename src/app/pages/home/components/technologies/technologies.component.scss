@@ -4,7 +4,8 @@
 .wrapper {
   margin-bottom: 60px;
 
-  @media (max-width: 1599px) {
+  //@media (max-width: 1599px)
+  @include mixins.tablet {
     margin-bottom: 40px;
   }
 
@@ -63,6 +64,11 @@
         }
 
         &-item {
+          padding-top: 2%;
+          @include mixins.tablet {
+            padding-top: 0;
+          }
+
           &-txt:not(:last-child) {
             margin-bottom: 20px;
 

@@ -5,7 +5,7 @@
 .services {
   padding: 10px;
 
-   @include mixins.mobile {
+  @include mixins.mobile {
     padding: 5px;
   }
 
@@ -20,16 +20,19 @@
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
-        padding: 10px;
+        padding: 10px 20px 10px 15px;
         @include mixins.glass();
 
         @include mixins.tablet {
-          width: 65%;
+          width: 72%;
+          padding: 10px;
+          // height: 1010px;
         }
 
-         @include mixins.mobile {
-          @include mixins.size($height: 600px, $width: 95%);
-          @include mixins.flex($justify-c: space-between);
+        @include mixins.mobile {
+          @include mixins.size($height: auto, $width: 95%); //650
+          //@include mixins.flex();
+          display: flex;
           flex-direction: column;
           top: 200px;
           left: 50%;
@@ -39,7 +42,14 @@
 
         &-txt {
           margin-bottom: 20px;
-          color:var(--color-text-white);
+          color: var(--color-text-white);
+          @include mixins.flex();
+          flex-direction: column;
+          gap: 10px;
+
+          span {
+            display: inline-block;
+          }
         }
 
         &-buttons {
@@ -64,13 +74,15 @@
       &-photo {
         @include mixins.size($height: 100%, $width: 50%);
         float: right;
+        border-radius: 10px;
+        overflow: hidden;
 
-         @include mixins.mobile {
-          @include mixins.size($height: 40%);
+        @include mixins.mobile {
+          @include mixins.size($height: 370px); //40%
         }
 
         img {
-          @include mixins.size();
+          @include mixins.size($width: 120%);
           object-fit: cover;
           border-radius: 10px;
         }
@@ -79,15 +91,25 @@
   }
 }
 
-:host ::ng-deep .mat-mdc-tab-labels { 
-   @include mixins.mobile {
+.first-card {
+  @include mixins.mobile {
+    height: 800px;
+    top: 25%;
+  }
+  img {
+    @include mixins.size($width: 100%);
+  }
+}
+
+:host ::ng-deep .mat-mdc-tab-labels {
+  @include mixins.mobile {
     padding: 0 10px;
   }
 }
 
 :host ::ng-deep .mdc-tab {
-   @include mixins.mobile {
-    width: 90px;
+  @include mixins.mobile {
+    width: 70px; //90
     white-space: normal;
   }
 }
@@ -99,16 +121,17 @@
 }
 
 :host ::ng-deep .mat-mdc-tab-body-wrapper {
-  @include mixins.size($height: 600px);
+  @include mixins.size($height: 670px);
   box-shadow: 3px 3px 5px var(--color-shadow-black-05);
   border-radius: 10px;
 
   @include mixins.tablet {
-    height: 480px;
+    height: 620px;
   }
 
-   @include mixins.mobile {
-    height: 810px;
+  @include mixins.mobile {
+    height: 1100px;
+    width: 310px;
   }
 }
 
@@ -116,7 +139,7 @@
   background-color: var(--color-bg-dark-gray);
   padding: 10px;
 
-   @include mixins.mobile {
+  @include mixins.mobile {
     padding: 7px;
   }
 }

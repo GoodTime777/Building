@@ -19,7 +19,12 @@
       grid-template-areas: "A" "B";
       gap: 10px;
     }
-
+    h4 {
+      line-height: 0.7;
+      @include mixins.mobile {
+        line-height: normal;
+      }
+    }
     a,
     p {
       font-size: clamp(0.875rem, 0.7321rem + 0.2232vw, 1rem); //14-16 1024-1920
@@ -46,6 +51,7 @@
       &-info {
         display: flex;
         width: 100%;
+
         @include mixins.tablet {
           position: relative;
           display: grid;
@@ -64,22 +70,23 @@
           margin-right: 10px;
 
           @include mixins.tablet {
-            margin-bottom: auto;
             grid-area: A;
           }
 
           @include mixins.mobile {
             margin-right: 0;
+            flex-direction: row;
+            gap: 5px;
           }
 
           &-title {
             color: var(--color-texas-rose);
             font-weight: 300;
-            border-bottom: 1px solid var(--color-texas-rose);
             margin-bottom: 8px;
 
             @include mixins.mobile {
               margin-bottom: 4px;
+              border-bottom: 1px solid var(--color-texas-rose);
             }
           }
 
@@ -204,7 +211,7 @@
 
       @include mixins.tablet {
         width: 70px;
-          margin: auto -8px -5px 0px;
+        margin: auto -8px -5px 0px;
       }
 
       @include mixins.mobile {

@@ -20,7 +20,8 @@
       label-text-font: Oswald,
     )
   );
-  @media (min-width: 768px) and (max-width: 1599px) {
+
+  @include mixins.tablet {
     @include mat.tabs-overrides(
       (
         label-text-size: 22px,

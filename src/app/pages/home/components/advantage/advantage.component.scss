@@ -26,14 +26,14 @@
           }
 
           &-item {
-            @include mixins.size($width: 43%, $height: 200px);
+            @include mixins.size($width: 43%, $height: 225px);
             position: absolute;
-            @include mixins.card-outline();
+            @include mixins.card-outline($border-r:10px);
             box-shadow: 3px 1px 4px 0px var(--color-shadow-black);
             padding: 20px 15px;
 
             @include mixins.tablet {
-              // height: 200px;
+               height: 215px;
               padding: 10px 7px;
             }
 
@@ -80,18 +80,24 @@
                 text-align: right;
                 font-weight: 500;
                 font-size: 22px;
+
                 @include mixins.tablet {
                   font-size: 18px;
                 }
+
                 @include mixins.mobile {
                   font-size: 16px;
                 }
 
                 &:nth-child(2) {
-                  margin-bottom: 30px;
+                  margin-top: 10px;
+                  margin-bottom: 35px;
+
                   @include mixins.tablet {
-                    margin-bottom: 50px;
+                    margin-top: 20px;
+                    margin-bottom: 20px;
                   }
+
                   @include mixins.mobile {
                     margin-bottom: 0px;
                   }
@@ -146,9 +152,9 @@
             }
 
             &:nth-child(3):hover {
-              transform: translateX(34%);
+              transform: translateX(50%);
               @include mixins.tablet {
-                transform: translateX(73%);
+                transform: translateX(63%);
               }
 
               @include mixins.mobile {
