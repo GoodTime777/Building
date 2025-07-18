@@ -52,12 +52,12 @@ export class HeaderComponent implements OnInit {
     );
   }
 
-  menuBurger() {
+  menuBurger(): void {
     this.isCheckboxChecked = !this.isCheckboxChecked
     this.show = !this.show
   }
 
-  menuBurgerClose(event: Event) {
+  menuBurgerClose(event: Event): void {
     this.isCheckboxChecked = false;
     this.show = false
   }

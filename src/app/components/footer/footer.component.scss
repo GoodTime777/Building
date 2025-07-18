@@ -217,7 +217,7 @@
       @include mixins.mobile {
         width: 60px;
         position: absolute;
-        bottom: 27%;
+        bottom: 29%;
         right: clamp(0.625rem, -9.3323rem + 49.7866vw, 22.5rem);
       }
 
@@ -290,7 +290,9 @@
         @include mixins.mobile {
           @include mixins.flex($justify-c: flex-end, $align-i: normal);
           flex-direction: column;
-          padding-bottom: 7px;
+          gap: 8px;
+          margin-bottom: 5px;
+          // padding-bottom: 7px;
         }
 
         &-copyright {

@@ -1,5 +1,5 @@
 @use "variables";
-@use '@angular/material' as mat;
+@use "@angular/material" as mat;
 
 :root {
   @include mat.dialog-overrides(
@@ -9,6 +9,7 @@
       container-max-width: 100%,
       container-min-width: 30%,
       actions-alignment: center,
+      //supporting-text-size: 40px,
     )
   );
 }

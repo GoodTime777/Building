@@ -5,7 +5,8 @@
 .modal {
   @include mixins.card-outline(
     $background-c: transparent,
-    $border-r: 30px,
+    $border-r:
+      var(--mat-dialog-container-shape, var(--mat-sys-corner-extra-large, 4px)),
     $outline: 1.5px solid var(--color-border-black)
   );
   text-align: center;
@@ -42,6 +43,12 @@
     gap: 40px;
     padding-bottom: 20px;
     margin-top: 10px;
+
+    @include mixins.mobile {
+      gap: 20px;
+      // display: flex;
+      // flex-direction: column;
+    }
 
     &-btn {
       text-transform: uppercase;
@@ -103,6 +110,9 @@ mat-checkbox {
 input {
   font-family: Oswald, "Helvetica Neue", sans-serif;
   color: var(--color-text-white);
+  @include mixins.mobile {
+    font-size: 14px !important;
+  }
 }
 
 ::ng-deep .mat-mdc-form-field-error-wrapper {
@@ -120,7 +130,31 @@ input {
 mat-label,
 mat-error {
   font-family: "Open Sans", "Helvetica Neue", sans-serif;
-  -webkit-font-family: "Open Sans", "Helvetica Neue", sans-serif !important;
+}
+mat-label {
+  @include mixins.mobile {
+    font-size: 14px;
+  }
+}
+::ng-deep .mat-mdc-text-field-wrapper {
+  @include mixins.mobile {
+    //height: 45px !important;
+  }
+}
+::ng-deep .mat-mdc-form-field-infix {
+  @include mixins.mobile {
+    // min-height: 45px !important;
+    // padding-top: 20px !important;
+    // padding-bottom: 0px !important;
+  }
+}
+::ng-deep
+  .mat-mdc-text-field-wrapper
+  .mat-mdc-form-field-flex
+  .mat-mdc-floating-label {
+  @include mixins.mobile {
+    //  top: calc(var(--mat-form-field-container-height, 50px) / 2);
+  }
 }
 
 ::ng-deep .mat-pseudo-checkbox {

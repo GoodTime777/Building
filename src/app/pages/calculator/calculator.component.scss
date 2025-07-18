@@ -159,6 +159,7 @@
 
     &-form {
       width: 40%;
+
       @include mixins.card-outline($border-r: 20px);
       padding: 13px;
 
@@ -175,6 +176,7 @@
         &-wrap {
           &-item {
             width: 100%;
+            //height: 100%;
             @include mixins.flex();
             flex-direction: column;
             margin: 10px auto;
@@ -193,16 +195,6 @@
                 border-radius: 6px;
                 background-color: rgb(20, 20, 20);
               }
-            }
-
-            .btnClear {
-              grid-area: A;
-              width: 100%;
-            }
-
-            .btnCalc {
-              grid-area: B;
-              width: 100%;
             }
 
             &-btn {
@@ -226,6 +218,16 @@
                 color: var(--color-text-white);
                 background-color: var(--color-border-black);
               }
+            }
+
+            .btnClear {
+              grid-area: A;
+              width: 100%;
+            }
+
+            .btnCalc {
+              grid-area: B;
+              width: 100%;
             }
 
             &-result {
@@ -253,23 +255,20 @@
     }
 
     .calc-wall-wrap {
-      width: 100%;
-      //height: 100%;
       display: flex;
       flex-direction: column;
-     // justify-content: space-between;
-      //padding-top: 38px;
+      justify-content: space-between;
+      min-height: 328px;
+
+      @include mixins.tablet {
+        min-height: 372px;
+      }
 
       @include mixins.mobile {
+      //  height:100%;
+        min-height: 0;
         // padding-top: 0px;
       }
-    }
-
-    .item-input {
-      flex-grow: 3;
-    }
-    .result-wall {
-     flex-grow: 1;
     }
   }
 

@@ -51,7 +51,7 @@ export class DialogComponent {
   protected readonly dialogRef = inject(MatDialogRef<DialogComponent>);
   protected readonly data = inject<DialogData>(MAT_DIALOG_DATA);
 
-  applicationForm = new FormGroup({
+protected  applicationForm = new FormGroup({
     name: new FormControl('', [Validators.required, Validators.pattern('^[A-Za-zА-Яа-яЁё]+$')]),
     address: new FormControl('', [Validators.required]),
     tel: new FormControl('', [Validators.required]),

@@ -25,7 +25,8 @@
 
     swiper-container {
       width: 100%;
-      background-color: var(--color-bg-middle-two-gray);
+      background-color: rgb(206, 206, 206);
+      //  background-color: var(--color-bg-middle-two-gray);
       box-shadow: 0 0 3px 0 var(--color-shadow-black-02);
       border-radius: 10px;
     }
@@ -39,6 +40,7 @@
       border: solid 1px var(--color-border-black);
       box-shadow: 5px 5px 5px var(--color-shadow-black-05);
       background-color: var(--color-bg-dark-gray);
+      margin-bottom: 10px;
 
       @include mixins.mobile {
         width: 95%;
@@ -51,10 +53,10 @@
     }
 
     swiper-container::part(button-next),
-    swiper-container::part(button-prev){
+    swiper-container::part(button-prev) {
       color: var(--color-squash);
     }
-    swiper-container::part(pagination){
+    swiper-container::part(pagination) {
       display: none;
     }
 
@@ -73,6 +75,13 @@
       &-swiper {
         padding: 10px 0;
 
+        swiper-slide {
+          &:hover,
+          &:active {
+            border-color: var(--color-border-dark-orange);
+          }
+        }
+        
         video {
           width: 100%;
           object-fit: cover;
