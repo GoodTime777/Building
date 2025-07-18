@@ -7,7 +7,8 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:building": "node dist/building/server/server.mjs"
+    "serve:ssr:building": "node dist/building/server/server.mjs",
+    "firebase:deploy": "ng b && firebase deploy"
   },
   "private": true,
   "dependencies": {
