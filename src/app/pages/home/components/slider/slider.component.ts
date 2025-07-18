@@ -9,7 +9,7 @@ import {
   MatDialogTitle,
 } from '@angular/material/dialog';
 import { MatDialogModule } from '@angular/material/dialog';
-import { DialogComponent } from '../../../../core/ui/dialog/dialog.component';
+import { DialogComponent } from '../../../../components/dialog/dialog.component';
 import { MatIconModule } from '@angular/material/icon';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 

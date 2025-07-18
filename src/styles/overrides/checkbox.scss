@@ -1,0 +1,21 @@
+@use "variables";
+@use "@angular/material" as mat;
+
+:root {
+  @include mat.checkbox-overrides(
+    (
+      //label-text-size: 28px,
+      // label-text-color: black,
+      // selected-checkmark-color: black,
+      // selected-focus-icon-color: black,
+      // selected-focus-state-layer-color: black,
+      // selected-hover-icon-color: black,
+      // selected-hover-state-layer-color: black,
+      // selected-icon-color: black,
+      // selected-pressed-state-layer-color: black,
+      // unselected-focus-icon-color: black,
+      // disabled-label-color: rgb(0, 255, 13),
+      // disabled-selected-checkmark-color: red,,
+    )
+  );
+}

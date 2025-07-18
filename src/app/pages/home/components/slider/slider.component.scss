@@ -76,6 +76,7 @@
         position: absolute;
         @include mixins.size($width: 61.5%);
         display: flex;
+
         top: 0;
         gap: 10px;
         padding: 10px;
@@ -87,7 +88,7 @@
 
         &-content {
           width: 60%;
-          @include mixins.flex($justify-c: baseline);
+          @include mixins.flex($justify-c: center);
           flex-direction: column;
           gap: 30px;
 

@@ -62,27 +62,27 @@
         box-shadow: 0 4px 10px var(--color-shadow-black-05);
       }
 
-      &:hover {
-        color: var(--color-text-black);
-        @include mixins.glass(
-          $background: var(--color-bg-glass-hover-orange),
-          $border-r: 16px,
-          $box-s: 0 4px 30px var(--color-shadow-black-02),
-          $backdrop-f: blur(8.8px),
-          $w-b-filter: blur(8.8px)
-        );
-        transform: translate(8px, -5px);
+      // &:hover {
+      //   color: var(--color-text-black);
+      //   @include mixins.glass(
+      //     $background: var(--color-bg-glass-hover-orange),
+      //     $border-r: 16px,
+      //     $box-s: 0 4px 30px var(--color-shadow-black-02),
+      //     $backdrop-f: blur(8.8px),
+      //     $w-b-filter: blur(8.8px)
+      //   );
+      //   transform: translate(8px, -5px);
 
-        @include mixins.tablet {
-          transform: scale(1, 1);
-        }
+      //   @include mixins.tablet {
+      //     transform: scale(1, 1);
+      //   }
 
-        @include mixins.mobile {
-          transform: translate(0px, 0px);
-          background: var(--color-bg-glass);
-          box-shadow: 0 4px 10px var(--color-shadow-black-05);
-        }
-      }
+      //   @include mixins.mobile {
+      //     transform: translate(0px, 0px);
+      //     background: var(--color-bg-glass);
+      //     box-shadow: 0 4px 10px var(--color-shadow-black-05);
+      //   }
+      // }
     }
   }
 
@@ -128,7 +128,7 @@
           &-day {
             font-size: 20px;
             font-weight: 400;
-            @include mixins.mobile{
+            @include mixins.mobile {
               font-size: 18px;
             }
           }

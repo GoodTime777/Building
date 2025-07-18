@@ -56,6 +56,22 @@
         <mat-label>Комментарии</mat-label>
         <textarea matInput></textarea>
       </mat-form-field>
+      <div class="check">
+        <mat-checkbox
+          [disabled]="true"
+          class="consent"
+          name="consent"
+          formControlName="consent"
+          >Я согласен с этой штукой
+          <a href="#"> Соглашение на обработку персональных данных</a>
+        </mat-checkbox>
+        <mat-error>
+          @if(applicationForm.value.consent===false){Необходимо ваше согласие }
+        </mat-error>
+      </div>
+      <!-- <mat-error>
+        @if(consent?.hasError('true')){ Необходимо согласие }
+      </mat-error> -->
     </form>
   </mat-dialog-content>
   <mat-dialog-actions class="modal__actions">

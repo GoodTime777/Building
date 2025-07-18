@@ -15,7 +15,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { DialogComponent } from '../../core/ui/dialog/dialog.component';
+import { DialogComponent } from '../dialog/dialog.component';
 
 @Component({
   selector: 'app-footer',

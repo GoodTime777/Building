@@ -117,20 +117,22 @@
             min-height: 91.5%;
           }
 
-          @include mixins.mobile {
-            flex-direction: column;
-            min-height: 91.5%;
-          }
+          // @include mixins.mobile {
+          //   flex-direction: column;
+          //   min-height: 91.5%;
+          // }
 
           &-item {
             a {
-              @include mixins.tablet {
-                transition: color 0.15s ease-in-out;
-                color: var(--color-text-black);
-              }
-              @include mixins.mobile {
-                color: var(--color-text-black);
-              }
+              color: var(--color-text-black);
+              transition: color 0.2s ease;
+              // @include mixins.tablet {
+              //   transition: color 0.15s ease-in-out;
+              //   color: var(--color-text-black);
+              // }
+              // @include mixins.mobile {
+              //   color: var(--color-text-black);
+              // }
             }
 
             span {
@@ -138,20 +140,29 @@
 
               mat-icon {
                 @include mixins.size();
-                color: var(--color-text-white);
+                color: var(--color-text-black);
                 font-size: 28px;
-                transition: transform 0.5s ease;
+                transition: color 0.2s ease-in-out, transform 0.25s ease-in-out;
 
-                @include mixins.tablet {
-                  transition: color 0.15s ease-in-out, transform 0.5s ease;
-                  color: var(--color-text-black);
-                }
+                // @include mixins.tablet {
+                //  // transition: color 0.15s ease-in-out, transform 0.5s ease;
+                //   //color: var(--color-text-black);
+                // }
+
+                // @include mixins.mobile {
+                // //  transition: color 0.15s ease-in-out;
+                //   // color: var(--color-text-black);
+                // }
+              }
+
+              mat-icon:hover {
+                color: var(--color-link-white);
 
                 @include mixins.mobile {
-                  transition: color 0.15s ease-in-out;
                   color: var(--color-text-black);
                 }
               }
+
               mat-icon:active {
                 @include mixins.mobile {
                   color: var(--color-squash);
@@ -166,6 +177,7 @@
           }
 
           &-item:hover a {
+            color: var(--color-link-white);
             @include mixins.tablet {
               color: var(--color-squash);
             }
@@ -175,13 +187,14 @@
           }
 
           &-item:hover mat-icon {
-            transform: scale(1.1, 1.1);
+            transform: scale(1.07, 1.07);
             @include mixins.mobile {
               transform: scale(1, 1);
             }
           }
 
-          &-item:active {
+          &-item:active a {
+            color: var(--color-link-white);
             @include mixins.mobile {
               color: var(--color-squash);
             }
@@ -206,10 +219,10 @@
           order: 3;
           margin-left: auto;
         }
-        @include mixins.mobile {
-          order: 3;
-          margin-left: auto;
-        }
+        // @include mixins.mobile {
+        //  // order: 3;
+        //   margin-left: auto;
+        // }
 
         a {
           color: var(--color-link-black);
@@ -242,6 +255,7 @@
             }
           }
         }
+
         a:hover {
           color: var(--color-link-white);
 

@@ -3,7 +3,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 
 import { MatIconModule } from '@angular/material/icon';
 import { MatDialogModule } from '@angular/material/dialog';
-import { DialogComponent } from '../../core/ui/dialog/dialog.component';
+import { DialogComponent } from '../dialog/dialog.component';
 import {
   MAT_DIALOG_DATA,
   MatDialog,

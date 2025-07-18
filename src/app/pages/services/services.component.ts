@@ -11,7 +11,7 @@ import {
   MatDialogTitle,
 } from '@angular/material/dialog';
 import { MatDialogModule } from '@angular/material/dialog';
-import { DialogComponent } from '../../core/ui/dialog/dialog.component';
+import { DialogComponent } from '../../components/dialog/dialog.component';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 
 

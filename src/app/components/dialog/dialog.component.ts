@@ -1,4 +1,4 @@
-import { Component, inject, model } from '@angular/core';
+import { Component, inject, model, computed, signal } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import {
   MAT_DIALOG_DATA,
@@ -14,10 +14,17 @@ import { MatInputModule } from '@angular/material/input';
 import { FormControl, FormsModule, ReactiveFormsModule, NgForm, FormGroup, Validators } from '@angular/forms';
 import { NgxMaskDirective } from 'ngx-mask';
 import { MatSelectModule } from '@angular/material/select';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 export interface DialogData {
   //animal: string;
 }
+
+// export interface Task {
+//   name: string;
+//   completed: boolean;
+//   subtasks?: Task[];
+// }
 
 @Component({
   selector: 'app-dialog',
@@ -32,7 +39,8 @@ export interface DialogData {
     NgxMaskDirective,
     MatFormFieldModule,
     MatSelectModule,
-    ReactiveFormsModule,   
+    ReactiveFormsModule,
+    MatCheckboxModule
   ],
   templateUrl: './dialog.component.html',
   styleUrl: './dialog.component.scss'
@@ -40,17 +48,19 @@ export interface DialogData {
 
 
 export class DialogComponent {
-  readonly dialogRef = inject(MatDialogRef<DialogComponent>);
-  readonly data = inject<DialogData>(MAT_DIALOG_DATA);
+  protected readonly dialogRef = inject(MatDialogRef<DialogComponent>);
+  protected readonly data = inject<DialogData>(MAT_DIALOG_DATA);
 
   applicationForm = new FormGroup({
     name: new FormControl('', [Validators.required, Validators.pattern('^[A-Za-zА-Яа-яЁё]+$')]),
     address: new FormControl('', [Validators.required]),
     tel: new FormControl('', [Validators.required]),
-    works: new FormControl('', [Validators.required])
+    works: new FormControl('', [Validators.required]),
+    consent: new FormControl(false, [Validators.requiredTrue])
   });
 
   workList: string[] = ['Штукатурка стен', 'Стяжка пола'];
+  //consent= new FormControl(false, [Validators.requiredTrue]);
 
   get name() {
     return this.applicationForm.get('name')
@@ -66,6 +76,10 @@ export class DialogComponent {
 
   get works() {
     return this.applicationForm.get('works')
+  }
+
+  get consent() {
+    return this.applicationForm.get('consent')
   }
 
   onSubmit() {
