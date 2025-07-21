@@ -62,16 +62,18 @@
           class="consent"
           name="consent"
           formControlName="consent"
-          >Я согласен с этой штукой
-          <a href="#"> Соглашение на обработку персональных данных</a>
+          >Согласен на обработку моих персональных данных в соответствии с
+          <a href="#" class="check-privacy-link">
+            политикой конфиденциальности.
+          </a>
+          <a href="#" class="consent-link">
+            Соглашение на обработку персональных данных</a
+          >
         </mat-checkbox>
         <mat-error>
           @if(applicationForm.value.consent===false){Необходимо ваше согласие }
         </mat-error>
       </div>
-      <!-- <mat-error>
-        @if(consent?.hasError('true')){ Необходимо согласие }
-      </mat-error> -->
     </form>
   </mat-dialog-content>
   <mat-dialog-actions class="modal__actions">

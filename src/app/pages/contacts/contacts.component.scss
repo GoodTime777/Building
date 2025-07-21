@@ -3,7 +3,6 @@
 @use "decoration";
 
 .contacts {
-  // background-color: pink;
   display: grid;
   grid-template-areas: "A B" "C C";
   grid-template-columns: 48% 48%;
@@ -42,7 +41,6 @@
   }
 
   &__info {
-    //background-color: aqua;
     width: 100%;
     border-radius: 16px;
     grid-area: A;
@@ -71,57 +69,31 @@
         background: var(--color-bg-glass);
         box-shadow: 0 4px 10px var(--color-shadow-black-05);
       }
-
-      // &:hover {
-      //   color: var(--color-text-black);
-      //   @include mixins.glass(
-      //     $background: var(--color-bg-glass-hover-orange),
-      //     $border-r: 16px,
-      //     $box-s: 0 4px 30px var(--color-shadow-black-02),
-      //     $backdrop-f: blur(8.8px),
-      //     $w-b-filter: blur(8.8px)
-      //   );
-      //   transform: translate(8px, -5px);
-
-      //   @include mixins.tablet {
-      //     transform: scale(1, 1);
-      //   }
-
-      //   @include mixins.mobile {
-      //     transform: translate(0px, 0px);
-      //     background: var(--color-bg-glass);
-      //     box-shadow: 0 4px 10px var(--color-shadow-black-05);
-      //   }
-      // }
     }
   }
 
   &__contacts {
-    //
     grid-area: B;
     width: 100%;
     text-align: center;
     @include mixins.flex();
     flex-direction: column;
     margin-bottom: 10px;
-    // overflow: hidden;
-
-    @include mixins.tablet {
-      width: 100%;
-    }
+    // @include mixins.tablet {
+    //   //width: 100%;
+    // }
 
     @include mixins.mobile {
       order: 1;
-      //   width: 100%;
     }
 
     &-contact {
-      //background-color: aqua;
       width: 100%;
       color: var(--color-text-black);
       margin: 0 auto;
       display: grid;
       grid-template-areas: "A" "B" "C";
+
       &-title {
         grid-area: A;
       }
@@ -129,50 +101,54 @@
         grid-area: B;
         width: 100%;
 
-        &-phones {
-          // grid-area: B;
+        &-container {
           display: flex;
           justify-content: space-between;
           align-items: flex-end;
-          // gap: 20px;
-          //display: grid;
-          //  grid-template-areas: "A" "B" "CC";
           margin-bottom: 8px;
-          &-container {
+          @include mixins.mobile {
+            display: block;
+          }
+
+          &-phones {
             &-box {
               display: flex;
+              @include mixins.mobile {
+                width: 100%;
+                justify-content: center;
+              }
 
               &:first-child {
                 margin-bottom: 5px;
+                @include mixins.mobile {
+                  margin-bottom: 2px;
+                }
               }
 
               a {
-                font-size: clamp(
-                  0.875rem,
-                  0.8rem + 0.375vw,
-                  1.25rem
-                ); //20-14 320-1920
+                font-size: clamp(0.875rem, 0.8rem + 0.375vw, 1.25rem);
                 color: var(--color-text-black);
                 font-weight: 500;
               }
-              .tlg-link,
-              .whtsp-link {
+
+              .telegram,
+              .whats-app {
                 margin-top: -5px;
-                //  margin-right: -5px;
                 @include mixins.flex();
                 width: 30px;
                 text-align: center;
                 transform: scale(1, 1);
                 transition: transform 0.3s ease-in-out;
+
                 img {
                   @include mixins.size($width: 28px, $height: 28px);
                 }
               }
 
-              .tlg-link:hover,
-              .whtsp-link:hover,
-              .tlg-link:active,
-              .whtsp-link:active {
+              .telegram:hover,
+              .whats-app:hover,
+              .telegram:active,
+              .whats-app:active {
                 transform: scale(1.1, 1.1);
               }
 
@@ -210,22 +186,6 @@
         }
       }
     }
-
-    // &-map {
-    //   cursor: pointer;
-    //   width: 100%;
-    //   margin-bottom: 20px;
-
-    //   @include mixins.mobile {
-    //     margin-bottom: 10px;
-    //   }
-
-    iframe {
-      @include mixins.mobile {
-        width: 100%;
-      }
-    }
-    // }
   }
   &__buttons {
     grid-area: C;
@@ -242,9 +202,11 @@
       gap: 0;
       margin-bottom: 15px;
     }
+
     .btn {
       margin-bottom: 0;
     }
+
     &-btn {
       button,
       button:hover {
@@ -263,5 +225,4 @@
       }
     }
   }
-
 }

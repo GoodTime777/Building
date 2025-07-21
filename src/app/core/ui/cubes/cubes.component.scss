@@ -1,23 +1,14 @@
 @use "variables";
 @use "mixins" as mixins;
 
-@mixin fill {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-}
-
 .cubes {
   position: relative;
-  width: 15%; //3em;
-  height: 235px;
+  @include mixins.size($width: 15%, $height: 235px);
   font-size: clamp(5.625rem, 4.0536rem + 2.4554vw, 7rem);
   transform-style: preserve-3d;
   transform: rotateX(60deg) rotateZ(45deg);
 
- @include mixins.tablet {
+  @include mixins.tablet {
     font-size: 66px;
     height: 225px;
   }
@@ -29,8 +20,7 @@
 
   &__cube {
     position: absolute;
-    width: 1em;
-    height: 1em;
+    @include mixins.size($width: 1em, $height: 1em);
     border: 1px solid var(--color-black);
     animation: move var(--ani-dur) ease-in-out infinite;
     transform-style: preserve-3d;
@@ -38,7 +28,6 @@
     &::before,
     &::after {
       content: "";
-      //@include fill;
       position: absolute;
       top: 0;
       left: 0;

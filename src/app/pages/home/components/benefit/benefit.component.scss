@@ -5,7 +5,7 @@
 .wrapper {
   margin-bottom: 60px;
 
-  @media (max-width: 1599px) {
+  @include mixins.tablet {
     margin-bottom: 40px;
   }
 
@@ -35,24 +35,40 @@
 
       &-item {
         position: relative;
-        // width:100%;
         color: var(--color-text-black);
         text-align: center;
         font-weight: 300;
-        padding: 16px;
         display: flex;
         justify-content: center;
         align-items: center;
+        padding: 16px;
 
         @include mixins.tablet {
           padding: 10px;
         }
 
         @include mixins.mobile {
-          flex-direction: column;
-          padding: 0;
           justify-content: center;
           align-items: center;
+          flex-direction: column;
+          padding: 0;
+        }
+
+        &:not(:last-child) {
+          &::after {
+            content: "";
+            position: absolute;
+            top: 0px;
+            right: 0;
+            width: 2px;
+            height: 150px;
+            color: var(--color-texas-rose);
+            background-color: var(--color-texas-rose);
+
+            @include mixins.mobile {
+              display: none;
+            }
+          }
         }
 
         &-text {
@@ -60,46 +76,14 @@
             margin-bottom: 10px;
           }
         }
+
         .red {
           display: inline-block;
-          font-size: clamp(1.25rem, 1.15rem + 0.5vw, 1.75rem); //20-28
+          font-size: clamp(1.25rem, 1.15rem + 0.5vw, 1.75rem);
           font-weight: 400;
-          color: var(--color-bittersweet); //акцент
-        }
-      }
-
-      &-item:not(:last-child) {
-        &::after {
-          content: "";
-          position: absolute;
-          top: 0px;
-          right: 0;
-          width: 2px;
-          height: 150px;
-          color: var(--color-texas-rose);
-          background-color: var(--color-texas-rose);
-
-          @include mixins.mobile {
-            display: none;
-          }
+          // color: var(--color-bittersweet);
         }
       }
     }
   }
-
-  .stars-divider {
-    display: none;
-
-    @include mixins.mobile {
-      display: block;
-    }
-  }
-
-  // .line {
-  //   @include mixins.size($width: 2px, $height: 110px);
-
-  //   @include mixins.mobile {
-  //     display: none;
-  //   }
-  // }
 }

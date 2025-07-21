@@ -18,18 +18,32 @@
     gap: 3px;
 
     &-item {
+      padding: 5px 8px 5px 5px;
       border-top-left-radius: 50%;
       border-bottom-left-radius: 50%;
-      padding: 5px 8px 5px 5px;
       border: 1px solid var(--color-border-white-02);
       box-shadow: -1px 3px 8px 3px var(--color-shadow-black-05);
-      background-color: var(--color-bg-light-orange); //  $bg-glass; //glass
+      background-color: var(--color-bg-light-orange);
       transition: background-color 0.5s ease, transform 0.3s ease,
         box-shadow 0.1s ease, border 0.1s ease;
-      a,
-      button {
-        cursor: auto;
+
+      &:hover {
+        background-color: var(--color-bg-light-gray);
+        transform: scale(1.03, 1.03);
       }
+
+      &:active {
+        background-color: var(--color-bg-light-orange);
+        box-shadow: -1px 1px 2px 0px rgba(0, 0, 0, 0.75);
+        border-width: 1px;
+        border-style: solid;
+        border-left-color: rgba(0, 0, 0, 0.75);
+        border-top-color: rgba(0, 0, 0, 0.5);
+        border-bottom-color: rgba(0, 0, 0, 0.5);
+        border-right-color: var(--color-border-white-02);
+        transform: scale(1, 1);
+      }
+
       span {
         @include mixins.flex();
         @include mixins.size();
@@ -37,33 +51,17 @@
         border-radius: 50%;
         border: 1px solid var(--color-border-black);
         cursor: pointer;
-        
+
         @include mixins.mobile {
           padding: 5px;
         }
-      }
-      mat-icon {
-        @include mixins.size();
-        font-size: clamp(1.5rem, 1.225rem + 1.375vw, 2.875rem); //24-46 320-1920
-        color: var(--color-text-black);
-      }
-    }
 
-    &-item:hover {
-      background-color: var(--color-bg-light-gray);
-      transform: scale(1.03, 1.03);
-    }
-
-    &-item:active {
-      background-color: var(--color-bg-light-orange);
-      box-shadow: -1px 1px 2px 0px rgba(0, 0, 0, 0.75);
-      border-left: 1px solid rgba(0, 0, 0, 0.75);
-      border-top: 1px solid rgba(0, 0, 0, 0.5);
-      border-bottom: 1px solid rgba(0, 0, 0, 0.5);
-      border-right: 1px solid var(--color-border-white-02);
-      transform: scale(1, 1);
+        mat-icon {
+          @include mixins.size();
+          color: var(--color-text-black);
+          font-size: clamp(1.5rem, 1.225rem + 1.375vw, 2.875rem);
+        }
+      }
     }
   }
 }
-
-

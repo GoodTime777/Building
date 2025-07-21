@@ -2,7 +2,7 @@
   <div class="content calculator">
     <h2 class="calculator__title">Цены</h2>
     <div class="calculator__price">
-      <table class="calculator__price-table table-one">
+      <table class="calculator__price-table">
         <thead>
           <tr>
             <th>Вид работ</th>
@@ -32,13 +32,14 @@
           </tr>
         </tbody>
       </table>
-      <table class="calculator__price-table table-two">
+      <table class="calculator__price-table">
         <thead>
           <tr>
             <th>Вид работ</th>
             <th>Площадь</th>
             <th>Толщина</th>
-            <th>Цена руб/м<sup>2</sup></th>
+            <!-- <th>Цена руб/м<sup>2</sup></th> -->
+            <th>Цена руб/м</th>
           </tr>
         </thead>
         <tbody>
@@ -64,7 +65,7 @@
                 Площадь (м<sup>2</sup>)
               </mat-label>
               <mat-form-field
-                class="calculator__container-form-calc-wrap-item-input"
+                class="calculator__container-form-calc-wrap-item-field"
               >
                 <input
                   matInput
@@ -87,7 +88,7 @@
                 Толщина (см)
               </mat-label>
               <mat-form-field
-                class="calculator__container-form-calc-wrap-item-input"
+                class="calculator__container-form-calc-wrap-item-field"
               >
                 <input
                   matInput
@@ -137,7 +138,7 @@
                 Площадь (м<sup>2</sup>)
               </mat-label>
               <mat-form-field
-                class="calculator__container-form-calc-wrap-item-input"
+                class="calculator__container-form-calc-wrap-item-field"
               >
                 <input
                   matInput
@@ -195,5 +196,3 @@
     </div>
   </div>
 </div>
-
-

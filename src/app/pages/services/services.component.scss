@@ -26,12 +26,10 @@
         @include mixins.tablet {
           width: 72%;
           padding: 10px;
-          // height: 1010px;
         }
 
         @include mixins.mobile {
-          @include mixins.size($height: auto, $width: 95%); //650
-          //@include mixins.flex();
+          @include mixins.size($height: auto, $width: 95%);
           display: flex;
           flex-direction: column;
           top: 200px;
@@ -78,7 +76,7 @@
         overflow: hidden;
 
         @include mixins.mobile {
-          @include mixins.size($height: 370px); //40%
+          @include mixins.size($height: 370px);
         }
 
         img {
@@ -96,9 +94,6 @@
     height: 800px;
     top: 25%;
   }
-  img {
-    @include mixins.size($width: 100%);
-  }
 }
 
 :host ::ng-deep .mat-mdc-tab-labels {
@@ -109,14 +104,16 @@
 
 :host ::ng-deep .mdc-tab {
   @include mixins.mobile {
-    width: 70px; //90
+    width: 70px;
     white-space: normal;
   }
 }
-
+// mat-tab{
+//   border-radius: 50px;
+// }
 :host ::ng-deep .mat-mdc-tab-header {
   background-color: var(--color-bg-dark-gray);
-  border-radius: 10px;
+   border-radius: 10px;
   margin-bottom: 5px;
 }
 
@@ -130,8 +127,7 @@
   }
 
   @include mixins.mobile {
-    height: 1100px;
-    width: 310px;
+    @include mixins.size($width: 310px, $height: 1100px);
   }
 }
 

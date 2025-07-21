@@ -17,16 +17,9 @@
       flex-flow: wrap;
     }
 
-    video {
-      filter: grayscale(60%);
-      border-radius: 5px;
-      transition: all 0.25s ease-in-out;
-    }
-
     swiper-container {
       width: 100%;
       background-color: rgb(206, 206, 206);
-      //  background-color: var(--color-bg-middle-two-gray);
       box-shadow: 0 0 3px 0 var(--color-shadow-black-02);
       border-radius: 10px;
     }
@@ -45,17 +38,18 @@
       @include mixins.mobile {
         width: 95%;
       }
-    }
 
-    // swiper-slide:hover img,
-    swiper-slide:hover video {
-      filter: grayscale(0);
+      &:hover,
+      &:active {
+        border-color: var(--color-border-dark-orange);
+      }
     }
 
     swiper-container::part(button-next),
     swiper-container::part(button-prev) {
       color: var(--color-squash);
     }
+
     swiper-container::part(pagination) {
       display: none;
     }
@@ -75,18 +69,18 @@
       &-swiper {
         padding: 10px 0;
 
-        swiper-slide {
-          &:hover,
-          &:active {
-            border-color: var(--color-border-dark-orange);
-          }
-        }
-        
         video {
           width: 100%;
           object-fit: cover;
-          cursor: pointer;
           padding: 0px 0;
+          border-radius: 5px;
+          filter: grayscale(60%);
+          transition: all 0.25s ease-in-out;
+          cursor: pointer;
+
+          &:hover {
+            filter: grayscale(0);
+          }
         }
       }
     }

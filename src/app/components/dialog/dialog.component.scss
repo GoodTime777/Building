@@ -31,7 +31,6 @@
     &-form {
       @include mixins.flex();
       flex-direction: column;
-      // gap: 10px;
 
       &-field {
         width: 100%;
@@ -45,9 +44,7 @@
     margin-top: 10px;
 
     @include mixins.mobile {
-      gap: 20px;
-      // display: flex;
-      // flex-direction: column;
+      gap: 5px;
     }
 
     &-btn {
@@ -59,9 +56,12 @@
   }
 }
 .check {
-  width: 100%;
+  width: 90%;
   text-align: left;
   white-space: normal;
+  @include mixins.mobile{
+    width: 100%;
+  }
 
   mat-error {
     padding-left: 38px;
@@ -75,16 +75,26 @@ mat-checkbox {
   margin-left: -8px;
 
   a {
+    color: black;
+    text-decoration: underline;
+    font-weight: 400;
+    transition: color 0.3s ease;
+    &:hover {
+      color: white;
+    }
+  }
+
+  .check-privacy-link {
+    font-size: 14px;
+  }
+
+  .consent-link {
     text-transform: uppercase;
     display: block;
     font-size: 12px;
-    font-weight: 400;
-    color: black;
-    //text-decoration: 10px solid black !important;
-    //border-bottom: 1px solid black;
   }
 }
-//////////////////////////
+
 ::ng-deep .mat-internal-form-field {
   color: black !important;
   font-size: 14px !important;
@@ -94,18 +104,14 @@ mat-checkbox {
   color: rgb(0, 0, 0) !important;
 }
 ::ng-deep .mdc-checkbox__background {
-  //margin-bottom: auto;
   border: 2px solid black !important;
   background-color: transparent !important;
   margin-top: -5px !important;
-  // margin-right: -5px !important;
 }
-//.mat-mdc-checkbox
 ::ng-deep .mat-internal-form-field {
   font-weight: 200;
   font-family: "Open Sans", "Helvetica Neue", sans-serif !important;
 }
-//////////////////////
 
 input {
   font-family: Oswald, "Helvetica Neue", sans-serif;
@@ -116,7 +122,6 @@ input {
 }
 
 ::ng-deep .mat-mdc-form-field-error-wrapper {
-  // padding-left: 42px !important;
   margin-top: -5px;
 }
 
@@ -136,26 +141,9 @@ mat-label {
     font-size: 14px;
   }
 }
-::ng-deep .mat-mdc-text-field-wrapper {
-  @include mixins.mobile {
-    //height: 45px !important;
-  }
-}
-::ng-deep .mat-mdc-form-field-infix {
-  @include mixins.mobile {
-    // min-height: 45px !important;
-    // padding-top: 20px !important;
-    // padding-bottom: 0px !important;
-  }
-}
-::ng-deep
-  .mat-mdc-text-field-wrapper
-  .mat-mdc-form-field-flex
-  .mat-mdc-floating-label {
-  @include mixins.mobile {
-    //  top: calc(var(--mat-form-field-container-height, 50px) / 2);
-  }
-}
+
+
+
 
 ::ng-deep .mat-pseudo-checkbox {
   background-color: var(--color-bg-dark-gray) !important;
@@ -174,4 +162,11 @@ mat-label {
 
 :host ::ng-deep .mat-mdc-select-value-text {
   white-space: wrap;
+}
+::ng-deep .mat-mdc-dialog-container {
+  margin: 0 auto;
+  width: 80% !important;
+  @include mixins.mobile {
+    width: 95% !important;
+  }
 }

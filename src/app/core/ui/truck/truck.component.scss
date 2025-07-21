@@ -2,10 +2,10 @@
 @use "mixins" as mixins;
 
 .loop-wrapper {
+  position: relative;
   display: block;
   color: #c2c2c2;
-  @include mixins.size($height: 130px);
-  position: relative;
+  @include mixins.size($height: 130px);  
   overflow: hidden;
   border-bottom: 3px solid #c2c2c2;
   margin: 0 auto;

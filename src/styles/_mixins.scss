@@ -1,4 +1,3 @@
-//@use 'sass:list';
 @use "variables" as vars;
 
 @mixin flex($display: flex, $justify-c: center, $align-i: center) {
@@ -38,7 +37,8 @@
   border-radius: $border-r;
   outline: $outline;
   outline-offset: $outline-o;
-}//10
+}
+
 // @mixin border($border-l:transparent, $border-t:transparent,$border-b:transparent,$border-r:transparent){
 //    border-left: 1px solid rgba(0, 0, 0, 0.75);
 //       border-top: 1px solid rgba(0, 0, 0, 0.5);
@@ -46,53 +46,13 @@
 //       border-right: 1px solid var(--color-border-white-02);
 // }
 
-// @include mixins.btn()
-// @mixin linkInBtn(){
 
-// }
 
-// @mixin bg($path) {
-//   background-image: url('#{vars.$project-url}/#{$path}');
-//   background-repeat: no-repeat;
-//   background-position: center;
-// }
-
-// @mixin img-set($name, $ext: 'png') {
-//   // url('#{vars.$project-url}/#{$name}@3x.#{$ext}') type('image/#{$ext}') 3x
-//   background-image: image-set(
-//     url('#{vars.$project-url}/#{$name}@1x.#{$ext}') type('image/#{$ext}') 1x,
-//     url('#{vars.$project-url}/#{$name}@2x.#{$ext}') type('image/#{$ext}') 2x
-//   );
-//   background-repeat: no-repeat;
-// }
-
-// @mixin transition($list, $duration: 0.2s, $timing-fn: ease-in) {
-//   transition-timing-function: $timing-fn;
-//   transition-duration: $duration;
-//   transition-property: list.join($list, (), $separator: 'comma');
-// }
-
-// /**
-//  * Миксин для мобильных устройств.
-//  *
-//  * @param {number} $max-mobile-width - Максимальная ширина экрана для мобильных устройств. По умолчанию 767px.
-//  * @example
-//  * .example {
-//  *   @include mobile() {
-//  *     background-color: red;
-//  *   }
-//  * }
-//  */
 @mixin mobile($max-mobile-width: 767px) {
   @media (max-width: $max-mobile-width) {
     @content;
   }
 }
-// @mixin tablet($min-tablet-width:768px ,$max-tablet-width: 1599px) {
-//   @media(min-width: $min-tablet-width) and (max-width: $max-tablet-width) {
-//        @content;
-//   }
-// }
 
 @mixin tablet($max-tablet-width: 1599px) {
   @media (max-width: $max-tablet-width) {
@@ -100,116 +60,8 @@
   }
 }
 
-//@include mixins.tablet
 @mixin desktop($min-desktop-width: 1600px) {
   @media (min-width: $min-desktop-width) {
     @content;
   }
 }
-// /**
-//  * Миксин для настольных устройств.
-//  *
-//  * @param {number} $min-desktop-width - Минимальная ширина экрана для настольных устройств. По умолчанию 768px.
-//  * @example
-//  * .example {
-//  *   @include desktop() {
-//  *     background-color: blue;
-//  *   }
-//  * }
-//  */
-
-// /**
-//  * Миксин для устройств с сенсорным экраном.
-//  *
-//  * @example
-//  * .example {
-//  *   @include for-touch-screen() {
-//  *     background-color: green;
-//  *   }
-//  * }
-//  */
-// @mixin for-touch-screen() {
-//   @media (pointer: coarse) {
-//     @content;
-//   }
-// }
-
-// /**
-//  * Миксин для устройств с мышью.
-//  *
-//  * @example
-//  * .example {
-//  *   @include for-mouse-screen() {
-//  *     background-color: yellow;
-//  *   }
-//  * }
-//  */
-// @mixin for-mouse-screen() {
-//   @media (pointer: fine) {
-//     @content;
-//   }
-// }
-
-// /**
-//  * Миксин для устройств, поддерживающих hover.
-//  *
-//  * @example
-//  * .example {
-//  *   @include for-hover-screen() {
-//  *     background-color: purple;
-//  *   }
-//  * }
-//  */
-// @mixin for-hover-screen() {
-//   @media (hover: hover) {
-//     @content;
-//   }
-// }
-
-// /**
-//  * Миксин для устройств, не поддерживающих hover.
-//  *
-//  * @example
-//  * .example {
-//  *   @include for-none-hover-screen() {
-//  *     background-color: orange;
-//  *   }
-//  * }
-//  */
-// @mixin for-none-hover-screen() {
-//   @media (hover: none) {
-//     @content;
-//   }
-// }
-
-//////////////////////////////////////////////
-
-// @mixin font($letter-spacing: $ls, $font-weight: $fw_bold, $color: $white) {
-//   letter-spacing: $letter-spacing;
-//   font-weight: $font-weight;
-//   color: $color;
-// }
-// @mixin fontText(
-//   $font-size: $fz_20,
-//   $letter-spacing: $ls,
-//   $line-height: 142%,
-//   $color: $white
-// ) {
-//   font-size: $font-size;
-//   letter-spacing: $letter-spacing;
-//   line-height: $line-height;
-//   color: $color;
-// }
-
-// @mixin flex(
-//   $display: flex,
-//   $justify-content: center,
-//   $align-items: center,
-//   $gap: 0
-// ) {
-//   display: $display;
-//   justify-content: $justify-content;
-//   align-items: $align-items;
-//   gap: $gap;
-// }
-// @include fontText($line-height: 124%, $font-size: $fz_h2, $color: $black);

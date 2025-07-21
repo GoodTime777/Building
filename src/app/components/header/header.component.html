@@ -2,16 +2,15 @@
   <div class="content header">
     <div class="header__container">
       <div class="header__container-logo">
-        <div class="header__container-logo-box header-logo">
-          <a href="#" class="header__container-logo-box-img">
-            <img
-              src="/assets/images/icons/logo-black.png"
-              alt="логотип компании"
-            />
-            <h2 class="header__container-logo-box-img-name">ВЕРТИКАЛЬ</h2>
-          </a>
-        </div>
+        <a href="#" class="header__container-logo-link">
+          <img
+            src="/assets/images/icons/logo-black.png"
+            alt="логотип компании"
+          />
+          <h2 class="header__container-logo-link-name">ВЕРТИКАЛЬ</h2>
+        </a>
       </div>
+
       <div class="header__container-burger">
         <input
           class="header__container-burger-trigger hidden"
@@ -29,6 +28,8 @@
           ></div>
         </div>
       </div>
+
+
       <nav class="header__container-nav" [class.show]="show">
         <ul
           class="header__container-nav-menu"
@@ -50,7 +51,6 @@
               <span> Услуги</span>
             </a>
           </li>
-
           <li class="header__container-nav-menu-item">
             <a class="decor" routerLink="calculator" routerLinkActive="active">
               <span>Калькулятор</span></a
@@ -66,7 +66,6 @@
               <span>Контакты</span></a
             >
           </li>
-
           <li class="header__container-nav-menu-item">
             <button (click)="openDialog()">
               <span>
@@ -81,7 +80,7 @@
         <div class="header__container-tel-item">
           <a
             href="tel:89201711771"
-            class="header__container-tel-item-link tel-one"
+            class="header__container-tel-item-link"
           >
             <span> <mat-icon>call</mat-icon> </span> 8-920-171-17-71
           </a>
@@ -89,7 +88,7 @@
         <div class="header__container-tel-item">
           <a
             href="tel:89043586195"
-            class="header__container-tel-item-link tel-two"
+            class="header__container-tel-item-link"
           >
             <span> <mat-icon>call</mat-icon> </span> 8-904-358-61-95
           </a>

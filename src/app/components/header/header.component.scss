@@ -10,9 +10,6 @@
   @include mixins.tablet {
     overflow: visible;
   }
-  @include mixins.mobile {
-    overflow: visible;
-  }
 
   .header {
     &__container {
@@ -24,7 +21,6 @@
 
       @include mixins.tablet {
         padding: 7px 10px;
-        //  justify-content: center;
       }
 
       @include mixins.mobile {
@@ -39,20 +35,18 @@
           order: 2;
         }
 
-        &-box {
-          &-img {
-            @include mixins.flex();
+        &-link {
+          @include mixins.flex();
 
-            &-name {
-              font-family: "Raleway", sans-serif;
-              font-weight: 400;
-              font-size: 40px;
-              @include mixins.tablet {
-                font-size: 28px;
-              }
-              @include mixins.mobile {
-                display: none;
-              }
+          &-name {
+            font-family: "Raleway", sans-serif;
+            font-weight: 400;
+            font-size: 40px;
+            @include mixins.tablet {
+              font-size: 28px;
+            }
+            @include mixins.mobile {
+              display: none;
             }
           }
 
@@ -72,205 +66,6 @@
         }
       }
 
-      &-nav {
-        @include mixins.size($width: auto, $height: auto);
-        border-radius: 0px;
-        transform: translateY(0%);
-        @include mixins.tablet {
-          order: 1;
-          @include mixins.size($width: 760px, $height: 0vh);
-          position: absolute;
-          transform: translateY(-100vh);
-          transition-property: transform, border-radius, width, height;
-          transition-duration: 0.6s;
-          transition-timing-function: ease-in-out;
-          background: var(--color-bg-white);
-          border-bottom-left-radius: 10px;
-          border-bottom-right-radius: 100px;
-          margin-left: -9px;
-          // margin: -10px auto 0 auto;
-          z-index: -1;
-        }
-        @include mixins.mobile {
-          order: 1;
-          @include mixins.size($width: 310px, $height: 0vh);
-          position: absolute;
-          transform: translateY(-100vh);
-          transition-property: transform, border-radius, width, height;
-          transition-duration: 0.6s;
-          transition-timing-function: ease-in-out;
-          background: var(--color-bg-white);
-          border-bottom-left-radius: 10px;
-          border-bottom-right-radius: 10px;
-          margin: -10px auto 0 auto;
-          z-index: -1;
-        }
-
-        &-menu {
-          @include mixins.flex();
-          gap: 25px;
-          margin: 0 auto;
-
-          @include mixins.tablet {
-            gap: 15px;
-            flex-direction: column;
-            min-height: 91.5%;
-          }
-
-          // @include mixins.mobile {
-          //   flex-direction: column;
-          //   min-height: 91.5%;
-          // }
-
-          &-item {
-            a {
-              color: var(--color-text-black);
-              transition: color 0.2s ease;
-              // @include mixins.tablet {
-              //   transition: color 0.15s ease-in-out;
-              //   color: var(--color-text-black);
-              // }
-              // @include mixins.mobile {
-              //   color: var(--color-text-black);
-              // }
-            }
-
-            span {
-              @include mixins.size();
-
-              mat-icon {
-                @include mixins.size();
-                color: var(--color-text-black);
-                font-size: 28px;
-                transition: color 0.2s ease-in-out, transform 0.25s ease-in-out;
-
-                // @include mixins.tablet {
-                //  // transition: color 0.15s ease-in-out, transform 0.5s ease;
-                //   //color: var(--color-text-black);
-                // }
-
-                // @include mixins.mobile {
-                // //  transition: color 0.15s ease-in-out;
-                //   // color: var(--color-text-black);
-                // }
-              }
-
-              mat-icon:hover {
-                color: var(--color-link-white);
-
-                @include mixins.mobile {
-                  color: var(--color-text-black);
-                }
-              }
-
-              mat-icon:active {
-                @include mixins.mobile {
-                  color: var(--color-squash);
-                }
-              }
-            }
-          }
-
-          &-item:first-child,
-          &-item:last-child {
-            @include mixins.size($width: 28px, $height: 28px);
-          }
-
-          &-item:hover a {
-            color: var(--color-link-white);
-            @include mixins.tablet {
-              color: var(--color-squash);
-            }
-            @include mixins.mobile {
-              color: var(--color-text-black);
-            }
-          }
-
-          &-item:hover mat-icon {
-            transform: scale(1.07, 1.07);
-            @include mixins.mobile {
-              transform: scale(1, 1);
-            }
-          }
-
-          &-item:active a {
-            color: var(--color-link-white);
-            @include mixins.mobile {
-              color: var(--color-squash);
-            }
-          }
-        }
-      }
-
-      &-nav.show {
-        @include mixins.tablet {
-          transform: translateY(44.35%);
-          height: 100vh;
-        }
-        @include mixins.mobile {
-          transform: translateY(44.35%); //54.35
-          height: 100vh;
-        }
-      }
-
-      &-tel,
-      .tel {
-        @include mixins.tablet {
-          order: 3;
-          margin-left: auto;
-        }
-        // @include mixins.mobile {
-        //  // order: 3;
-        //   margin-left: auto;
-        // }
-
-        a {
-          color: var(--color-link-black);
-          transition: color 0.3s ease;
-          font-weight: 400;
-
-          span {
-            margin-right: 2px;
-            @media (min-width: 1420px) and (max-width: 1570px) {
-              margin-right: 0;
-            }
-            @media (min-width: 768px) and (max-width: 1419px) {
-              margin-right: -5px;
-            }
-
-            @include mixins.mobile {
-              margin-right: -5px;
-            }
-
-            mat-icon {
-              font-size: clamp(
-                0.875rem,
-                0.7875rem + 0.4375vw,
-                1.3125rem
-              ); //14-21 320-1920
-
-              height: 100%;
-              font-weight: 600;
-              margin-bottom: -3px;
-            }
-          }
-        }
-
-        a:hover {
-          color: var(--color-link-white);
-
-          @include mixins.mobile {
-            color: rgb(0, 0, 0);
-          }
-        }
-
-        a:active {
-          @include mixins.mobile {
-            color: var(--color-link-white);
-          }
-        }
-      }
-
       &-burger {
         display: none;
         @include mixins.tablet {
@@ -278,11 +73,6 @@
           color: var(--color-text-black);
           margin-right: 4px;
           margin-bottom: 4.5px;
-        }
-        @include mixins.mobile {
-          display: block;
-          color: var(--color-text-black);
-          margin-right: 4px;
         }
 
         &-trigger {
@@ -315,8 +105,8 @@
           position: relative;
 
           &-hamburger,
-          &-hamburger:before,
-          &-hamburger:after {
+          &-hamburger::before,
+          &-hamburger::after {
             @include mixins.size($width: 32px, $height: 1px);
             border-radius: 10px;
             background: var(--color-bg-black);
@@ -350,6 +140,157 @@
             position: absolute;
             top: -18px;
             z-index: 3;
+          }
+        }
+      }
+
+      &-nav {
+        @include mixins.size($width: auto, $height: auto);
+        border-radius: 0px;
+        transform: translateY(0%);
+
+        @include mixins.tablet {
+          order: 1;
+          @include mixins.size($width: 760px, $height: 0vh);
+          position: absolute;
+          transform: translateY(-100vh);
+          transition-property: transform, border-radius, width, height;
+          transition-duration: 0.6s;
+          transition-timing-function: ease-in-out;
+          background: var(--color-bg-white);
+          border-bottom-left-radius: 10px;
+          border-bottom-right-radius: 100px;
+          margin-left: -9px;
+          z-index: -1;
+        }
+
+        @include mixins.mobile {
+          @include mixins.size($width: 310px, $height: 0vh);
+          margin: -10px auto 0 auto;
+        }
+
+        &-menu {
+          @include mixins.flex();
+          gap: 25px;
+          margin: 0 auto;
+
+          @include mixins.tablet {
+            gap: 15px;
+            flex-direction: column;
+            min-height: 91.5%;
+          }
+
+          &-item {
+            &:first-child,
+            &:last-child {
+              @include mixins.size($width: 28px, $height: 28px);
+            }
+
+            a {
+              color: var(--color-text-black);
+              transition: color 0.2s ease;
+
+              &:hover {
+                color: var(--color-link-white);
+                @include mixins.tablet {
+                  color: var(--color-squash);
+                }
+                @include mixins.mobile {
+                  color: var(--color-text-black);
+                }
+              }
+
+              &:active {
+                @include mixins.mobile {
+                  color: var(--color-squash);
+                }
+              }
+            }
+
+            span {
+              @include mixins.size();
+
+              mat-icon {
+                @include mixins.size();
+                color: var(--color-text-black);
+                font-size: 28px;
+                transition: color 0.2s ease-in-out, transform 0.25s ease-in-out;
+
+                &:hover {
+                  transform: scale(1.07, 1.07);
+                  color: var(--color-link-white);
+
+                  @include mixins.tablet {
+                    color: var(--color-squash);
+                  }
+
+                  @include mixins.mobile {
+                    transform: scale(1, 1);
+                    color: var(--color-text-black);
+                  }
+                }
+
+                &:active {
+                  @include mixins.mobile {
+                    color: var(--color-squash);
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+      &-nav.show {
+        @include mixins.tablet {
+          transform: translateY(44.35%);
+          height: 100vh;
+        }
+      }
+
+      &-tel {
+        @include mixins.tablet {
+          order: 3;
+          margin-left: auto;
+        }
+
+        &-item {
+          &-link {
+            color: var(--color-link-black);
+            transition: color 0.3s ease;
+            font-weight: 400;
+
+            &:hover {
+              color: var(--color-link-white);
+
+              @include mixins.mobile {
+                color: rgb(0, 0, 0);
+              }
+            }
+
+            &:active {
+              @include mixins.mobile {
+                color: var(--color-link-white);
+              }
+            }
+
+            span {
+              margin-right: 2px;
+              @include mixins.tablet {
+                margin-right: -5px;
+              }
+
+              @include mixins.mobile {
+                margin-right: -10px;
+              }
+
+              mat-icon {
+                height: 100%;
+                font-size: clamp(0.875rem, 0.7875rem + 0.4375vw, 1.3125rem);
+                font-weight: 600;
+                margin-bottom: -3px;
+              }
+            }
           }
         }
       }

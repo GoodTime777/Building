@@ -19,6 +19,7 @@
       grid-template-areas: "A" "B";
       gap: 10px;
     }
+
     h4 {
       line-height: 0.7;
       @include mixins.mobile {
@@ -79,7 +80,7 @@
             gap: 5px;
           }
 
-          &-title {
+          &-time {
             color: var(--color-texas-rose);
             font-weight: 300;
             margin-bottom: 8px;
@@ -87,16 +88,6 @@
             @include mixins.mobile {
               margin-bottom: 4px;
               border-bottom: 1px solid var(--color-texas-rose);
-            }
-          }
-
-          &-description {
-            color: var(--color-text-white);
-
-            &-detail-one {
-              @include mixins.mobile {
-                color: var(--color-texas-rose);
-              }
             }
           }
         }
@@ -111,40 +102,47 @@
           }
 
           &-contacts {
-            &-container {
-              display: flex;
-              flex-direction: column;
-              gap: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 5px;
+
+            @include mixins.tablet {
+              margin-bottom: 0;
+            }
+            @include mixins.mobile {
               margin-bottom: 5px;
+            }
 
+            &-address {
+              &-company {
+                padding-left: 25px;
+              }
+
+              a {
+                position: relative;
+                @include mixins.flex();
+                gap: 5px;
+
+                img {
+                  @include mixins.size($width: 22px, $height: 22px);
+                }
+              }
+            }
+
+            &-tel {
               @include mixins.tablet {
-                margin-bottom: 0;
-              }
-              @include mixins.mobile {
-                margin-bottom: 5px;
+                width: 53%;
               }
 
-              &-address {
-                a {
-                  position: relative;
-                  @include mixins.flex();
-                  gap: 5px;
-
-                  img {
-                    @include mixins.size($width: 22px, $height: 22px);
-                  }
-                }
-              }
-
-              &-tel {
-                @include mixins.tablet {
-                  width: 53%;
-                }
-
-                a {
+              &-item {
+                &-link {
                   transition: color 0.5s ease;
 
                   @include mixins.mobile {
+                    color: var(--color-texas-rose);
+                  }
+                  &:hover {
                     color: var(--color-texas-rose);
                   }
 
@@ -153,10 +151,6 @@
                     color: var(--color-texas-rose);
                     margin-bottom: -10px;
                   }
-                }
-
-                a:hover {
-                  color: var(--color-texas-rose);
                 }
               }
             }
@@ -191,11 +185,11 @@
             text-align: center;
             transform: scale(1, 1);
             transition: transform 0.3s ease-in-out;
-          }
 
-          a:hover,
-          a:active {
-            transform: scale(1.1, 1.1);
+            &:hover,
+            &:active {
+              transform: scale(1.1, 1.1);
+            }
           }
 
           img {
@@ -204,10 +198,10 @@
         }
       }
     }
+
     &__logo {
       width: 80px;
       margin-top: auto;
-      //  margin: auto 0 0px 10px;
 
       @include mixins.tablet {
         width: 70px;
@@ -292,13 +286,6 @@
           flex-direction: column;
           gap: 8px;
           margin-bottom: 5px;
-          // padding-bottom: 7px;
-        }
-
-        &-copyright {
-          &-txt {
-            color: var(--color-text-white);
-          }
         }
 
         &-privacy {
@@ -308,13 +295,20 @@
             @include mixins.mobile {
               border-bottom: 1px dashed var(--color-texas-rose);
             }
-          }
-          &-link:hover {
-            color: var(--color-texas-rose);
 
-            @include mixins.mobile {
-              color: var(--color-text-white);
+            &:hover {
+              color: var(--color-texas-rose);
+
+              @include mixins.mobile {
+                color: var(--color-text-white);
+              }
             }
+          }
+        }
+
+        &-copyright {
+          &-txt {
+            color: var(--color-text-white);
           }
         }
       }
@@ -324,12 +318,5 @@
   .decor::after {
     right: 0;
     background-color: var(--color-texas-rose);
-  }
-
-  .line,
-  .decor::after {
-    @include mixins.mobile {
-      display: none;
-    }
   }
 }

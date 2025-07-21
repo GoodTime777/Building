@@ -11,7 +11,6 @@ body {
   @include mixins.tablet {
     padding-top: 50px;
   }
-
   @include mixins.mobile {
     padding-top: 57px;
   }
@@ -34,19 +33,17 @@ h4 {
 h1 {
   font-size: 48px;
   line-height: 1;
-  // font-size: clamp(1.625rem, 0.3558rem + 2.6442vw, 3rem);//26-48
   @include mixins.tablet {
     font-size: 30px;
   }
 
   @include mixins.mobile {
-    // font-size: 30px;
     color: var(--color-text-white);
   }
 }
 
 h2 {
-  font-size: clamp(1.375rem, 1.2rem + 0.875vw, 2.25rem); //22-36 320-1920
+  font-size: clamp(1.375rem, 1.2rem + 0.875vw, 2.25rem);
   margin-bottom: 20px;
 
   @include mixins.tablet {
@@ -55,11 +52,52 @@ h2 {
 }
 
 h3 {
-  font-size: clamp(1.125rem, 1.075rem + 0.25vw, 1.375rem); //18-22 320-1920
+  font-size: clamp(1.125rem, 1.075rem + 0.25vw, 1.375rem);
 }
 
 h4 {
-  font-size: clamp(0.875rem, 0.8rem + 0.375vw, 1.25rem); //20-14 320-1920
+  font-size: clamp(0.875rem, 0.8rem + 0.375vw, 1.25rem);
+}
+
+thead {
+  tr {
+    th {
+      border-bottom: none;
+      background-color: var(--color-bg-yellow);
+
+      @include mixins.mobile {
+        height: 60px;
+        font-weight: 400;
+        padding: 0 5px;
+      }
+    }
+  }
+}
+
+tbody {
+  tr {
+    td {
+      font-size: 16px;
+
+      @include mixins.tablet {
+        font-size: 14px;
+      }
+
+      @include mixins.mobile {
+        height: 60px;
+      }
+    }
+
+    td:nth-child(1) {
+      font-family: Oswald, "Helvetica Neue", sans-serif;
+      font-size: 18px;
+
+      @include mixins.mobile {
+        font-size: 16px;
+        line-height: 1.2;
+      }
+    }
+  }
 }
 
 th {
@@ -74,23 +112,19 @@ th {
     font-size: 14px;
   }
 }
-//  &-title {
-//         text-decoration: underline solid var(--color-squash);
-//       }
+
 a,
 button {
   cursor: pointer;
   font-size: 18px;
-  //font-size: clamp(0.875rem, 0.5893rem + 0.4464vw, 1.125rem); //14-18 320-1920
 
   @include mixins.tablet {
     font-size: 14px;
   }
-  @include mixins.mobile {
-    font-size: 14px;
-  }
 }
-
+a {
+  color: var(--color-link-white);
+}
 button,
 p {
   font-weight: 300;
@@ -110,10 +144,6 @@ mat-error {
   color: var(--color-error);
 }
 
-a {
-  color: var(--color-link-white);
-}
-
 .wrapper {
   width: 100%;
   overflow: hidden;
@@ -123,7 +153,7 @@ a {
 
 .content {
   width: 100%;
-  max-width: 1600px; //1920px;
+  max-width: 1600px;
   margin: 0 auto;
 
   @include mixins.tablet {
@@ -150,125 +180,32 @@ a {
   }
 }
 
-.btn {
-  margin-bottom: 30px;
+.main-txt {
+  font-size: clamp(0.875rem, 0.5288rem + 0.7212vw, 1.25rem);
   @include mixins.tablet {
-    margin-bottom: 10px;
+    font-size: 14px;
   }
-
   @include mixins.mobile {
-    width: 100%;
-  }
-
-  button {
-    //font-weight: 300;
-    min-width: 240px;
-    text-align: center;
-    border-radius: 6px;
-    padding: 15px 0;
-    transition: color 0.4s ease, border 0.4s ease, background-color 0.4s ease;
-
-    @include mixins.tablet {
-      padding: 12px 0;
-    }
-
-    @include mixins.mobile {
-      width: 100%;
-    }
-    a {
-      font-weight: 300;
-    }
-  }
-}
-.btn-black,
-.btn-black.btn-black:active {
-  color: var(--color-black);
-  border: 1px solid var(--color-border-black);
-
-  a {
-    color: var(--color-link-black);
-
-    @include mixins.mobile {
-      color: var(--color-seashell);
-    }
+    font-size: 16px; //16
+    font-weight: 300;
   }
 }
 
-.btn-black:hover {
-  color: var(--color-seashell);
-  border: 1px solid transparent;
-  background-color: var(--color-bg-dark-gray);
-
-  a {
-    color: var(--color-seashell);
+.emphasized-txt {
+  //Выделенный
+  font-size: clamp(1rem, 0.925rem + 0.375vw, 1.375rem);
+  @include mixins.tablet {
+    font-size: 16px;
   }
 }
 
-.btn-black:active {
-  background-color: inherit;
-}
-
-.btn-white,
-.btn-white.btn-white:active {
-  color: var(--color-seashell);
-  border: 1px solid var(--color-seashell);
-
-  a {
-    color: var(--color-seashell);
+.txt {
+  font-size: clamp(1rem, 0.7692rem + 0.4808vw, 1.25rem);
+  @include mixins.tablet {
+    font-size: 16px;
   }
-}
-
-.btn-white:hover {
-  color: var(--color-black);
-  border: 1px solid transparent;
-  background-color: var(--color-seashell);
-
-  a {
-    color: var(--color-link-black);
-  }
-}
-
-.btn-white:active {
-  background-color: inherit;
-}
-
-.btn-orange {
-  color: var(--color-black);
-  border: 1px solid var(--color-border-black);
-
   @include mixins.mobile {
-    background-color: rgba(255, 187, 61, 1);
-    border: 1px solid transparent;
-  }
-
-  a {
-    color: var(--color-black);
-
-    @include mixins.mobile {
-      color: var(--color-seashell);
-    }
-  }
-}
-
-.btn-orange:hover {
-  color: var(--color-black);
-  background-color: rgba(255, 187, 61, 1);
-  border: 1px solid transparent;
-
-  a {
-    color: var(--color-black);
-  }
-}
-
-.btn-orange:active {
-  color: var(--color-seashell);
-  background-color: var(--color-bg-dark-gray);
-
-  a {
-    color: var(--color-black);
-    @include mixins.mobile {
-      color: var(--color-seashell);
-    }
+    font-size: 14px;
   }
 }
 
@@ -283,9 +220,86 @@ a {
 
   @include mixins.mobile {
     width: 100%;
-    // flex-direction: column;
     gap: 5px;
   }
+}
+.btn {
+  margin-bottom: 30px;
+  @include mixins.tablet {
+    margin-bottom: 10px;
+  }
+
+  @include mixins.mobile {
+    width: 100%;
+  }
+
+  button {
+    min-width: 240px;
+    text-align: center;
+    border-radius: 6px;
+    padding: 15px 0;
+    transition: color 0.4s ease, border 0.4s ease, background-color 0.4s ease;
+
+    @include mixins.tablet {
+      padding: 12px 0;
+    }
+
+    @include mixins.mobile {
+      width: 100%;
+    }
+  }
+}
+.btn-black,
+.btn-black.btn-black:active {
+  color: var(--color-black);
+  border: 1px solid var(--color-border-black);
+}
+
+.btn-black:hover {
+  color: var(--color-seashell);
+  border: 1px solid transparent;
+  background-color: var(--color-bg-dark-gray);
+}
+
+.btn-black:active {
+  background-color: inherit;
+}
+
+.btn-white,
+.btn-white.btn-white:active {
+  color: var(--color-seashell);
+  border: 1px solid var(--color-seashell);
+}
+
+.btn-white:hover {
+  color: var(--color-black);
+  border: 1px solid transparent;
+  background-color: var(--color-seashell);
+}
+
+.btn-white:active {
+  background-color: inherit;
+}
+
+.btn-orange {
+  color: var(--color-black);
+  border: 1px solid var(--color-border-black);
+
+  @include mixins.mobile {
+    background-color: rgba(255, 187, 61, 1);
+    border: 1px solid transparent;
+  }
+}
+
+.btn-orange:hover {
+  color: var(--color-black);
+  background-color: rgba(255, 187, 61, 1);
+  border: 1px solid transparent;
+}
+
+.btn-orange:active {
+  color: var(--color-seashell);
+  background-color: var(--color-bg-dark-gray);
 }
 
 .red {
@@ -293,39 +307,6 @@ a {
 }
 
 ::-webkit-scrollbar {
-  width: 0px; /* remove scrollbar space */
-  background: transparent; /* optional: just make scrollbar invisible */
-}
-
-.main-txt {
-  font-size: clamp(0.875rem, 0.5288rem + 0.7212vw, 1.25rem);
-  @include mixins.tablet {
-    font-size: 14px;
-  }
-  @include mixins.mobile {
-    font-size: 16px; //16
-    font-weight: 300;
-  }
-}
-
-.emphasized-txt {
-  //Выделенный
-  font-size: clamp(1rem, 0.925rem + 0.375vw, 1.375rem); //16-22 320-1920
-  @include mixins.tablet {
-    font-size: 16px;
-  }
-  // @include mixins.mobile {
-  //   font-size: 16px; //16
-  // }
-}
-
-.txt {
-  font-size: clamp(1rem, 0.7692rem + 0.4808vw, 1.25rem); //16-20
-  @include mixins.tablet {
-    font-size: 16px;
-    // font-weight: 300;
-  }
-  @include mixins.mobile {
-    font-size: 14px;
-  }
+  width: 0px;
+  background: transparent;
 }

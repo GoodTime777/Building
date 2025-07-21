@@ -5,50 +5,9 @@
 .calculator {
   color: var(--color-text-black);
 
-  thead {
-    tr {
-      th {
-        border-bottom: none;
-        background-color: var(--color-bg-yellow);
-
-        @include mixins.mobile {
-          height: 60px;
-          font-weight: 400;
-          padding: 0 5px;
-        }
-      }
-    }
-  }
-
-  tbody {
-    tr {
-      td {
-        font-size: 16px;
-
-        @include mixins.tablet {
-          font-size: 14px;
-        }
-
-        @include mixins.mobile {
-          // font-size: 14px;
-          height: 60px;
-        }
-      }
-
-      td:nth-child(1) {
-        font-family: Oswald, "Helvetica Neue", sans-serif;
-        font-size: 18px;
-
-        @include mixins.mobile {
-          font-size: 16px;
-          line-height: 1.2;
-        }
-      }
-    }
-  }
-
   &__title {
-    margin-bottom: 0;
+    text-align: center;
+    margin-bottom: 10px;
   }
 
   &__price {
@@ -62,87 +21,83 @@
       text-align: center;
       border-spacing: 0px;
       border: 1px solid var(--color-border-black);
-    }
+      border-bottom-width: 3px;
 
-    .table-one {
-      @include mixins.mobile {
-        display: flex;
-        flex-direction: row;
-      }
-
-      thead,
-      tbody {
+      &:nth-child(1) {
         @include mixins.mobile {
           display: flex;
           flex-direction: row;
         }
 
-        tr {
-          @include mixins.mobile {
-            display: flex;
-            flex-direction: column;
-          }
-        }
-      }
-
-      thead {
-        th:nth-child(2),
-        th:nth-child(4),
-        th:nth-child(6) {
-          @include mixins.mobile {
-            background-color: transparent;
-          }
-        }
-      }
-
-      tbody {
-        tr {
-          @include mixins.mobile {
-            border-left: 1px solid var(--color-border-black);
-          }
-
-          td:nth-child(1) {
+        thead {
+          th:nth-child(2),
+          th:nth-child(4),
+          th:nth-child(6) {
             @include mixins.mobile {
-              padding: 0 15px;
+              background-color: transparent;
             }
           }
         }
-        tr:nth-child(2) {
-          background-color: var(--color-bg-yellow);
 
-          @include mixins.mobile {
-            background-color: transparent;
+        tbody {
+          tr {
+            @include mixins.mobile {
+              border-left: 1px solid var(--color-border-black);
+            }
+
+            td:nth-child(1) {
+              @include mixins.mobile {
+                padding: 0 15px;
+              }
+            }
           }
-        }
-
-        td:nth-child(1),
-        td:nth-child(3),
-        td:nth-child(5) {
-          @include mixins.mobile {
+          tr:nth-child(2) {
             background-color: var(--color-bg-yellow);
+
+            @include mixins.mobile {
+              background-color: transparent;
+            }
+          }
+
+          td:nth-child(1),
+          td:nth-child(3),
+          td:nth-child(5) {
+            @include mixins.mobile {
+              background-color: var(--color-bg-yellow);
+            }
           }
         }
-      }
 
-      th,
-      td {
-        @include mixins.mobile {
-          @include mixins.flex();
+        thead,
+        tbody {
+          @include mixins.mobile {
+            display: flex;
+            flex-direction: row;
+          }
+
+          tr {
+            @include mixins.mobile {
+              display: flex;
+              flex-direction: column;
+            }
+          }
         }
-      }
 
-      th.inline-flex {
-        @include mixins.mobile {
-          display: inline;
-          line-height: 50px;
+        th,
+        td {
+          @include mixins.mobile {
+            @include mixins.flex();
+          }
+        }
+
+        th.inline-flex {
+          @include mixins.mobile {
+            display: inline;
+            line-height: 50px;
+          }
         }
       }
     }
-  }
-
-  &__title {
-    text-align: center;
-    margin-bottom: 10px;
   }
 
   &__container {
@@ -176,7 +131,6 @@
         &-wrap {
           &-item {
             width: 100%;
-            //height: 100%;
             @include mixins.flex();
             flex-direction: column;
             margin: 10px auto;
@@ -186,7 +140,7 @@
               margin-bottom: 5px;
             }
 
-            &-input {
+            &-field {
               width: 100%;
 
               input {
@@ -198,6 +152,7 @@
             }
 
             &-btn {
+              width: 100%;
               color: var(--color-text-black);
               background-color: var(--color-bg-white);
               border-radius: 10px;
@@ -222,12 +177,10 @@
 
             .btnClear {
               grid-area: A;
-              width: 100%;
             }
 
             .btnCalc {
               grid-area: B;
-              width: 100%;
             }
 
             &-result {
@@ -265,9 +218,7 @@
       }
 
       @include mixins.mobile {
-      //  height:100%;
         min-height: 0;
-        // padding-top: 0px;
       }
     }
   }
