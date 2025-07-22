@@ -8,6 +8,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
   templateUrl: './benefit.component.html',
   styleUrl: './benefit.component.scss'
 })
+
 export class BenefitComponent {
 
 }

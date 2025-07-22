@@ -1,8 +1,7 @@
-import { Component, inject, model, computed, signal } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import {
   MAT_DIALOG_DATA,
-  //   MatDialog,
   MatDialogActions,
   MatDialogClose,
   MatDialogContent,
@@ -11,20 +10,13 @@ import {
 } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { FormControl, FormsModule, ReactiveFormsModule, NgForm, FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormsModule, ReactiveFormsModule, FormGroup, Validators } from '@angular/forms';
 import { NgxMaskDirective } from 'ngx-mask';
 import { MatSelectModule } from '@angular/material/select';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 
 export interface DialogData {
-  //animal: string;
 }
-
-// export interface Task {
-//   name: string;
-//   completed: boolean;
-//   subtasks?: Task[];
-// }
 
 @Component({
   selector: 'app-dialog',
@@ -51,7 +43,7 @@ export class DialogComponent {
   protected readonly dialogRef = inject(MatDialogRef<DialogComponent>);
   protected readonly data = inject<DialogData>(MAT_DIALOG_DATA);
 
-protected  applicationForm = new FormGroup({
+  protected applicationForm = new FormGroup({
     name: new FormControl('', [Validators.required, Validators.pattern('^[A-Za-zА-Яа-яЁё]+$')]),
     address: new FormControl('', [Validators.required]),
     tel: new FormControl('', [Validators.required]),
@@ -60,29 +52,28 @@ protected  applicationForm = new FormGroup({
   });
 
   workList: string[] = ['Штукатурка стен', 'Стяжка пола'];
-  //consent= new FormControl(false, [Validators.requiredTrue]);
 
-  get name() {
+  get name(): any {
     return this.applicationForm.get('name')
   }
 
-  get address() {
+  get address(): any {
     return this.applicationForm.get('address')
   }
 
-  get tel() {
+  get tel(): any {
     return this.applicationForm.get('tel')
   }
 
-  get works() {
+  get works(): any {
     return this.applicationForm.get('works')
   }
 
-  get consent() {
+  get consent(): any {
     return this.applicationForm.get('consent')
   }
 
-  onSubmit() {
+  onSubmit(): void {
     console.log(this.applicationForm.value)
   }
 }

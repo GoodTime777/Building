@@ -1,16 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
-import {
-  MAT_DIALOG_DATA,
-  MatDialog,
-  MatDialogActions,
-  MatDialogClose,
-  MatDialogContent,
-  MatDialogRef,
-  MatDialogTitle,
-} from '@angular/material/dialog';
+import {  MatDialog} from '@angular/material/dialog';
 import { MatDialogModule } from '@angular/material/dialog';
-//import { DialogComponent } from '../dialog/dialog.component';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { DialogComponent } from '../../components/dialog/dialog.component';
 import { BackgroundComponent } from "../../core/ui/background/background.component";

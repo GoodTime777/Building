@@ -1,21 +1,10 @@
 import { Component, inject } from '@angular/core';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatIconModule } from '@angular/material/icon';
-import {
-  MAT_DIALOG_DATA,
-  MatDialog,
-  MatDialogActions,
-  MatDialogClose,
-  MatDialogContent,
-  MatDialogRef,
-  MatDialogTitle,
-} from '@angular/material/dialog';
+import { MatDialog } from '@angular/material/dialog';
 import { MatDialogModule } from '@angular/material/dialog';
 import { DialogComponent } from '../../components/dialog/dialog.component';
 import { RouterLink, RouterLinkActive } from '@angular/router';
-
-
-
 
 @Component({
   selector: 'app-services',
@@ -25,13 +14,13 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 })
 
 export class ServicesComponent {
-  fTwo(): void {
+  protected fTwo(): void {
     console.log('click2')
   }
 
   public readonly dialog = inject(MatDialog);
 
-  openDialog(): void {
+   openDialog(): void {
     this.dialog.open(DialogComponent);
   }
 }

@@ -7,17 +7,9 @@
     (
       container-color: var(--color-squash),
       subhead-color: var(--color-black),
-      container-max-width: 90%,
+      container-max-width: 100%,
       container-min-width: 30%,
       actions-alignment: center,
     )
   );
-
-  @include mixins.mobile {
-    @include mat.dialog-overrides(
-      (
-        container-max-width: 95%,
-      )
-    );
-  }
 }

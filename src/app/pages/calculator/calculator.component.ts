@@ -5,16 +5,9 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatDialogModule } from '@angular/material/dialog';
 import { DialogComponent } from '../../components/dialog/dialog.component';
-import {
-  MAT_DIALOG_DATA,
-  MatDialog,
-  MatDialogActions,
-  MatDialogClose,
-  MatDialogContent,
-  MatDialogRef,
-  MatDialogTitle,
-} from '@angular/material/dialog';
+import {  MatDialog} from '@angular/material/dialog';
 import { CommonModule } from '@angular/common';
+
 @Component({
   selector: 'app-calculator',
   imports: [ReactiveFormsModule, CommonModule, MatDialogModule, MatFormFieldModule, MatInputModule],
@@ -23,7 +16,7 @@ import { CommonModule } from '@angular/common';
 })
 
 export class CalculatorComponent {
-  readonly dialog = inject(MatDialog);
+ public readonly dialog = inject(MatDialog);
 
   protected priceFloor: number = 800;
   protected resultFloor: number = 0;
@@ -39,7 +32,7 @@ export class CalculatorComponent {
     areaWall: new FormControl(1, [Validators.required, Validators.min(1)]),
   })
 
-  calculateFloor() {
+protected  calculateFloor():number {
     if (!!this.floor.value.widthFloor && !!this.floor.value.areaFloor) {
       if ((this.floor.value.widthFloor) > 6) {
         this.resultFloor = ((((this.floor.value.widthFloor) - 6) * 150) + this.priceFloor) * (this.floor.value.areaFloor)
@@ -52,7 +45,7 @@ export class CalculatorComponent {
   }
 
 
-  calculateWall() {
+protected  calculateWall():number {
     if (!!this.wall.value.areaWall) {
       this.resultWall = this.wall.value.areaWall * this.priceWall
     }
@@ -60,13 +53,13 @@ export class CalculatorComponent {
     return this.resultWall
   }
 
-  resetFormFloor() {
+protected  resetFormFloor():void {
     this.floor.controls['areaFloor'].setValue(1);
     this.floor.controls['widthFloor'].setValue(6);
     this.resultFloor = 0
   }
 
-  resetFormWall() {
+protected  resetFormWall():void {
     this.wall.controls['areaWall'].setValue(1);
     this.resultWall = 0
   }

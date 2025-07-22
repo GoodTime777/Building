@@ -6,6 +6,7 @@ import { Component } from '@angular/core';
   templateUrl: './technologies.component.html',
   styleUrl: './technologies.component.scss'
 })
+
 export class TechnologiesComponent {
 
 }

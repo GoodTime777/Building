@@ -1,26 +1,17 @@
-import { ChangeDetectionStrategy, Component, OnInit, inject, model, signal, EventEmitter, Output, ElementRef, ViewChild } from '@angular/core';
-import { RouterLink, RouterLinkActive, Router } from '@angular/router';
+import { Component, OnInit, inject } from '@angular/core';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
-import { ServicesComponent } from '../../pages/services/services.component';
-//import { ServicesComponent } from '../services/services.component';
-import { FormsModule } from '@angular/forms';
-import {
+import { MatDialog,
   MAT_DIALOG_DATA,
-  MatDialog,
   MatDialogActions,
   MatDialogClose,
   MatDialogContent,
   MatDialogRef,
-  MatDialogTitle,
-} from '@angular/material/dialog';
+  MatDialogTitle, } from '@angular/material/dialog';
 import { MatDialogModule } from '@angular/material/dialog';
-
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
 import { DialogComponent } from '../dialog/dialog.component';
-
-import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { BreakpointObserver } from '@angular/cdk/layout';
 
 @Component({
   selector: 'app-header',
@@ -30,11 +21,10 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 })
 
 export class HeaderComponent implements OnInit {
-  public customBreakpoints: string = '(min-width: 1599px)';
-  // public customBreakpoints: string = '(min-width: 1024px)';
-  public screen: boolean = false;
-  public isCheckboxChecked: boolean = false;
-  public show: boolean = false;
+  private customBreakpoints: string = '(min-width: 1599px)';
+  protected screen: boolean = false;
+  protected isCheckboxChecked: boolean = false;
+  protected show: boolean = false;
 
   public readonly dialog = inject(MatDialog);
 
@@ -52,12 +42,12 @@ export class HeaderComponent implements OnInit {
     );
   }
 
-  menuBurger(): void {
+protected  menuBurger(): void {
     this.isCheckboxChecked = !this.isCheckboxChecked
     this.show = !this.show
   }
 
-  menuBurgerClose(event: Event): void {
+protected  menuBurgerClose(event: Event): void {
     this.isCheckboxChecked = false;
     this.show = false
   }
