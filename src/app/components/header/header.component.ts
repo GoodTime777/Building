@@ -2,13 +2,7 @@ import { Component, OnInit, inject } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
-import { MatDialog,
-  MAT_DIALOG_DATA,
-  MatDialogActions,
-  MatDialogClose,
-  MatDialogContent,
-  MatDialogRef,
-  MatDialogTitle, } from '@angular/material/dialog';
+import { MatDialog } from '@angular/material/dialog';
 import { MatDialogModule } from '@angular/material/dialog';
 import { DialogComponent } from '../dialog/dialog.component';
 import { BreakpointObserver } from '@angular/cdk/layout';
@@ -42,12 +36,12 @@ export class HeaderComponent implements OnInit {
     );
   }
 
-protected  menuBurger(): void {
+  protected menuBurger(): void {
     this.isCheckboxChecked = !this.isCheckboxChecked
     this.show = !this.show
   }
 
-protected  menuBurgerClose(event: Event): void {
+  protected menuBurgerClose(event: Event): void {
     this.isCheckboxChecked = false;
     this.show = false
   }

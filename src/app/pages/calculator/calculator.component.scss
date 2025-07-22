@@ -228,14 +228,14 @@
     flex-direction: column;
     gap: 20px;
     margin-bottom: 20px;
-    
 
     &-number {
       font-size: 26px;
       border-bottom: 2px solid var(--color-border-orange);
-       @include mixins.mobile{
-      text-align: center;
-     }
+
+      @include mixins.mobile {
+        text-align: center;
+      }
     }
 
     &-description {

@@ -171,3 +171,20 @@
     }
   }
 }
+:host ::ng-deep app-cubes {
+  .cubes {
+    margin-left: auto;
+    right: 8%;
+    bottom: 80px;
+
+    @include mixins.tablet {
+      right: 18.5%;
+      bottom: 35px;
+    }
+    @include mixins.mobile {
+      right: 0;
+      bottom: 30px;
+      margin: 0 auto;
+    }
+  }
+}

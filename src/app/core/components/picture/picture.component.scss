@@ -10,6 +10,7 @@
     border-radius: 5px;
     filter: grayscale(60%);
     transition: all 0.25s ease-in-out;
+    
     @include mixins.mobile {
       filter: grayscale(0);
     }

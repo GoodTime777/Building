@@ -94,6 +94,7 @@
       &-title {
         grid-area: A;
       }
+
       &-address {
         grid-area: B;
         width: 100%;
@@ -103,6 +104,7 @@
           justify-content: space-between;
           align-items: flex-end;
           margin-bottom: 8px;
+          
           @include mixins.mobile {
             display: block;
           }
