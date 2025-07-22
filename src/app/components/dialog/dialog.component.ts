@@ -14,6 +14,7 @@ import { FormControl, FormsModule, ReactiveFormsModule, FormGroup, Validators } 
 import { NgxMaskDirective } from 'ngx-mask';
 import { MatSelectModule } from '@angular/material/select';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 
 export interface DialogData {
 }
@@ -32,7 +33,8 @@ export interface DialogData {
     MatFormFieldModule,
     MatSelectModule,
     ReactiveFormsModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+     RouterLink, RouterLinkActive 
   ],
   templateUrl: './dialog.component.html',
   styleUrl: './dialog.component.scss'

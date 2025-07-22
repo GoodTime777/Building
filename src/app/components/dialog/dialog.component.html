@@ -61,10 +61,20 @@
           name="consent"
           formControlName="consent"
           >Согласен на обработку моих персональных данных в соответствии с
-          <a href="#" class="modal__dialog-form-checkbox-consent-privacy">
+          <a
+            mat-dialog-close
+            routerLink="privacy"
+            routerLinkActive="active"
+            class="modal__dialog-form-checkbox-consent-privacy"
+          >
             политикой конфиденциальности.
           </a>
-          <a href="#" class="modal__dialog-form-checkbox-consent-link">
+          <a
+            mat-dialog-close
+            routerLink="consent"
+            routerLinkActive="active"
+            class="modal__dialog-form-checkbox-consent-link"
+          >
             Соглашение на обработку персональных данных</a
           >
         </mat-checkbox>

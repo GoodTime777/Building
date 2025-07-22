@@ -5,6 +5,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatDialogModule } from '@angular/material/dialog';
 import { DialogComponent } from '../dialog/dialog.component';
 
+
 @Component({
   selector: 'app-footer',
   imports: [RouterLink, RouterLinkActive, MatIconModule, MatDialogModule],
