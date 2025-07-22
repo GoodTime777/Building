@@ -4,18 +4,21 @@
 :root {
   @include mat.checkbox-overrides(
     (
-      //label-text-size: 28px,
-      // label-text-color: black,
-      // selected-checkmark-color: black,
-      // selected-focus-icon-color: black,
-      // selected-focus-state-layer-color: black,
-      // selected-hover-icon-color: black,
-      // selected-hover-state-layer-color: black,
-      // selected-icon-color: black,
-      // selected-pressed-state-layer-color: black,
-      // unselected-focus-icon-color: black,
-      // disabled-label-color: rgb(0, 255, 13),
-      // disabled-selected-checkmark-color: red,,
+      label-text-size: 14px,
+      label-text-color: var(--color-black),
+      selected-checkmark-color: var(--color-black),
+      selected-focus-icon-color: var(--color-black-0),
+      selected-focus-state-layer-color: var(--color-black-0),
+      selected-pressed-state-layer-color: var(--color-black),
+      selected-icon-color: var(--color-black-0),
+      selected-pressed-icon-color: var(--color-black),
+      unselected-icon-color: var(--color-black),
+      unselected-focus-icon-color: var(--color-black),
+      unselected-hover-icon-color: var(--color-black),
+      unselected-focus-state-layer-color: var(--color-black-0),
+      unselected-hover-state-layer-color: var(--color-black-0),
+      unselected-pressed-state-layer-color: var(--color-black-0),
+      selected-hover-icon-color: var(--color-black-0),
     )
   );
 }

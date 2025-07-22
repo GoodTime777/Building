@@ -19,7 +19,7 @@
 
     swiper-container {
       width: 100%;
-      background-color: rgb(206, 206, 206);
+      background-color: var(--color-gallery-gray);
       box-shadow: 0 0 3px 0 var(--color-shadow-black-02);
       border-radius: 10px;
     }

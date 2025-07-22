@@ -122,9 +122,11 @@ button {
     font-size: 14px;
   }
 }
+
 a {
   color: var(--color-link-white);
 }
+
 button,
 p {
   font-weight: 300;
@@ -137,6 +139,11 @@ th,
 .btn-decor-flash,
 .btn-decor-flash-black {
   font-family: Oswald, "Helvetica Neue", sans-serif;
+}
+
+mat-label,
+mat-error {
+  font-family: "Open Sans", "Helvetica Neue", sans-serif;
 }
 
 mat-error {
@@ -186,13 +193,12 @@ mat-error {
     font-size: 14px;
   }
   @include mixins.mobile {
-    font-size: 16px; //16
+    font-size: 16px;
     font-weight: 300;
   }
 }
 
 .emphasized-txt {
-  //Выделенный
   font-size: clamp(1rem, 0.925rem + 0.375vw, 1.375rem);
   @include mixins.tablet {
     font-size: 16px;
@@ -223,6 +229,7 @@ mat-error {
     gap: 5px;
   }
 }
+
 .btn {
   margin-bottom: 30px;
   @include mixins.tablet {
@@ -249,6 +256,7 @@ mat-error {
     }
   }
 }
+
 .btn-black,
 .btn-black.btn-black:active {
   color: var(--color-black);
@@ -303,7 +311,7 @@ mat-error {
 }
 
 .red {
-  color: var(--color-bittersweet); //акцент
+  color: var(--color-bittersweet);
 }
 
 ::-webkit-scrollbar {

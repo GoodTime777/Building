@@ -22,7 +22,7 @@
   border-radius: $border-r;
   border: $border;
   box-shadow: $box-s;
-  background: $background; //glass
+  background: $background; 
   backdrop-filter: $backdrop-f;
   -webkit-backdrop-filter: $w-b-filter;
 }
@@ -38,15 +38,6 @@
   outline: $outline;
   outline-offset: $outline-o;
 }
-
-// @mixin border($border-l:transparent, $border-t:transparent,$border-b:transparent,$border-r:transparent){
-//    border-left: 1px solid rgba(0, 0, 0, 0.75);
-//       border-top: 1px solid rgba(0, 0, 0, 0.5);
-//       border-bottom: 1px solid rgba(0, 0, 0, 0.5);
-//       border-right: 1px solid var(--color-border-white-02);
-// }
-
-
 
 @mixin mobile($max-mobile-width: 767px) {
   @media (max-width: $max-mobile-width) {

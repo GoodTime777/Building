@@ -1,60 +1,51 @@
 :root {
-  //*white
-  --color-white: rgb(255, 255, 255); //@  a:hover+, color+, border+
-  --color-white-02: rgba(255, 255, 255, 0.23); //glass //border+, bg+
-  --color-white-03: rgba(255, 255, 255, 0.36); //bg+, border+
-  --color-white-05: rgba(255, 255, 255, 0.521); //@
-  --color-white-07: rgba(255, 255, 255, 0.705); //@
+  --color-white: rgb(255, 255, 255);
+  --color-white-02: rgba(255, 255, 255, 0.23);
+  --color-white-03: rgba(255, 255, 255, 0.36);
+  --color-white-05: rgba(255, 255, 255, 0.521);
+  --color-white-07: rgba(255, 255, 255, 0.705);
 
-  //*gray
-  --color-silk: rgb(182, 182, 182); //@
-  --color-seashell: rgb(236, 240, 241); //@body !light+
-  --color-cinder: rgb(20, 20, 20); //bg,!dark+
-  --color-zeus: rgba(32, 32, 32, 0.4); //@ shadow+,
-  --color-dune: rgba(51, 51, 51, 1); //@ bg, !middle+
-  --color-black-cow: rgb(75, 74, 74); //color+
-  --color-carbon-gray: rgb(90, 90, 90); //bg+
+  --color-silk: rgb(182, 182, 182);
+  --color-seashell: rgb(236, 240, 241);
+  --color-cinder: rgb(20, 20, 20);
+  --color-zeus: rgba(32, 32, 32, 0.4);
+  --color-dune: rgba(51, 51, 51, 1);
+  --color-black-cow: rgb(75, 74, 74);
+  --color-carbon-gray: rgb(90, 90, 90);
+  --color-gallery-gray:rgb(206, 206, 206);
 
-  //*glass
-  --color-glass: rgba(255, 241, 214, 0.315); //*
+  --color-glass: rgba(255, 241, 214, 0.315);
 
-  //*black
-  --color-black: rgb(0, 0, 0); //a+, color+, @
-  --color-black-05: rgba(0, 0, 0, 0.5); //shadow+
-  --color-black-02: rgba(0, 0, 0, 0.233); //shadow+
-  --color-black-0: rgba(0, 0, 0, 0); //shadow+
+  --color-black: rgb(0, 0, 0);
+  --color-black-05: rgba(0, 0, 0, 0.5);
+  --color-black-02: rgba(0, 0, 0, 0.233);
+  --color-black-0: rgba(0, 0, 0, 0);
 
-  //*orange
-  --color-bittersweet: rgb(255, 127, 80); //border?+
-  --color-gamboge: rgb(255, 141, 10); //bg,+ @
-  --color-squash: rgb(255, 166, 0); //bg+, border+ @
-  --color-texas-rose: rgb(255, 187, 61); //bg+
-  --color-grandis: rgba(255, 209, 140, 0.37); //bg+
+  --color-bittersweet: rgb(255, 127, 80);
+  --color-gamboge: rgb(255, 141, 10);
+  --color-squash: rgb(255, 166, 0);
+  --color-texas-rose: rgb(255, 187, 61);
+  --color-grandis: rgba(255, 209, 140, 0.37);
 
-  //*red
-  --color-rosso-corsa: rgb(230, 0, 0); //@
-  --color-venetian-red: rgb(206, 2, 2); //@
-  --color-class-red: rgb(255, 0, 0); //@ .red
-  --color-bright-red: rgb(255, 0, 0); //decor
+  --color-rosso-corsa: rgb(230, 0, 0);
+  --color-venetian-red: rgb(206, 2, 2);
+  --color-class-red: rgb(255, 0, 0);
+  --color-bright-red: rgb(255, 0, 0);
 
-  //*txt
   --color-text-white: rgb(255, 255, 255);
   --color-txt-white: rgb(255, 255, 255);
   --color-text-gray: rgb(75, 74, 74);
   --color-text-black: rgb(0, 0, 0);
 
-  //*link
   --color-link-white: rgb(255, 255, 255);
   --color-link-black: rgb(0, 0, 0);
 
-  //*shadow
   --color-shadow-black-0: rgba(0, 0, 0, 0);
   --color-shadow-black-02: rgba(0, 0, 0, 0.233);
   --color-shadow-black-05: rgba(0, 0, 0, 0.5);
   --color-shadow-black-1: rgb(0, 0, 0);
   --color-shadow-black: rgba(32, 32, 32, 0.4);
 
-  //*border
   --color-border-white: rgb(255, 255, 255);
   --color-border-white-02: rgba(255, 255, 255, 0.23);
   --color-border-white-03: rgba(255, 255, 255, 0.3);
@@ -62,12 +53,10 @@
   --color-border-dark-orange: rgb(255, 141, 10);
   --color-border-orange: rgb(255, 166, 0);
 
-  //*background-orange
   --color-bg-light-orange: rgb(255, 166, 0);
-  --color-bg-orange: rgb(255, 141, 10); //header
+  --color-bg-orange: rgb(255, 141, 10);
   --color-bg-yellow: rgb(255, 187, 61);
 
-  //*background-gray
   --color-bg-white: rgba(255, 255, 255, 0.3);
   --color-bg-light-gray: rgb(236, 240, 241);
   --color-bg-middle-gray: rgba(51, 51, 51, 1);
@@ -76,18 +65,14 @@
   --color-bg-glass: rgba(255, 255, 255, 0.2);
   --color-bg-glass-hover-orange: rgba(255, 209, 140, 0.37);
 
-  //*background-black-white
   --color-bg-black: rgb(0, 0, 0);
   --color-bg-white: rgb(255, 255, 255);
 
-  //*state
   --color-error: rgb(230, 0, 0);
   --color-error-dark: rgb(206, 2, 2);
 
-  //*time
   --color-time: 0.9s;
 
-  //decor
   --c-white: rgb(255, 255, 255);
   --c-black: rgb(0, 0, 0);
   --ani-dur: 8s;

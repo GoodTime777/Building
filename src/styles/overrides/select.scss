@@ -1,13 +1,25 @@
 @use "variables";
-@use '@angular/material' as mat;
+@use "./mixins" as mixins;
+@use "@angular/material" as mat;
 
 :root {
   @include mat.select-overrides(
     (
-      panel-background-color:var(--color-dune),
-      enabled-arrow-color:var(--color-white-07),
-      focused-arrow-color:var(--color-white),
-      invalid-arrow-color:var(--color-rosso-corsa),
+      trigger-text-size: 16px,
+      trigger-text-font: "Open Sans",
+      panel-background-color: var(--color-dune),
+      enabled-arrow-color: var(--color-white-07),
+      focused-arrow-color: var(--color-white),
+      invalid-arrow-color: var(--color-rosso-corsa),
+      enabled-trigger-text-color: var(--color-white),
     )
   );
+
+  @include mixins.mobile {
+    @include mat.select-overrides(
+      (
+        trigger-text-size: 14px,
+      )
+    );
+  }
 }

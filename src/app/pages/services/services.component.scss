@@ -87,12 +87,12 @@
       }
     }
   }
-}
 
-.first-card {
-  @include mixins.mobile {
-    height: 800px;
-    top: 25%;
+  .first-card {
+    @include mixins.mobile {
+      height: 780px;
+      top: 25%;
+    }
   }
 }
 
@@ -108,12 +108,10 @@
     white-space: normal;
   }
 }
-// mat-tab{
-//   border-radius: 50px;
-// }
+
 :host ::ng-deep .mat-mdc-tab-header {
   background-color: var(--color-bg-dark-gray);
-   border-radius: 10px;
+  border-radius: 10px;
   margin-bottom: 5px;
 }
 
@@ -127,7 +125,7 @@
   }
 
   @include mixins.mobile {
-    @include mixins.size($width: 310px, $height: 1100px);
+    @include mixins.size($width: 310px, $height: 1070px);
   }
 }
 

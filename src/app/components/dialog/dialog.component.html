@@ -35,7 +35,6 @@
           @if(address?.hasError('required')){ Это обязательное поле }
         </mat-error>
       </mat-form-field>
-
       <mat-form-field class="modal__dialog-form-field">
         <mat-label>Tel</mat-label>
         <input
@@ -51,22 +50,21 @@
           @if(tel?.hasError('required')){ Это обязательное поле }
         </mat-error>
       </mat-form-field>
-
       <mat-form-field class="modal__dialog-form-field">
         <mat-label>Комментарии</mat-label>
         <textarea matInput></textarea>
       </mat-form-field>
-      <div class="check">
+      <div class="modal__dialog-form-checkbox">
         <mat-checkbox
           [disabled]="true"
-          class="consent"
+          class="modal__dialog-form-checkbox-consent"
           name="consent"
           formControlName="consent"
           >Согласен на обработку моих персональных данных в соответствии с
-          <a href="#" class="check-privacy-link">
+          <a href="#" class="modal__dialog-form-checkbox-consent-privacy">
             политикой конфиденциальности.
           </a>
-          <a href="#" class="consent-link">
+          <a href="#" class="modal__dialog-form-checkbox-consent-link">
             Соглашение на обработку персональных данных</a
           >
         </mat-checkbox>

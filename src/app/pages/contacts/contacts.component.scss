@@ -51,7 +51,7 @@
     }
 
     @include mixins.mobile {
-      order: 2;
+      order: 3;
     }
 
     &-content {
@@ -79,9 +79,6 @@
     @include mixins.flex();
     flex-direction: column;
     margin-bottom: 10px;
-    // @include mixins.tablet {
-    //   //width: 100%;
-    // }
 
     @include mixins.mobile {
       order: 1;
@@ -187,6 +184,7 @@
       }
     }
   }
+
   &__buttons {
     grid-area: C;
     width: 100%;
@@ -198,8 +196,9 @@
     }
 
     @include mixins.mobile {
+      order: 2;
       flex-direction: column;
-      gap: 0;
+      gap: 10px;
       margin-bottom: 15px;
     }
 

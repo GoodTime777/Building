@@ -4,6 +4,7 @@
 :root {
   @include mat.form-field-overrides(
     (
+      subscript-text-size: 14px,
       filled-caret-color: var(--color-white),
       filled-focus-active-indicator-color: var(--color-white),
       filled-focus-label-text-color: var(--color-white),
@@ -24,7 +25,6 @@
       filled-error-focus-active-indicator-color: var(--color-rosso-corsa),
       state-layer-color: var(--color-cinder),
       error-text-color: var(--color-venetian-red),
-      subscript-text-size: 14px,
     )
   );
 }

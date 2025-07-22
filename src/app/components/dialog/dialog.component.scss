@@ -35,6 +35,43 @@
       &-field {
         width: 100%;
       }
+
+      &-checkbox {
+        width: 90%;
+        text-align: left;
+        white-space: normal;
+        @include mixins.mobile {
+          width: 100%;
+        }
+
+        &-consent {
+          width: 100%;
+          white-space: normal;
+          font-weight: 200;
+          margin-left: -8px;
+
+          &-link {
+            text-transform: uppercase;
+            display: block;
+          }
+
+          a {
+            font-size: 14px;
+            color: var(--color-link-black);
+            text-decoration: underline;
+            font-weight: 400;
+            transition: color 0.3s ease;
+
+            &:hover {
+              color: var(--color-link-white);
+            }
+          }
+        }
+
+        mat-error {
+          padding-left: 38px;
+        }
+      }
     }
   }
 
@@ -54,106 +91,17 @@
       padding: 10px 20px;
     }
   }
-}
-.check {
-  width: 90%;
-  text-align: left;
-  white-space: normal;
-  @include mixins.mobile{
-    width: 100%;
-  }
 
-  mat-error {
-    padding-left: 38px;
-    margin-top: -3px;
-  }
-}
-mat-checkbox {
-  width: 100%;
-  white-space: normal;
-  font-weight: 200;
-  margin-left: -8px;
-
-  a {
-    color: black;
-    text-decoration: underline;
-    font-weight: 400;
-    transition: color 0.3s ease;
-    &:hover {
-      color: white;
+  input,
+  mat-label {
+    @include mixins.mobile {
+      font-size: 14px;
     }
   }
 
-  .check-privacy-link {
-    font-size: 14px;
+  mat-error {
+    margin-top: -5px;
   }
-
-  .consent-link {
-    text-transform: uppercase;
-    display: block;
-    font-size: 12px;
-  }
-}
-
-::ng-deep .mat-internal-form-field {
-  color: black !important;
-  font-size: 14px !important;
-}
-
-::ng-deep .mdc-checkbox__checkmark {
-  color: rgb(0, 0, 0) !important;
-}
-::ng-deep .mdc-checkbox__background {
-  border: 2px solid black !important;
-  background-color: transparent !important;
-  margin-top: -5px !important;
-}
-::ng-deep .mat-internal-form-field {
-  font-weight: 200;
-  font-family: "Open Sans", "Helvetica Neue", sans-serif !important;
-}
-
-input {
-  font-family: Oswald, "Helvetica Neue", sans-serif;
-  color: var(--color-text-white);
-  @include mixins.mobile {
-    font-size: 14px !important;
-  }
-}
-
-::ng-deep .mat-mdc-form-field-error-wrapper {
-  margin-top: -5px;
-}
-
-::ng-deep .mdc-list-item__primary-text {
-  color: var(--color-text-white) !important;
-  font-family: "Open Sans", "Helvetica Neue", sans-serif !important;
-  -webkit-color: var(--color-text-white) !important;
-  -webkit-font-family: "Open Sans", "Helvetica Neue", sans-serif !important;
-}
-
-mat-label,
-mat-error {
-  font-family: "Open Sans", "Helvetica Neue", sans-serif;
-}
-mat-label {
-  @include mixins.mobile {
-    font-size: 14px;
-  }
-}
-
-
-
-
-::ng-deep .mat-pseudo-checkbox {
-  background-color: var(--color-bg-dark-gray) !important;
-  border-color: rgb(255, 255, 255) !important;
-  -webkit-border-color: white !important;
-}
-
-::ng-deep .mat-pseudo-checkbox::after {
-  color: var(--color-text-white) !important;
-  -webkit-color: var(--color-text-white) !important;
 }
 
 ::ng-deep .mat-mdc-dialog-content {
@@ -163,10 +111,27 @@ mat-label {
 :host ::ng-deep .mat-mdc-select-value-text {
   white-space: wrap;
 }
+
 ::ng-deep .mat-mdc-dialog-container {
   margin: 0 auto;
-  width: 80% !important;
-  @include mixins.mobile {
-    width: 95% !important;
-  }
+}
+
+::ng-deep .mat-pseudo-checkbox {
+  background-color: var(--color-bg-dark-gray) !important;
+  border-color: var(--color-white) !important;
+  -webkit-border-color: var(--color-white) !important;
+}
+
+::ng-deep .mat-pseudo-checkbox::after {
+  color: var(--color-text-white) !important;
+  -webkit-color: var(--color-text-white) !important;
+}
+
+::ng-deep .mdc-list-item__primary-text {
+  color: var(--color-text-white);
+}
+
+::ng-deep .mdc-checkbox__background {
+  border: 2px solid var(--color-black) !important;
+  margin-top: -5px;
 }

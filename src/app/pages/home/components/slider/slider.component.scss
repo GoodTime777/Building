@@ -76,7 +76,6 @@
         position: absolute;
         @include mixins.size($width: 61.5%);
         display: flex;
-
         top: 0;
         gap: 10px;
         padding: 10px;
@@ -123,6 +122,7 @@
           }
         }
       }
+      
       &-content {
         @include mixins.mobile {
           height: 100%;
