@@ -318,3 +318,16 @@ mat-error {
   width: 0px;
   background: transparent;
 }
+
+* {
+  font-family: "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:active {
+  background-color: #141414 !important;
+  -webkit-box-shadow: 0 0 0 1000px #141414 inset !important;
+  -webkit-text-fill-color: #fff !important;
+}

@@ -3,21 +3,19 @@
   <p class="modal__subtitle">Выезд в день обращения</p>
 
   <mat-dialog-content class="modal__dialog">
-    <form
-      class="modal__dialog-form"
-      [formGroup]="applicationForm"
-      (ngSubmit)="onSubmit()"
-    >
+    <form class="modal__dialog-form" [formGroup]="contactForm">
       <mat-form-field class="modal__dialog-form-field">
+        @let name = contactForm.controls.name;
         <mat-label>Ваше имя</mat-label>
         <input matInput type="text" formControlName="name" name="name" />
         <mat-error>
-          @if(name?.invalid && (name?.dirty || name?.touched)){
-          @if(name?.hasError('required')){ Это обязательное поле }@else {
+          @if(name.invalid && (name.dirty || name.touched)){
+          @if(name.hasError('required')){ Это обязательное поле }@else {
           Допустимы только русский и английский алфавит} }
         </mat-error>
       </mat-form-field>
       <mat-form-field class="modal__dialog-form-field">
+        @let works = contactForm.controls.works;
         <mat-label>Вид работ</mat-label>
         <mat-select formControlName="works" multiple>
           @for (work of workList; track work) {
@@ -25,18 +23,20 @@
           }
         </mat-select>
         <mat-error>
-          @if(works?.hasError('required')){ Это обязательное поле }
+          @if(works.hasError('required')){ Это обязательное поле }
         </mat-error>
       </mat-form-field>
       <mat-form-field class="modal__dialog-form-field">
+        @let address = contactForm.controls.address;
         <mat-label>Адрес</mat-label>
         <input matInput type="text" formControlName="address" name="address" />
         <mat-error>
-          @if(address?.hasError('required')){ Это обязательное поле }
+          @if(address.hasError('required')){ Это обязательное поле }
         </mat-error>
       </mat-form-field>
       <mat-form-field class="modal__dialog-form-field">
-        <mat-label>Tel</mat-label>
+        @let tel = contactForm.controls.tel;
+        <mat-label>Телефон</mat-label>
         <input
           matInput
           type="text"
@@ -47,19 +47,31 @@
           name="tel"
         />
         <mat-error>
-          @if(tel?.hasError('required')){ Это обязательное поле }
+          @if(tel.hasError('required')){ Это обязательное поле }
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="modal__dialog-form-field">
+        @let email = contactForm.controls.name;
+        <mat-label>Email</mat-label>
+        <input matInput type="text" formControlName="email" name="email" />
+        <mat-error>
+          @if(email.hasError('email')){ Поле должно быть типа email:
+          "example&#64;email.com" }
         </mat-error>
       </mat-form-field>
       <mat-form-field class="modal__dialog-form-field">
         <mat-label>Комментарии</mat-label>
-        <textarea matInput></textarea>
+        <textarea
+          formControlName="comments"
+          matInput
+          placeholder="Введите текст..."
+        ></textarea>
       </mat-form-field>
       <div class="modal__dialog-form-checkbox">
         <mat-checkbox
-          [disabled]="true"
+          [formControl]="consent"
           class="modal__dialog-form-checkbox-consent"
           name="consent"
-          formControlName="consent"
           >Согласен на обработку моих персональных данных в соответствии с
           <a
             mat-dialog-close
@@ -79,7 +91,7 @@
           >
         </mat-checkbox>
         <mat-error>
-          @if(applicationForm.value.consent===false){Необходимо ваше согласие }
+          @if(consent.touched && consent.invalid) { Необходимо ваше согласие }
         </mat-error>
       </div>
     </form>
@@ -91,9 +103,9 @@
     <button
       mat-dialog-close
       class="modal__actions-btn btn-decor-flash"
-      [disabled]="applicationForm.invalid"
-      cdkFocusInitial
-      type="submit"
+      type="button"
+      [disabled]="contactForm.invalid || consent.invalid || loading()"
+      (click)="onSubmit()"
     >
       <span></span>
       <span></span>

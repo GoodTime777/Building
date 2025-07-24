@@ -1,81 +1,89 @@
-import { Component, inject } from '@angular/core';
-import { MatIconModule } from '@angular/material/icon';
 import {
-  MAT_DIALOG_DATA,
-  MatDialogActions,
-  MatDialogClose,
-  MatDialogContent,
-  MatDialogRef,
-  MatDialogTitle,
-} from '@angular/material/dialog';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
-import { FormControl, FormsModule, ReactiveFormsModule, FormGroup, Validators } from '@angular/forms';
-import { NgxMaskDirective } from 'ngx-mask';
-import { MatSelectModule } from '@angular/material/select';
-import { MatCheckboxModule } from '@angular/material/checkbox';
-import { RouterLink, RouterLinkActive } from '@angular/router';
-
-export interface DialogData {
-}
+  Component,
+  inject,
+  OnInit,
+  signal,
+  WritableSignal,
+} from '@angular/core';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import {
+  FormControl,
+  FormGroup,
+  Validators,
+  FormBuilder,
+  AbstractControl,
+} from '@angular/forms';
+import emailjs, { type EmailJSResponseStatus } from '@emailjs/browser';
+import { IContact } from './interfaces/contact.interface';
+import { DialogImports } from './imports';
+import { Contact } from './models/contact.model';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-dialog',
-  imports: [MatFormFieldModule,
-    MatInputModule,
-    FormsModule,
-    MatDialogTitle,
-    MatDialogContent,
-    MatDialogActions,
-    MatDialogClose,
-    MatIconModule,
-    NgxMaskDirective,
-    MatFormFieldModule,
-    MatSelectModule,
-    ReactiveFormsModule,
-    MatCheckboxModule,
-     RouterLink, RouterLinkActive 
-  ],
+  imports: DialogImports,
   templateUrl: './dialog.component.html',
-  styleUrl: './dialog.component.scss'
+  styleUrl: './dialog.component.scss',
 })
-
-
-export class DialogComponent {
+export class DialogComponent implements OnInit {
+  private fb: FormBuilder = inject(FormBuilder);
+  private snack: MatSnackBar = inject(MatSnackBar);
+  protected loading: WritableSignal<boolean> = signal(false);
+  protected consent: FormControl = this.fb.control(false, [
+    Validators.requiredTrue,
+  ]);
   protected readonly dialogRef = inject(MatDialogRef<DialogComponent>);
-  protected readonly data = inject<DialogData>(MAT_DIALOG_DATA);
+  protected readonly data = inject<any>(MAT_DIALOG_DATA);
+  protected readonly workList: string[] = ['Штукатурка стен', 'Стяжка пола'];
 
-  protected applicationForm = new FormGroup({
-    name: new FormControl('', [Validators.required, Validators.pattern('^[A-Za-zА-Яа-яЁё]+$')]),
-    address: new FormControl('', [Validators.required]),
-    tel: new FormControl('', [Validators.required]),
-    works: new FormControl('', [Validators.required]),
-    consent: new FormControl(false, [Validators.requiredTrue])
-  });
+  protected contactForm: FormGroup<
+    Record<keyof IContact, FormControl<string>>
+  > = null;
 
-  workList: string[] = ['Штукатурка стен', 'Стяжка пола'];
-
-  get name(): any {
-    return this.applicationForm.get('name')
+  ngOnInit(): void {
+    this.initForm();
   }
 
-  get address(): any {
-    return this.applicationForm.get('address')
+  private initForm(): void {
+    this.contactForm = this.fb.group({
+      name: [
+        null,
+        [Validators.required, Validators.pattern('^[A-Za-zА-Яа-яЁё ]+$')],
+      ],
+      address: [null],
+      tel: [null, [Validators.required]],
+      email: [null, [Validators.email]],
+      works: [null, [Validators.required]],
+      comments: [null, Validators.maxLength(255)],
+    }) as FormGroup<Record<keyof IContact, FormControl<string>>>;
   }
 
-  get tel(): any {
-    return this.applicationForm.get('tel')
-  }
+  protected async onSubmit(): Promise<void> {
+    this.loading.set(true);
 
-  get works(): any {
-    return this.applicationForm.get('works')
-  }
+    try {
+      await emailjs.send(
+        'service_hdpeod4',
+        'template_oaw11vj',
+        new Contact(this.contactForm.value as any) as any,
+        {
+          publicKey: 'Y2HLhWhQPJYwLgQ0R',
+        }
+      );
 
-  get consent(): any {
-    return this.applicationForm.get('consent')
-  }
-
-  onSubmit(): void {
-    console.log(this.applicationForm.value)
+      this.snack.open(
+        'Ваша заявка принята! Скоро с Вами свяжутся наши менеджеры',
+        null,
+        {
+          panelClass: 'success-snack',
+        }
+      );
+    } catch (e) {
+      this.snack.open('Что-то пошло не так. Попробуйте позднее', null, {
+        panelClass: 'error-snack',
+      });
+    } finally {
+      this.loading.set(false);
+    }
   }
 }
